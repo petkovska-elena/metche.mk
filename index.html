@@ -25,28 +25,32 @@
 <body>
   <!-- Announcement Bar -->
   <div class="announcement-bar">
-    <p>Our wildflower reserve blend is back — now in reusable glass jars.</p>
-    <a href="#products" class="announcement-link">Save 25% on starter kits</a>
+    <p data-i18n="announcement.text">Our wildflower reserve blend is back — now in reusable glass jars.</p>
+    <a href="#products" class="announcement-link" data-i18n="announcement.link">Save 25% on multi-jar sets</a>
   </div>
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
     <div class="mobile-nav-header">
-      <img src="LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48">
-      <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+      <img src="LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
+      <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+        <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+      </div>
+      <button class="mobile-close" id="mobileClose" aria-label="Close menu" data-i18n-aria="aria.closeMenu">&times;</button>
     </div>
     <nav class="mobile-nav-links">
       <details>
-        <summary>Shop Honey</summary>
-        <a href="#products">Starter Collections</a>
-        <a href="#products">Single-Origin Jars</a>
-        <a href="#grades">What Is Raw Honey?</a>
-        <a href="#products">Shop All</a>
+        <summary data-i18n="nav.shopHoney">Shop Honey</summary>
+        <a href="#products" data-i18n="nav.allJars">All Jars</a>
+        <a href="#products" data-i18n="nav.singleOrigin">Single-Origin</a>
+        <a href="#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
+        <a href="#products" data-i18n="nav.shopAll">Shop All</a>
       </details>
-      <a href="#story">Our Origins</a>
-      <a href="#blog">The Honey Journal</a>
-      <a href="#quiz">Find Your Jar Quiz</a>
-      <a href="#faq">FAQ</a>
+      <a href="#story" data-i18n="nav.origins">Our Origins</a>
+      <a href="#blog" data-i18n="nav.journal">The Honey Journal</a>
+      <a href="#quiz" data-i18n="nav.selector">Product Selector</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
   </div>
   <div class="overlay" id="overlay"></div>
@@ -54,19 +58,19 @@
   <!-- Cart Drawer -->
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
-      <h2>Cart</h2>
-      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+      <h2 data-i18n="cart.title">Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">&times;</button>
     </div>
-    <p class="cart-shipping" id="cartShipping">Spend $75 more for free shipping</p>
+    <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend €50 more for free shipping</p>
     <div class="cart-items" id="cartItems" data-lenis-prevent>
-      <p class="cart-empty">Your cart is empty</p>
+      <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
     </div>
     <div class="cart-footer">
       <div class="cart-subtotal">
-        <span>Subtotal</span>
-        <span id="cartSubtotal">$0</span>
+        <span data-i18n="cart.subtotal">Subtotal</span>
+        <span id="cartSubtotal">€0</span>
       </div>
-      <button class="btn btn-primary btn-full" id="checkoutBtn">Check Out</button>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Check Out</button>
     </div>
   </aside>
 
@@ -76,39 +80,39 @@
       <header class="header" id="header">
         <div class="header-inner">
           <div class="header-side header-side--left">
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" data-i18n-aria="aria.openMenu">
               <span></span><span></span><span></span>
             </button>
-            <nav class="nav-desktop nav-desktop--left" aria-label="Primary navigation">
+            <nav class="nav-desktop nav-desktop--left" aria-label="Primary navigation" data-i18n-aria="aria.navPrimary">
               <ul class="nav-list">
                 <li class="nav-item has-dropdown">
-                  <button class="nav-link" data-dropdown="shop-honey">Shop Honey</button>
+                  <button class="nav-link" data-dropdown="shop-honey" data-i18n="nav.shopHoney">Shop Honey</button>
                   <div class="mega-menu" id="dropdown-shop-honey">
                     <div class="mega-menu-inner">
                       <div class="mega-links">
-                        <a href="#products">Starter Collections</a>
-                        <a href="#products">Single-Origin Jars</a>
-                        <a href="#grades">What Is Raw Honey?</a>
-                        <a href="#products">Shop All</a>
+                        <a href="#products" data-i18n="nav.allJars">All Jars</a>
+                        <a href="#products" data-i18n="nav.singleOrigin">Single-Origin</a>
+                        <a href="#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
+                        <a href="#products" data-i18n="nav.shopAll">Shop All</a>
                       </div>
-                      <p class="mega-desc">Drawn from alpine meadows and sun-warmed apiaries, Metche honey is unheated, unblended, and bottled at peak floral intensity.</p>
+                      <p class="mega-desc" data-i18n="mega.shop.desc">Drawn from alpine meadows and sun-warmed apiaries, Metche honey is unheated, unblended, and bottled at peak floral intensity.</p>
                       <div class="mega-products">
                         <a href="#products" class="mega-product-card">
-                          <img src="images/products/reserve-blend.jpg" alt="Wildflower Reserve honey">
+                          <img src="images/products/reserve-blend.jpg" alt="Reserve Blend raw honey jar" data-i18n-alt="alt.mega.reserve">
                           <div class="mega-product-body">
-                            <span class="badge">Best Seller</span>
+                            <span class="badge" data-i18n="badge.bestseller">Best Seller</span>
                             <span class="rating">4.9 (28)</span>
-                            <span class="grade">Reserve Blend</span>
-                            <span class="price">FROM $58</span>
+                            <span class="grade" data-i18n-mega="product.mega.reserve">Reserve Blend, 500g</span>
+                            <span class="price">€14</span>
                           </div>
                         </a>
                         <a href="#products" class="mega-product-card">
-                          <img src="images/products/highland-gold.jpg" alt="Highland Gold honey">
+                          <img src="images/products/highland-gold.jpg" alt="Highland Gold raw honey jar" data-i18n-alt="alt.mega.highland">
                           <div class="mega-product-body">
-                            <span class="badge">Limited</span>
+                            <span class="badge" data-i18n="badge.limited">Limited</span>
                             <span class="rating">4.8 (17)</span>
-                            <span class="grade">Highland Gold</span>
-                            <span class="price">FROM $72</span>
+                            <span class="grade" data-i18n-mega="product.mega.highland">Highland Gold, 380g</span>
+                            <span class="price">€18</span>
                           </div>
                         </a>
                       </div>
@@ -116,37 +120,41 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a href="#story" class="nav-link">Our Origins</a>
+                  <a href="#story" class="nav-link" data-i18n="nav.origins">Our Origins</a>
                 </li>
               </ul>
             </nav>
           </div>
 
-          <a href="#" class="header-logo" aria-label="Metche home">
-            <img src="LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96">
+          <a href="#" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
+            <img src="LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
           </a>
 
           <div class="header-side header-side--right">
-            <nav class="nav-desktop nav-desktop--right" aria-label="Secondary navigation">
+            <nav class="nav-desktop nav-desktop--right" aria-label="Secondary navigation" data-i18n-aria="aria.navSecondary">
               <ul class="nav-list">
                 <li class="nav-item has-dropdown">
-                  <button class="nav-link" data-dropdown="learn">Learn</button>
+                  <button class="nav-link" data-dropdown="learn" data-i18n="nav.learn">Learn</button>
                   <div class="mega-menu mega-menu--simple" id="dropdown-learn">
                     <div class="mega-menu-inner">
                       <div class="mega-links mega-links--column">
-                        <a href="#grades">What Is Raw Honey?</a>
-                        <a href="#blog">The Honey Journal</a>
-                        <a href="#quiz">Find Your Jar Quiz</a>
-                        <a href="#story">Our Apiaries</a>
-                        <a href="#faq">FAQ</a>
+                        <a href="#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
+                        <a href="#blog" data-i18n="nav.journal">The Honey Journal</a>
+                        <a href="#quiz" data-i18n="nav.selector">Product Selector</a>
+                        <a href="#story" data-i18n="nav.apiaries">Our Apiaries</a>
+                        <a href="#faq" data-i18n="nav.faq">FAQ</a>
                       </div>
-                      <p class="mega-desc">Every Metche batch is traced to a single harvest season and the beekeeper who tended it.</p>
+                      <p class="mega-desc" data-i18n="mega.learn.desc">Every Metche batch is traced to a single harvest season and the beekeeper who tended it.</p>
                     </div>
                   </div>
                 </li>
               </ul>
             </nav>
-            <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+            <div class="lang-switcher" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+              <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+            </div>
+            <button class="cart-btn" id="cartBtn" aria-label="Open cart" data-i18n-aria="aria.openCart">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
               <span class="cart-count" id="cartCount">0</span>
             </button>
@@ -154,18 +162,18 @@
         </div>
       </header>
       <div class="hero-media">
-        <img src="janosch-diggelmann-8zuB5SK0pI0-unsplash.jpg" alt="Bee on wildflower — raw honey harvest">
+        <img src="janosch-diggelmann-8zuB5SK0pI0-unsplash.jpg" alt="Bee on wildflower — raw honey harvest" data-i18n-alt="alt.hero">
         <div class="container hero-content-wrap">
           <div class="hero-content">
-            <h1>Honey Worth Slowing Down For.</h1>
-            <p class="hero-sub">Small-batch raw honey from wildflower meadows — unfiltered, traceable, and bottled at the peak of the bloom.</p>
+            <h1 data-i18n="hero.title">Honey Worth Slowing Down For.</h1>
+            <p class="hero-sub" data-i18n="hero.sub">Small-batch raw honey from wildflower meadows — unfiltered, traceable, and bottled at the peak of the bloom.</p>
             <div class="hero-cta">
-              <a href="#products" class="btn btn-primary">Shop Raw Honey</a>
-              <a href="#quiz" class="btn btn-outline">Take Quiz</a>
+              <a href="#products" class="btn btn-primary" data-i18n="hero.cta.shop">Shop Raw Honey</a>
+              <a href="#quiz" class="btn btn-outline" data-i18n="hero.cta.selector">Product Selector</a>
             </div>
             <p class="hero-social-proof">
               <span class="stars">★★★★★</span>
-              41 verified 5-star reviews
+              <span data-i18n="hero.reviews">41 verified 5-star reviews</span>
             </p>
           </div>
         </div>
@@ -177,50 +185,50 @@
     <section class="section products-section" id="products">
       <div class="container">
         <div class="section-header">
-          <h2>Begin Your Daily Ritual.</h2>
-          <a href="#products" class="link-arrow">SHOP ALL</a>
+          <h2 data-i18n="products.title">Raw Honey Jars</h2>
+          <a href="#products" class="link-arrow" data-i18n="products.shopAll">SHOP ALL</a>
         </div>
         <div class="product-grid" id="productGrid">
-            <article class="product-card add-to-cart" data-id="reserve-ritual" data-name="Reserve Ritual Kit" data-price="58">
+            <article class="product-card add-to-cart" data-id="reserve-ritual" data-product="reserve-ritual" data-price="17">
               <div class="product-visual">
-                <img src="images/products/reserve-blend.jpg" alt="Reserve Ritual Kit">
-                <span class="product-grade">Reserve Blend</span>
+                <img src="images/products/reserve-blend.jpg" alt="Reserve Blend, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
+                <span class="product-grade" data-i18n-grade>Reserve Blend</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
                   <span class="product-stars" aria-hidden="true">★★★★★</span>
                   <span>4.9 (28)</span>
                 </div>
-                <h3>Reserve Ritual Kit</h3>
-                <span class="product-price">FROM $58</span>
+                <h3 data-i18n-name>Reserve Blend, 500g</h3>
+                <span class="product-price">€17</span>
               </div>
             </article>
-            <article class="product-card add-to-cart" data-id="morning-glow" data-name="Morning Glow Starter" data-price="78">
+            <article class="product-card add-to-cart" data-id="morning-glow" data-product="morning-glow" data-price="16">
               <div class="product-visual">
-                <img src="images/products/morning-glow.jpg" alt="Morning Glow Starter Kit">
-                <span class="product-grade">Wildflower Light</span>
+                <img src="images/products/morning-glow.jpg" alt="Wildflower Light, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
+                <span class="product-grade" data-i18n-grade>Wildflower Light</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
                   <span class="product-stars" aria-hidden="true">★★★★★</span>
                   <span>4.9 (33)</span>
                 </div>
-                <h3>Morning Glow Starter</h3>
-                <span class="product-price">FROM $78</span>
+                <h3 data-i18n-name>Wildflower Light, 340g</h3>
+                <span class="product-price">€16</span>
               </div>
             </article>
-            <article class="product-card add-to-cart" data-id="highland-deep" data-name="Highland Deep Collection" data-price="92">
+            <article class="product-card add-to-cart" data-id="highland-deep" data-product="highland-deep" data-price="19">
               <div class="product-visual">
-                <img src="images/products/highland-gold.jpg" alt="Highland Deep Collection">
-                <span class="product-grade">Highland Gold</span>
+                <img src="images/products/highland-gold.jpg" alt="Highland Gold, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
+                <span class="product-grade" data-i18n-grade>Highland Gold</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
                   <span class="product-stars" aria-hidden="true">★★★★★</span>
                   <span>4.7 (46)</span>
                 </div>
-                <h3>Highland Deep Collection</h3>
-                <span class="product-price">FROM $92</span>
+                <h3 data-i18n-name>Highland Gold, 2×250g</h3>
+                <span class="product-price">€19</span>
               </div>
             </article>
         </div>
@@ -231,15 +239,15 @@
     <section class="section meet-section" id="story">
       <div class="container meet-grid">
         <div class="meet-text">
-          <h2>Meet Metche</h2>
-          <p>
+          <h2 data-i18n="meet.title">Meet Metche</h2>
+          <p data-i18n-html="meet.text">
             Born in high-country apiaries and known for its <em>naturally complex floral character</em>,
             <em>slow-crystallized texture</em>, and <em>antioxidant-rich pollen</em>, this
             <em>ethically harvested</em> honey is more than a pantry staple. It's a quiet daily ritual.
           </p>
         </div>
         <div class="meet-image">
-          <img src="images/nature/bianca-ackermann-mTNVvQvmoKs-unsplash.jpg" alt="Beekeeper inspecting a hive frame">
+          <img src="images/nature/bianca-ackermann-mTNVvQvmoKs-unsplash.jpg" alt="Beekeeper inspecting a hive frame" data-i18n-alt="alt.beekeeper">
         </div>
       </div>
     </section>
@@ -247,66 +255,66 @@
     <!-- Grades / Tabs -->
     <section class="section grades-section" id="grades">
       <div class="container">
-        <h2 class="grades-heading">In raw honey, floral intensity reflects depth of flavor and natural compounds.</h2>
+        <h2 class="grades-heading" data-i18n="grades.heading">In raw honey, floral intensity reflects depth of flavor and natural compounds.</h2>
         <div class="grade-tabs" role="tablist">
-          <button class="grade-tab active" role="tab" data-tab="reserve" aria-selected="true">Reserve Blend</button>
-          <button class="grade-tab" role="tab" data-tab="highland" aria-selected="false">Highland Gold</button>
-          <button class="grade-tab" role="tab" data-tab="wildflower" aria-selected="false">Wildflower Light</button>
+          <button class="grade-tab active" role="tab" data-tab="reserve" aria-selected="true" data-i18n="grades.tab.reserve">Reserve Blend</button>
+          <button class="grade-tab" role="tab" data-tab="highland" aria-selected="false" data-i18n="grades.tab.highland">Highland Gold</button>
+          <button class="grade-tab" role="tab" data-tab="wildflower" aria-selected="false" data-i18n="grades.tab.wildflower">Wildflower Light</button>
         </div>
         <div class="grade-panels">
           <div class="grade-panel active" id="panel-reserve" role="tabpanel">
             <ul class="grade-benefits">
-              <li>Buttery caramel finish with meadow florals</li>
-              <li>Rich in enzymes and natural prebiotics</li>
-              <li>Steady, clean energy without the crash</li>
-              <li>Supports everyday immune balance*</li>
-              <li>Gentle on digestion and gut comfort*</li>
-              <li>Helps soothe seasonal inflammation*</li>
+              <li data-i18n-grade-item="grades.reserve.0">Buttery caramel finish with meadow florals</li>
+              <li data-i18n-grade-item="grades.reserve.1">Rich in enzymes and natural prebiotics</li>
+              <li data-i18n-grade-item="grades.reserve.2">Steady, clean energy without the crash</li>
+              <li data-i18n-grade-item="grades.reserve.3">Supports everyday immune balance*</li>
+              <li data-i18n-grade-item="grades.reserve.4">Gentle on digestion and gut comfort*</li>
+              <li data-i18n-grade-item="grades.reserve.5">Helps soothe seasonal inflammation*</li>
             </ul>
           </div>
           <div class="grade-panel" id="panel-highland" role="tabpanel">
             <ul class="grade-benefits">
-              <li>Deep amber color with toasted oak notes</li>
-              <li>Higher pollen density from alpine blooms</li>
-              <li>Long-lasting sweetness, spoon-coating texture</li>
-              <li>Ideal for active mornings and recovery*</li>
-              <li>Supports digestive regularity*</li>
-              <li>Helps maintain a calm inflammatory response*</li>
+              <li data-i18n-grade-item="grades.highland.0">Deep amber color with toasted oak notes</li>
+              <li data-i18n-grade-item="grades.highland.1">Higher pollen density from alpine blooms</li>
+              <li data-i18n-grade-item="grades.highland.2">Long-lasting sweetness, spoon-coating texture</li>
+              <li data-i18n-grade-item="grades.highland.3">Ideal for active mornings and recovery*</li>
+              <li data-i18n-grade-item="grades.highland.4">Supports digestive regularity*</li>
+              <li data-i18n-grade-item="grades.highland.5">Helps maintain a calm inflammatory response*</li>
             </ul>
           </div>
           <div class="grade-panel" id="panel-wildflower" role="tabpanel">
             <ul class="grade-benefits">
-              <li>Light, luminous gold with citrus lift</li>
-              <li>Delicate floral aroma from mixed meadows</li>
-              <li>Easy everyday spoonful for the whole family</li>
-              <li>Gentle immune support for daily use*</li>
-              <li>Promotes comfortable digestion*</li>
-              <li>Balances energy through the afternoon*</li>
+              <li data-i18n-grade-item="grades.wildflower.0">Light, luminous gold with citrus lift</li>
+              <li data-i18n-grade-item="grades.wildflower.1">Delicate floral aroma from mixed meadows</li>
+              <li data-i18n-grade-item="grades.wildflower.2">Easy everyday spoonful for the whole family</li>
+              <li data-i18n-grade-item="grades.wildflower.3">Gentle immune support for daily use*</li>
+              <li data-i18n-grade-item="grades.wildflower.4">Promotes comfortable digestion*</li>
+              <li data-i18n-grade-item="grades.wildflower.5">Balances energy through the afternoon*</li>
             </ul>
           </div>
         </div>
-        <p class="grade-disclaimer">*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Many customers notice subtle benefits within a few weeks of consistent use.</p>
+        <p class="grade-disclaimer" data-i18n="grades.disclaimer">*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Many customers notice subtle benefits within a few weeks of consistent use.</p>
 
         <!-- Featured Grade Cards -->
         <div class="featured-grades">
-          <article class="featured-grade featured-grade--bestseller">
-            <span class="featured-badge">#1 best seller</span>
-            <h3>Reserve Blend</h3>
-            <h4>Daily Balance &amp; Digestive Comfort</h4>
-            <p>Our most-loved jar — complex, creamy, and perfect for morning tea or straight from the spoon.</p>
-            <button class="btn btn-primary add-to-cart" data-id="reserve-blend" data-name="Reserve Blend Jar" data-price="58">Buy Reserve Blend</button>
+          <article class="featured-grade featured-grade--bestseller" data-product="reserve-blend">
+            <span class="featured-badge" data-i18n="featured.badge">#1 best seller</span>
+            <h3 data-i18n="featured.reserve.title">Reserve Blend, 500g</h3>
+            <h4 data-i18n="featured.reserve.sub">Raw · Unfiltered · Cold-bottled</h4>
+            <p data-i18n="featured.reserve.desc">Multi-floral alpine blend. Amber glass, batch-coded, never heated above 40°C.</p>
+            <button class="btn btn-primary add-to-cart" data-id="reserve-blend" data-price="14">Add to Cart — €14</button>
           </article>
-          <article class="featured-grade">
-            <h3>Highland Gold</h3>
-            <h4>Deep Strength &amp; Recovery</h4>
-            <p>Harvested at altitude for a bolder profile and higher natural compound concentration.</p>
-            <button class="btn btn-primary add-to-cart" data-id="highland-gold" data-name="Highland Gold Jar" data-price="72">Buy Now</button>
+          <article class="featured-grade" data-product="highland-gold">
+            <h3 data-i18n="featured.highland.title">Highland Gold, 380g</h3>
+            <h4 data-i18n="featured.highland.sub">Raw · Highland single-origin</h4>
+            <p data-i18n="featured.highland.desc">High-altitude wildflower honey. Higher pollen density, deep amber profile.</p>
+            <button class="btn btn-primary add-to-cart" data-id="highland-gold" data-price="18">Add to Cart — €18</button>
           </article>
-          <article class="featured-grade">
-            <h3>Wildflower Light</h3>
-            <h4>Everyday Gentle Support</h4>
-            <p>A bright, approachable honey for first-timers and families easing into raw honey.</p>
-            <button class="btn btn-primary add-to-cart" data-id="wildflower-light" data-name="Wildflower Light Jar" data-price="48">Buy Wildflower Light</button>
+          <article class="featured-grade" data-product="wildflower-light">
+            <h3 data-i18n="featured.wildflower.title">Wildflower Light, 340g</h3>
+            <h4 data-i18n="featured.wildflower.sub">Raw · Mild floral profile</h4>
+            <p data-i18n="featured.wildflower.desc">Lower viscosity, light wildflower notes. Cold-bottled, single-harvest batch.</p>
+            <button class="btn btn-primary add-to-cart" data-id="wildflower-light" data-price="12">Add to Cart — €12</button>
           </article>
         </div>
       </div>
@@ -315,55 +323,55 @@
     <!-- Comparison -->
     <section class="section compare-section">
       <div class="container">
-        <span class="section-label">COMPARE US</span>
-        <h2>How Metche Compares</h2>
-        <p class="compare-intro">Plenty of jars say "raw" or "pure" — but the details vary. Here's an honest look at how our small batches stack up against other raw honeys and typical supermarket options.</p>
+        <span class="section-label" data-i18n="compare.label">COMPARE US</span>
+        <h2 data-i18n="compare.title">How Metche Compares</h2>
+        <p class="compare-intro" data-i18n="compare.intro">Plenty of jars say "raw" or "pure" — but the details vary. Here's an honest look at how our small batches stack up against other raw honeys and typical supermarket options.</p>
         <div class="compare-table-wrap">
           <table class="compare-table">
             <thead>
               <tr>
                 <th></th>
                 <th>
-                  <img class="compare-thumb compare-thumb--metche" src="images/honey/oktay-yildiz-AQMqURILWoU-unsplash.jpg" alt="Honeybee">
-                  Metche
+                  <img class="compare-thumb compare-thumb--metche" src="images/honey/oktay-yildiz-AQMqURILWoU-unsplash.jpg" alt="Honeybee" data-i18n-alt="alt.compare.bee">
+                  <span data-i18n="compare.col.metche">Metche</span>
                 </th>
                 <th>
-                  <img class="compare-thumb compare-thumb--other" src="images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg" alt="Raw honeycomb">
-                  Other Raw
+                  <img class="compare-thumb compare-thumb--other" src="images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
+                  <span data-i18n="compare.col.other">Other Raw</span>
                 </th>
                 <th>
-                  <img class="compare-thumb compare-thumb--regular" src="images/honey/andy-holmes-wdz-dez94RQ-unsplash.jpg" alt="Wildflowers">
-                  Regular Honey
+                  <img class="compare-thumb compare-thumb--regular" src="images/honey/andy-holmes-wdz-dez94RQ-unsplash.jpg" alt="Wildflowers" data-i18n-alt="alt.compare.wildflowers">
+                  <span data-i18n="compare.col.regular">Regular Honey</span>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Protective Amber Glass Packaging</td>
+                <td data-i18n="compare.row.0">Protective Amber Glass Packaging</td>
                 <td><span class="check">✓</span></td>
                 <td><span class="check">✓</span></td>
                 <td><span class="check">✓</span></td>
               </tr>
               <tr>
-                <td>Third-Party Tested for Purity</td>
+                <td data-i18n="compare.row.1">Third-Party Tested for Purity</td>
                 <td><span class="check">✓</span></td>
                 <td><span class="cross">—</span></td>
                 <td><span class="cross">—</span></td>
               </tr>
               <tr>
-                <td>Pesticide Residue-Free Certified</td>
+                <td data-i18n="compare.row.2">Pesticide Residue-Free Certified</td>
                 <td><span class="check">✓</span></td>
                 <td><span class="check">✓</span></td>
                 <td><span class="cross">—</span></td>
               </tr>
               <tr>
-                <td>100% Traceable to Hive</td>
+                <td data-i18n="compare.row.3">100% Traceable to Hive</td>
                 <td><span class="check">✓</span></td>
                 <td><span class="cross">—</span></td>
                 <td><span class="cross">—</span></td>
               </tr>
               <tr>
-                <td>Ethical Beekeeping Standard</td>
+                <td data-i18n="compare.row.4">Ethical Beekeeping Standard</td>
                 <td><span class="check">✓</span></td>
                 <td><span class="check">✓</span></td>
                 <td><span class="cross">—</span></td>
@@ -384,40 +392,40 @@
           </div>
           <div class="taste-panel-inner">
             <div class="taste-intro">
-              <h2>Metche's Taste</h2>
-              <p>Smooth and creamy, similar to a rich buttery caramel — enjoy straight from the jar.</p>
+              <h2 data-i18n="taste.title">Metche's Taste</h2>
+              <p data-i18n="taste.intro">Smooth and creamy, similar to a rich buttery caramel — enjoy straight from the jar.</p>
             </div>
             <div class="taste-callouts">
               <div class="taste-callout">
                 <span class="taste-callout-dot" aria-hidden="true"></span>
                 <span class="taste-callout-dash" aria-hidden="true"></span>
                 <div class="taste-callout-body">
-                  <h4>Caramel</h4>
-                  <p>Rich and toasted — the dominant note on the first spoon.</p>
+                  <h4 data-i18n="taste.caramel.title">Caramel</h4>
+                  <p data-i18n="taste.caramel.desc">Rich and toasted — the dominant note on the first spoon.</p>
                 </div>
               </div>
               <div class="taste-callout">
                 <span class="taste-callout-dot" aria-hidden="true"></span>
                 <span class="taste-callout-dash" aria-hidden="true"></span>
                 <div class="taste-callout-body">
-                  <h4>Floral</h4>
-                  <p>Light and fresh — a subtle sweetness from seasonal wildflowers.</p>
+                  <h4 data-i18n="taste.floral.title">Floral</h4>
+                  <p data-i18n="taste.floral.desc">Light and fresh — a subtle sweetness from seasonal wildflowers.</p>
                 </div>
               </div>
               <div class="taste-callout">
                 <span class="taste-callout-dot" aria-hidden="true"></span>
                 <span class="taste-callout-dash" aria-hidden="true"></span>
                 <div class="taste-callout-body">
-                  <h4>Creamy</h4>
-                  <p>Dense, smooth, spoon-coating — never runny.</p>
+                  <h4 data-i18n="taste.creamy.title">Creamy</h4>
+                  <p data-i18n="taste.creamy.desc">Dense, smooth, spoon-coating — never runny.</p>
                 </div>
               </div>
               <div class="taste-callout">
                 <span class="taste-callout-dot" aria-hidden="true"></span>
                 <span class="taste-callout-dash" aria-hidden="true"></span>
                 <div class="taste-callout-body">
-                  <h4>Earthy</h4>
-                  <p>A deeper, grounded finish — the mark of unheated raw honey.</p>
+                  <h4 data-i18n="taste.earthy.title">Earthy</h4>
+                  <p data-i18n="taste.earthy.desc">A deeper, grounded finish — the mark of unheated raw honey.</p>
                 </div>
               </div>
             </div>
@@ -429,26 +437,26 @@
     <!-- Reviews -->
     <section class="section reviews-section">
       <div class="container">
-        <h2>Loved by 41 verified 5-star reviews</h2>
+        <h2 data-i18n="reviews.title">Loved by 41 verified 5-star reviews</h2>
         <div class="reviews-grid">
           <blockquote class="review-card">
-            <p>"Replace every sweetener in your kitchen. You'll taste the difference on day one."</p>
+            <p data-i18n-review="reviews.0">"Replace every sweetener in your kitchen. You'll taste the difference on day one."</p>
             <cite>Dr. Amara K.</cite>
           </blockquote>
           <blockquote class="review-card">
-            <p>"I take a spoonful every single morning. It's become non-negotiable."</p>
+            <p data-i18n-review="reviews.1">"I take a spoonful every single morning. It's become non-negotiable."</p>
             <cite>Hannah T.</cite>
           </blockquote>
           <blockquote class="review-card">
-            <p>"More steady energy, better focus — I didn't expect honey to feel this intentional."</p>
+            <p data-i18n-review="reviews.2">"More steady energy, better focus — I didn't expect honey to feel this intentional."</p>
             <cite>David R.</cite>
           </blockquote>
           <blockquote class="review-card">
-            <p>"It really is different. Creamier, deeper, worth every penny."</p>
+            <p data-i18n-review="reviews.3">"It really is different. Creamier, deeper, worth every penny."</p>
             <cite>Claire S.</cite>
           </blockquote>
           <blockquote class="review-card">
-            <p>"The best honey I've ever had. Full stop."</p>
+            <p data-i18n-review="reviews.4">"The best honey I've ever had. Full stop."</p>
             <cite>Marcus L.</cite>
           </blockquote>
         </div>
@@ -459,15 +467,15 @@
     <section class="section beekeeper-section">
       <div class="container beekeeper-grid">
         <div class="beekeeper-image">
-          <img src="images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.jpg" alt="Master beekeeper in the field">
+          <img src="images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.jpg" alt="Master beekeeper in the field" data-i18n-alt="alt.masterBeekeeper">
         </div>
         <div class="beekeeper-text">
-          <p class="beekeeper-intro">Our beekeepers follow the <em>Art of Gentle Harvesting</em> — a tradition that puts hive health and meadow biodiversity ahead of volume.</p>
-          <h3>Meet Tomas</h3>
-          <p>Introducing Tomas, one of Metche's founding master beekeepers from the remote highland valleys where our Reserve Blend is born.</p>
-          <blockquote>"What sets beekeeping apart here is that it doesn't just produce honey — it sustains the entire landscape around us."</blockquote>
-          <p class="beekeeper-sig">Master Beekeeper, Metche</p>
-          <a href="#story" class="btn btn-outline">Our Story</a>
+          <p class="beekeeper-intro" data-i18n-html="beekeeper.intro">Our beekeepers follow the <em>Art of Gentle Harvesting</em> — a tradition that puts hive health and meadow biodiversity ahead of volume.</p>
+          <h3 data-i18n="beekeeper.name">Meet Tomas</h3>
+          <p data-i18n="beekeeper.text">Introducing Tomas, one of Metche's founding master beekeepers from the remote highland valleys where our Reserve Blend is born.</p>
+          <blockquote data-i18n="beekeeper.quote">"What sets beekeeping apart here is that it doesn't just produce honey — it sustains the entire landscape around us."</blockquote>
+          <p class="beekeeper-sig" data-i18n="beekeeper.sig">Master Beekeeper, Metche</p>
+          <a href="#story" class="btn btn-outline" data-i18n="beekeeper.cta">Our Story</a>
         </div>
       </div>
     </section>
@@ -476,27 +484,27 @@
     <section class="section blog-section" id="blog">
       <div class="container">
         <div class="section-header">
-          <h2>Discover What Makes Raw Honey Different</h2>
-          <span class="section-label">Honey Journal</span>
+          <h2 data-i18n="blog.title">Discover What Makes Raw Honey Different</h2>
+          <span class="section-label" data-i18n="blog.label">Honey Journal</span>
         </div>
         <div class="blog-grid">
           <article class="blog-card">
-            <img src="images/honey/aaron-burden-2xhOYKK-jAM-unsplash.jpg" alt="Honey and wellness">
-            <div class="blog-meta">Journal | March 12, 2025</div>
-            <h3>Raw Honey as a Natural Prebiotic: What the Research Says</h3>
-            <a href="#" class="link-arrow">Read More</a>
+            <img src="images/honey/aaron-burden-2xhOYKK-jAM-unsplash.jpg" alt="Honey and wellness" data-i18n-alt="alt.blog.0">
+            <div class="blog-meta" data-i18n-blog="0.meta">Journal | March 12, 2025</div>
+            <h3 data-i18n-blog="0.title">Raw Honey as a Natural Prebiotic: What the Research Says</h3>
+            <a href="#" class="link-arrow" data-i18n="blog.readMore">Read More</a>
           </article>
           <article class="blog-card">
-            <img src="images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.jpg" alt="First jar of honey">
-            <div class="blog-meta">Journal | January 8, 2024</div>
-            <h3>Your First Month with Metche: What to Expect</h3>
-            <a href="#" class="link-arrow">Read More</a>
+            <img src="images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.jpg" alt="First jar of honey" data-i18n-alt="alt.blog.1">
+            <div class="blog-meta" data-i18n-blog="1.meta">Journal | January 8, 2024</div>
+            <h3 data-i18n-blog="1.title">Your First Month with Metche: What to Expect</h3>
+            <a href="#" class="link-arrow" data-i18n="blog.readMore">Read More</a>
           </article>
           <article class="blog-card">
-            <img src="images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture">
-            <div class="blog-meta">Journal | November 3, 2025</div>
-            <h3>Why Raw Honey Tastes Richer: The Science Behind the Texture</h3>
-            <a href="#" class="link-arrow">Read More</a>
+            <img src="images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture" data-i18n-alt="alt.blog.2">
+            <div class="blog-meta" data-i18n-blog="2.meta">Journal | November 3, 2025</div>
+            <h3 data-i18n-blog="2.title">Why Raw Honey Tastes Richer: The Science Behind the Texture</h3>
+            <a href="#" class="link-arrow" data-i18n="blog.readMore">Read More</a>
           </article>
         </div>
       </div>
@@ -505,9 +513,9 @@
     <!-- Quiz CTA -->
     <section class="section quiz-section" id="quiz">
       <div class="container quiz-box">
-        <h2>Not sure where to start?</h2>
-        <p>Answer four quick questions and we'll match you with the perfect jar.</p>
-        <button class="btn btn-primary" id="quizOpenBtn">Take the Quiz</button>
+        <h2 data-i18n="quiz.section.title">Need help choosing?</h2>
+        <p data-i18n="quiz.section.desc">Answer three questions — we'll recommend a SKU by profile and size.</p>
+        <button class="btn btn-primary" id="quizOpenBtn" data-i18n="quiz.section.cta">Open Product Selector</button>
       </div>
     </section>
   </main>
@@ -521,63 +529,63 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-newsletter">
-          <p class="footer-newsletter-text">Get the latest on all things honey and be the first for exclusive offers.</p>
+          <p class="footer-newsletter-text" data-i18n="footer.newsletter">Get the latest on all things honey and be the first for exclusive offers.</p>
           <form class="footer-newsletter-form" id="newsletterForm">
             <div class="footer-input-wrap">
-              <input type="email" placeholder="Email Address" required aria-label="Email address">
-              <button type="submit" class="footer-submit" aria-label="Subscribe">
+              <input type="email" placeholder="Email Address" required aria-label="Email address" data-i18n-placeholder="footer.email" data-i18n-aria="aria.email">
+              <button type="submit" class="footer-submit" aria-label="Subscribe" data-i18n-aria="aria.subscribe">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
             </div>
           </form>
           <div class="footer-fda-box">
-            <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
+            <p data-i18n="footer.fda">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
           </div>
-          <p class="footer-newsletter-success hidden" id="newsletterSuccess">Thanks — you're on the list.</p>
+          <p class="footer-newsletter-success hidden" id="newsletterSuccess" data-i18n="footer.thanks">Thanks — you're on the list.</p>
         </div>
 
         <div class="footer-nav">
           <div class="footer-col">
-            <h4>Shop Honey</h4>
-            <a href="#products">Starter Collections</a>
-            <a href="#products">Single-Origin Jars</a>
-            <a href="#grades">What Is Raw Honey?</a>
-            <a href="#products">Shop All</a>
+            <h4 data-i18n="footer.shop">Shop Honey</h4>
+            <a href="#products" data-i18n="nav.allJars">All Jars</a>
+            <a href="#products" data-i18n="nav.singleOrigin">Single-Origin</a>
+            <a href="#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
+            <a href="#products" data-i18n="nav.shopAll">Shop All</a>
           </div>
           <div class="footer-col">
-            <h4>Learn</h4>
-            <a href="#story">Our Origins</a>
-            <a href="#story">Our Apiaries</a>
-            <a href="#blog">The Honey Journal</a>
-            <a href="#quiz">Find Your Jar Quiz</a>
+            <h4 data-i18n="footer.learn">Learn</h4>
+            <a href="#story" data-i18n="nav.origins">Our Origins</a>
+            <a href="#story" data-i18n="nav.apiaries">Our Apiaries</a>
+            <a href="#blog" data-i18n="nav.journal">The Honey Journal</a>
+            <a href="#quiz" data-i18n="nav.selector">Product Selector</a>
           </div>
           <div class="footer-col">
-            <h4>Support</h4>
-            <a href="#faq">FAQ</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Returns &amp; Exchanges</a>
-            <a href="#">Store Locator</a>
+            <h4 data-i18n="footer.support">Support</h4>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            <a href="#" data-i18n="footer.contact">Contact Us</a>
+            <a href="#" data-i18n="footer.returns">Returns &amp; Exchanges</a>
+            <a href="#" data-i18n="footer.locator">Store Locator</a>
           </div>
           <div class="footer-col">
-            <h4>Social</h4>
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="TikTok">TikTok</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="YouTube">YouTube</a>
+            <h4 data-i18n="footer.social">Social</h4>
+            <a href="#" data-i18n-social="social.instagram" aria-label="Instagram">Instagram</a>
+            <a href="#" data-i18n-social="social.tiktok" aria-label="TikTok">TikTok</a>
+            <a href="#" data-i18n-social="social.facebook" aria-label="Facebook">Facebook</a>
+            <a href="#" data-i18n-social="social.youtube" aria-label="YouTube">YouTube</a>
           </div>
         </div>
       </div>
 
       <div class="footer-brand-display">
-        <span class="footer-brand-name">metche</span>
+        <span class="footer-brand-name" data-i18n="brand.wordmark">metche</span>
       </div>
 
       <div class="footer-bar">
-        <p class="footer-tagline">The quiet sweetness behind your steadiest days.</p>
-        <p class="footer-copy">&copy; All Rights Reserved 2026</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">The quiet sweetness behind your steadiest days.</p>
+        <p class="footer-copy" data-i18n="footer.copy">&copy; All Rights Reserved 2026</p>
         <div class="footer-legal">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
+          <a href="#" data-i18n="footer.terms">Terms</a>
+          <a href="#" data-i18n="footer.privacy">Privacy</a>
         </div>
       </div>
     </div>
@@ -587,38 +595,38 @@
   <div class="modal" id="quizModal" role="dialog" aria-labelledby="quizTitle" aria-hidden="true">
     <div class="modal-backdrop" id="quizBackdrop"></div>
     <div class="modal-content quiz-modal" data-lenis-prevent>
-      <button class="modal-close" id="quizClose" aria-label="Close quiz">&times;</button>
-      <h2 id="quizTitle">Find Your Perfect Jar</h2>
+      <button class="modal-close" id="quizClose" aria-label="Close quiz" data-i18n-aria="aria.closeQuiz">&times;</button>
+      <h2 id="quizTitle" data-i18n="quiz.title">Product Selector</h2>
       <div class="quiz-steps" id="quizSteps">
         <div class="quiz-step active" data-step="1">
-          <p class="quiz-question">What matters most to you?</p>
+          <p class="quiz-question" data-i18n="quiz.q1">What matters most to you?</p>
           <div class="quiz-options">
-            <button class="quiz-option" data-answer="wildflower">Everyday gentle wellness</button>
-            <button class="quiz-option" data-answer="reserve">Balanced daily ritual</button>
-            <button class="quiz-option" data-answer="highland">Deep, bold flavor</button>
+            <button class="quiz-option" data-answer="wildflower" data-i18n="quiz.q1.a">Everyday gentle wellness</button>
+            <button class="quiz-option" data-answer="reserve" data-i18n="quiz.q1.b">Balanced, medium intensity</button>
+            <button class="quiz-option" data-answer="highland" data-i18n="quiz.q1.c">Deep, bold flavor</button>
           </div>
         </div>
         <div class="quiz-step" data-step="2">
-          <p class="quiz-question">When do you reach for honey?</p>
+          <p class="quiz-question" data-i18n="quiz.q2">When do you reach for honey?</p>
           <div class="quiz-options">
-            <button class="quiz-option" data-answer="morning">Morning tea or toast</button>
-            <button class="quiz-option" data-answer="afternoon">Afternoon energy</button>
-            <button class="quiz-option" data-answer="evening">Evening wind-down</button>
+            <button class="quiz-option" data-answer="morning" data-i18n="quiz.q2.a">Morning tea or toast</button>
+            <button class="quiz-option" data-answer="afternoon" data-i18n="quiz.q2.b">Afternoon energy</button>
+            <button class="quiz-option" data-answer="evening" data-i18n="quiz.q2.c">Evening wind-down</button>
           </div>
         </div>
         <div class="quiz-step" data-step="3">
-          <p class="quiz-question">How do you like your honey?</p>
+          <p class="quiz-question" data-i18n="quiz.q3">How do you like your honey?</p>
           <div class="quiz-options">
-            <button class="quiz-option" data-answer="light">Light and floral</button>
-            <button class="quiz-option" data-answer="creamy">Creamy and caramel</button>
-            <button class="quiz-option" data-answer="bold">Dark and complex</button>
+            <button class="quiz-option" data-answer="light" data-i18n="quiz.q3.a">Light and floral</button>
+            <button class="quiz-option" data-answer="creamy" data-i18n="quiz.q3.b">Creamy and caramel</button>
+            <button class="quiz-option" data-answer="bold" data-i18n="quiz.q3.c">Dark and complex</button>
           </div>
         </div>
         <div class="quiz-step" data-step="result">
-          <p class="quiz-result-label">We recommend</p>
-          <h3 id="quizResultTitle">Reserve Blend</h3>
-          <p id="quizResultDesc">Our best-selling jar — creamy, balanced, and ideal for daily rituals.</p>
-          <button class="btn btn-primary add-to-cart" id="quizAddBtn" data-id="reserve-blend" data-name="Reserve Blend Jar" data-price="58">Add to Cart — $58</button>
+          <p class="quiz-result-label" data-i18n="quiz.result.label">We recommend</p>
+          <h3 id="quizResultTitle">Reserve Blend, 500g</h3>
+          <p id="quizResultDesc">Multi-floral alpine blend. Raw, unfiltered, cold-bottled.</p>
+          <button class="btn btn-primary add-to-cart" id="quizAddBtn" data-id="reserve-blend" data-price="14">Add to Cart — €14</button>
         </div>
       </div>
       <div class="quiz-progress">
@@ -627,6 +635,7 @@
     </div>
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
 </body>

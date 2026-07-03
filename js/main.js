@@ -5,76 +5,25 @@
 (function () {
   'use strict';
 
-  const FREE_SHIPPING_THRESHOLD = 75;
+  const FREE_SHIPPING_THRESHOLD = 50;
   let cart = [];
   let quizStep = 1;
   let quizAnswers = [];
+  let lastQuizResultKey = null;
 
   const quizResults = {
-    wildflower: {
-      title: 'Wildflower Light',
-      desc: 'A bright, approachable jar — perfect for everyday spoons and first-time raw honey lovers.',
-      id: 'wildflower-light',
-      name: 'Wildflower Light Jar',
-      price: 48
-    },
-    reserve: {
-      title: 'Reserve Blend',
-      desc: 'Our best-selling jar — creamy, balanced, and ideal for daily rituals.',
-      id: 'reserve-blend',
-      name: 'Reserve Blend Jar',
-      price: 58
-    },
-    highland: {
-      title: 'Highland Gold',
-      desc: 'Bold, complex, and harvested at altitude — for those who want depth in every spoon.',
-      id: 'highland-gold',
-      name: 'Highland Gold Jar',
-      price: 72
-    },
-    light: {
-      title: 'Wildflower Light',
-      desc: 'Light and floral — exactly what you described.',
-      id: 'wildflower-light',
-      name: 'Wildflower Light Jar',
-      price: 48
-    },
-    creamy: {
-      title: 'Reserve Blend',
-      desc: 'Creamy caramel notes with meadow florals — our signature profile.',
-      id: 'reserve-blend',
-      name: 'Reserve Blend Jar',
-      price: 58
-    },
-    bold: {
-      title: 'Highland Gold',
-      desc: 'Dark, complex, and full-bodied — the boldest jar in our lineup.',
-      id: 'highland-gold',
-      name: 'Highland Gold Jar',
-      price: 72
-    },
-    morning: {
-      title: 'Morning Glow Starter',
-      desc: 'Built for morning tea and toast — a gentle start to your day.',
-      id: 'morning-glow',
-      name: 'Morning Glow Starter',
-      price: 78
-    },
-    afternoon: {
-      title: 'Reserve Ritual Kit',
-      desc: 'Steady energy for the afternoon — our most versatile collection.',
-      id: 'reserve-ritual',
-      name: 'Reserve Ritual Kit',
-      price: 58
-    },
-    evening: {
-      title: 'Wildflower Light',
-      desc: 'A gentle, floral honey perfect for evening tea or a quiet wind-down ritual.',
-      id: 'wildflower-light',
-      name: 'Wildflower Light Jar',
-      price: 48
-    }
+    wildflower: { titleKey: 'quiz.result.wildflower.title', descKey: 'quiz.result.wildflower.desc', id: 'wildflower-light', product: 'wildflower-light', price: 12 },
+    reserve: { titleKey: 'quiz.result.reserve.title', descKey: 'quiz.result.reserve.desc', id: 'reserve-blend', product: 'reserve-blend', price: 14 },
+    highland: { titleKey: 'quiz.result.highland.title', descKey: 'quiz.result.highland.desc', id: 'highland-gold', product: 'highland-gold', price: 18 },
+    light: { titleKey: 'quiz.result.wildflower.title', descKey: 'quiz.result.light.desc', id: 'wildflower-light', product: 'wildflower-light', price: 12 },
+    creamy: { titleKey: 'quiz.result.reserve.title', descKey: 'quiz.result.creamy.desc', id: 'reserve-blend', product: 'reserve-blend', price: 14 },
+    bold: { titleKey: 'quiz.result.highland.title', descKey: 'quiz.result.bold.desc', id: 'highland-gold', product: 'highland-gold', price: 18 },
+    morning: { titleKey: 'quiz.result.wildflower.title', descKey: 'quiz.result.morning.desc', id: 'morning-glow', product: 'morning-glow', price: 16 },
+    afternoon: { titleKey: 'quiz.result.reserve.title', descKey: 'quiz.result.afternoon.desc', id: 'reserve-ritual', product: 'reserve-ritual', price: 17 },
+    evening: { titleKey: 'quiz.result.wildflower.title', descKey: 'quiz.result.evening.desc', id: 'wildflower-light', product: 'wildflower-light', price: 12 }
   };
+
+  const t = (key, vars) => window.MetcheI18n?.t(key, vars) ?? key;
 
   // DOM Elements
   const header = document.getElementById('header');
@@ -231,19 +180,19 @@
     const subtotal = getSubtotal();
 
     cartCount.textContent = totalItems;
-    cartSubtotal.textContent = `$${subtotal}`;
+    cartSubtotal.textContent = `€${subtotal}`;
 
     const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
     if (remaining > 0) {
-      cartShipping.textContent = `Spend $${remaining} more for free shipping`;
+      cartShipping.textContent = t('cart.shipping.remaining', { amount: remaining });
       cartShipping.style.display = 'block';
     } else {
-      cartShipping.textContent = 'You qualify for free shipping!';
+      cartShipping.textContent = t('cart.shipping.free');
       cartShipping.style.display = 'block';
     }
 
     if (cart.length === 0) {
-      cartItems.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
+      cartItems.innerHTML = `<p class="cart-empty">${t('cart.empty')}</p>`;
       return;
     }
 
@@ -251,8 +200,8 @@
       <div class="cart-item">
         <div class="cart-item-info">
           <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">$${item.price} × ${item.qty}</div>
-          <button class="cart-item-remove" data-remove="${item.id}">Remove</button>
+          <div class="cart-item-price">€${item.price} × ${item.qty}</div>
+          <button class="cart-item-remove" data-remove="${item.id}">${t('cart.remove')}</button>
         </div>
       </div>
     `).join('');
@@ -264,7 +213,7 @@
 
   checkoutBtn?.addEventListener('click', () => {
     if (cart.length === 0) return;
-    alert('Thank you for your order! Checkout is a demo — connect your payment provider to go live.');
+    alert(t('cart.checkout.alert'));
     cart = [];
     renderCart();
     closeCart();
@@ -321,10 +270,11 @@
   function resetQuiz() {
     quizStep = 1;
     quizAnswers = [];
+    lastQuizResultKey = null;
     quizSteps.querySelectorAll('.quiz-step').forEach(step => {
       step.classList.toggle('active', step.dataset.step === '1');
     });
-    quizProgress.textContent = '1 / 3';
+    quizProgress.textContent = t('quiz.progress', { step: 1 });
   }
 
   quizOpenBtn?.addEventListener('click', openQuiz);
@@ -340,12 +290,30 @@
         quizSteps.querySelectorAll('.quiz-step').forEach(step => {
           step.classList.toggle('active', parseInt(step.dataset.step, 10) === quizStep);
         });
-        quizProgress.textContent = `${quizStep} / 3`;
+        quizProgress.textContent = t('quiz.progress', { step: quizStep });
       } else {
         showQuizResult();
       }
     });
   });
+
+  function renderQuizResult(result) {
+    const productName = t(`product.${result.product}.name`);
+
+    document.getElementById('quizResultTitle').textContent = t(result.titleKey);
+    document.getElementById('quizResultDesc').textContent = t(result.descKey);
+
+    const addBtn = document.getElementById('quizAddBtn');
+    addBtn.dataset.id = result.id;
+    addBtn.dataset.name = productName;
+    addBtn.dataset.price = result.price;
+    addBtn.textContent = t('featured.addCart', { price: result.price });
+
+    quizSteps.querySelectorAll('.quiz-step').forEach(step => {
+      step.classList.toggle('active', step.dataset.step === 'result');
+    });
+    quizProgress.textContent = t('quiz.complete');
+  }
 
   function showQuizResult() {
     const counts = {};
@@ -362,21 +330,9 @@
       }
     });
 
+    lastQuizResultKey = best;
     const result = quizResults[best] || quizResults.reserve;
-
-    document.getElementById('quizResultTitle').textContent = result.title;
-    document.getElementById('quizResultDesc').textContent = result.desc;
-
-    const addBtn = document.getElementById('quizAddBtn');
-    addBtn.dataset.id = result.id;
-    addBtn.dataset.name = result.name;
-    addBtn.dataset.price = result.price;
-    addBtn.textContent = `Add to Cart — $${result.price}`;
-
-    quizSteps.querySelectorAll('.quiz-step').forEach(step => {
-      step.classList.toggle('active', step.dataset.step === 'result');
-    });
-    quizProgress.textContent = 'Complete';
+    renderQuizResult(result);
   }
 
   // Newsletter
@@ -431,6 +387,22 @@
   });
 
   // Init
+  window.MetcheI18n?.init();
   initSmoothScroll();
   renderCart();
+
+  document.addEventListener('metche:languagechange', () => {
+    cart = cart.map(item => ({
+      ...item,
+      name: t(`product.${item.id}.name`) || item.name
+    }));
+    renderCart();
+
+    if (lastQuizResultKey) {
+      const result = quizResults[lastQuizResultKey] || quizResults.reserve;
+      renderQuizResult(result);
+    } else if (quizModal?.classList.contains('open')) {
+      quizProgress.textContent = t('quiz.progress', { step: quizStep });
+    }
+  });
 })();
