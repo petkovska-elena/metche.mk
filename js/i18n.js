@@ -456,6 +456,83 @@
     }
   };
 
+  // Contact page translations
+  translations.en = Object.assign({}, translations.en, {
+    'contact.hero.title': 'Get in Touch',
+    'contact.hero.sub': "We're here to help. Reach out with questions, feedback, or just to say hello.",
+    'contact.form.title': 'Send us a Message',
+    'contact.form.desc': "We'll get back to you as soon as possible, typically within 24 hours.",
+    'contact.form.name': 'Name',
+    'contact.form.email': 'Email Address',
+    'contact.form.subject': 'Subject',
+    'contact.form.message': 'Message',
+    'contact.form.submit': 'Send Message',
+    'contact.form.success': "Thank you for reaching out. We'll be in touch soon.",
+    'contact.details.title': 'Other Ways to Reach Us',
+    'contact.details.email': 'Email',
+    'contact.details.phone': 'Phone',
+    'contact.details.location': 'Location',
+    'contact.details.address': 'Wildflower Valley, Highland Region\nPchinja, North Macedonia',
+    'contact.details.hours': 'Business Hours',
+    'contact.details.schedule': 'Monday – Friday: 9 AM – 6 PM\nSaturday: 10 AM – 4 PM\nSunday: Closed',
+    'contact.faq.title': 'Frequently Asked Questions',
+    'contact.faq.intro': "Find answers to common questions below. If you don't find what you're looking for, feel free to reach out directly.",
+    'contact.faq.q1.question': 'What is the difference between raw and regular honey?',
+    'contact.faq.q1.answer': "Raw honey is unheated and unfiltered, preserving enzymes, pollen, and natural compounds that heating removes. Regular honey is often pasteurized and blended. Metche's raw honey is bottled at the peak of bloom, never heated above 40°C.",
+    'contact.faq.q2.question': 'How should I store Metche honey?',
+    'contact.faq.q2.answer': 'Store in a cool, dark place at room temperature. Honey naturally crystallizes over time — this is a sign of quality and purity. If you prefer a softer texture, gently warm the jar in warm water. Never microwave or heat above 40°C, as this damages the natural compounds.',
+    'contact.faq.q3.question': 'Do you offer international shipping?',
+    'contact.faq.q3.answer': 'Currently, we ship throughout Europe with standard and express options. International orders outside Europe are being evaluated. Contact us for specific shipping inquiries or custom orders.',
+    'contact.faq.q4.question': 'What is your return policy?',
+    'contact.faq.q4.answer': "We stand behind the quality of our honey. If you're not completely satisfied within 30 days of purchase, we offer a full refund or replacement. Unopened jars can be returned for any reason.",
+    'contact.faq.q5.question': 'Is your honey suitable for infants?',
+    'contact.faq.q5.answer': 'Raw honey should not be given to infants under 12 months due to the rare risk of botulism. For children over 12 months and adults, our raw honey is a wonderful addition to their diet.',
+    'contact.faq.q6.question': 'Are your beekeeping practices ethical?',
+    'contact.faq.q6.answer': "Yes. All our honey comes from beekeepers who follow the Art of Gentle Harvesting — prioritizing hive health, bee welfare, and meadow biodiversity over volume. Every batch is 100% traceable to a specific apiary and harvest season.",
+    'aria.contactName': 'Your name',
+    'aria.contactEmail': 'Your email',
+    'aria.contactSubject': 'Message subject',
+    'aria.contactMessage': 'Your message'
+  });
+
+  translations.mk = Object.assign({}, translations.mk, {
+    'contact.hero.title': 'Контакт',
+    'contact.hero.sub': 'Тука сме за да помогнеме. Контактирајте не со прашања, повратни информации или само да поздравите.',
+    'contact.form.title': 'Пишете ни порака',
+    'contact.form.desc': 'Ќе ви одговориме што е можно побрзо, обично во рок од 24 часа.',
+    'contact.form.name': 'Име',
+    'contact.form.email': 'Е-пошта',
+    'contact.form.subject': 'Наслов',
+    'contact.form.message': 'Порака',
+    'contact.form.submit': 'Испрати порака',
+    'contact.form.success': 'Ви благодариме што не контактиравте. Ќе ве известиме наскоро.',
+    'contact.details.title': 'Други начини да не контактирате',
+    'contact.details.email': 'Е-пошта',
+    'contact.details.phone': 'Телефон',
+    'contact.details.location': 'Локација',
+    'contact.details.address': 'Долина на ливади, Планински регион\nПчinja, Северна Македонија',
+    'contact.details.hours': 'Работно време',
+    'contact.details.schedule': 'Понеделник – Петок: 9:00 – 18:00\nСабота: 10:00 – 16:00\nНедела: Затворено',
+    'contact.faq.title': 'Најчесто поставувани прашања',
+    'contact.faq.intro': 'Најдете одговори на чести прашања подолу. Ако не најдете што барате, слободно контактирајте не директно.',
+    'contact.faq.q1.question': 'Кое е разликата помеѓу суров и обичен мед?',
+    'contact.faq.q1.answer': 'Суровиот мед не е загреан и не е филтриран, го зачувува ензимите, поленот и природните соединенија што грењето ги отстранува. Обичниот мед често е пастеризиран и мешан. Метче-ов мед се флашува на врвот на цветот, никогаш над 40°C.',
+    'contact.faq.q2.question': 'Како треба да го чувам Метче медот?',
+    'contact.faq.q2.answer': 'Чувајте на ладно, темно место на собна температура. Медот природно кристализира со тек на време — тоа е знак за квалитет и чистота. Ако сакате порамна текстура, нежно загрејте ја теглата во топла вода. Никогаш не користете микробранова или загревање над 40°C.',
+    'contact.faq.q3.question': 'Дали нудите меѓународна достава?',
+    'contact.faq.q3.answer': 'Во моментов испраќаме низ цела Европа со стандардни и експрес опции. Меѓународни нарачки надвор од Европа се разгледуваат. Контактирајте не за специфични прашања за достава или нарачки по нарачка.',
+    'contact.faq.q4.question': 'Која е вашата политика за враќање?',
+    'contact.faq.q4.answer': 'Го поддржуваме квалитетот на нашиот мед. Ако не сте целосно задоволни во рок од 30 дена од купувањето, нудиме целосно враќање на средствата или замена. Ненадворени тегли може да се вратат од било кој причина.',
+    'contact.faq.q5.question': 'Дали вашиот мед е погоден за бебиња?',
+    'contact.faq.q5.answer': 'Суровиот мед не треба да се дава на бебиња под 12 месеци поради редок ризик од ботулизам. За деца над 12 месеци и возрасни, нашиот суров мед е одличен додаток во исхраната.',
+    'contact.faq.q6.question': 'Дали вашите практики на пчеларство се етички?',
+    'contact.faq.q6.answer': 'Да. Сите наши медови доаѓаат од пчелари кои ги следат Уметноста на нежното берење — приоритизирајќи го здравјето на пчелите, благосостојбата на пчелите и биоразновидноста на ливадите пред количината. Секоја серија е 100% следлива до одреден пчеларник и сезона на берење.',
+    'aria.contactName': 'Вашето име',
+    'aria.contactEmail': 'Вашата е-пошта',
+    'aria.contactSubject': 'Наслов на пораката',
+    'aria.contactMessage': 'Вашата порака'
+  });
+
   let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
 
   function t(key, vars = {}) {
