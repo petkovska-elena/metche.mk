@@ -532,6 +532,49 @@
     'aria.contactSubject': 'Наслов на пораката',
     'aria.contactMessage': 'Вашата порака'
   });
+    translations.mk = Object.assign({}, translations.mk, {
+      'products.page.title': 'Сите производи',
+      'products.page.subtitle': 'Откријте ја нашата цела колекција на суров мед. Секоја тегла ја раскажува приказната за една жетва, една ливада и пчеларот кој неа ја негуваше со внимание.',
+
+      'cta.title': 'Подготвени да ја најдете вашата совршена тегла?',
+      'cta.desc': 'Направете го нашиот квиз „Селектор на производи“ — одговорете на три прашања и ќе ви препорачаме идеален мед.',
+      'cta.button': 'Отвори селектор на производи',
+
+      'why.title': 'Зошто да го изберете Метче',
+      'why.traceable.title': '100% Следлив',
+      'why.traceable.desc': 'Секоја тегла е поврзана со конкретна жетва, ливада и пчелар. Скенирајте го кодот на серијата за да ја дознаете приказната.',
+      'why.unfiltered.title': 'Нефилтриран и суров',
+      'why.unfiltered.desc': 'Не е загреан над 40°C. Сите ензими, полен и природни соединенија остануваат непроменети.',
+      'why.ethical.title': 'Етичко берење',
+      'why.ethical.desc': 'Нашите пчелари ја практикуваат Уметноста на нежното берење, давајќи приоритет на здравјето на кошниците и биоразновидноста на ливадите.',
+      'why.tested.title': 'Трето-страно тестирање',
+      'why.tested.desc': 'Сертифицирано без остатоци од пестициди и тестиран за чистота. Секоја серија ги исполнува нашите строги стандарди.',
+      'product.wildflower.desc': 'Пониска вискозност, лесни цветни ноти. Студено полнење, единична жетвена серија.',
+      'product.highland.desc': 'Високопланински мед од диви цветови. Поголема густина на полен, длабок амбер профил.',
+      'product.reserve.desc': 'Мешавина од алпски мултифлора. Амбер шише, кодирана серија, никогаш загреан над 40°C.'
+    });
+
+    translations.en = Object.assign({}, translations.en, {
+      'products.page.title': 'All Products',
+      'products.page.subtitle': 'Discover our complete collection of raw honey. Each jar tells the story of a single harvest, a specific meadow, and the beekeeper who tended it with care.',
+
+      'cta.title': 'Ready to find your perfect jar?',
+      'cta.desc': "Take our Product Selector quiz — answer three questions and we'll recommend the ideal honey for you.",
+      'cta.button': 'Open Product Selector',
+
+      'why.title': 'Why Choose Metche',
+      'why.traceable.title': '100% Traceable',
+      'why.traceable.desc': 'Every jar is linked to a specific harvest, meadow, and beekeeper. Scan the batch code to learn the story.',
+      'why.unfiltered.title': 'Unfiltered & Raw',
+      'why.unfiltered.desc': 'Never heated above 40°C. All the enzymes, pollen, and natural compounds remain intact.',
+      'why.ethical.title': 'Ethically Harvested',
+      'why.ethical.desc': 'Our beekeepers follow the Art of Gentle Harvesting, prioritizing hive health and meadow biodiversity.',
+      'why.tested.title': 'Third-Party Tested',
+      'why.tested.desc': 'Certified pesticide residue-free and tested for purity. Every batch meets our rigorous standards.',
+      'product.wildflower.desc': 'Lower viscosity, light wildflower notes. Cold-bottled, single-harvest batch.',
+      'product.highland.desc': 'High-altitude wildflower honey. Higher pollen density, deep amber profile.',
+      'product.reserve.desc': 'Multi-floral alpine blend. Amber glass, batch-coded, never heated above 40°C.'
+  });
 
   let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
 
