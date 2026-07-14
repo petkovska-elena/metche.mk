@@ -1,5 +1,5 @@
 /**
- * Metche — Main JavaScript
+ * Metche: Main JavaScript
  */
 
 (function () {
@@ -89,6 +89,12 @@
 
   function closeMegaMenus() {
     document.querySelectorAll('.mega-menu').forEach(menu => menu.classList.remove('open'));
+    header?.classList.remove('header--menu-open');
+  }
+
+  function syncMenuOpenState() {
+    const anyOpen = !!document.querySelector('.mega-menu.open');
+    header?.classList.toggle('header--menu-open', anyOpen);
   }
 
   function setHeaderMinimal(isMinimal) {
@@ -98,16 +104,55 @@
 
   function initHeaderScroll() {
     const trigger = document.querySelector('.header-scroll-trigger');
-    if (!trigger) return;
+    if (trigger) {
+      const observer = new IntersectionObserver(
+        ([entry]) => setHeaderMinimal(!entry.isIntersecting),
+        { threshold: 0 }
+      );
+      observer.observe(trigger);
+    } else {
+      setHeaderMinimal(true);
+    }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeaderMinimal(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(trigger);
+    let lastY = 0;
+
+    function onScrollDirection(y) {
+      const delta = y - lastY;
+
+      if (y < 24) {
+        header.classList.remove('header--hidden');
+      } else if (delta > 6) {
+        header.classList.add('header--hidden');
+        closeMegaMenus();
+      } else if (delta < -6) {
+        header.classList.remove('header--hidden');
+      }
+
+      lastY = y;
+    }
+
+    if (lenis) {
+      lenis.on('scroll', ({ scroll }) => onScrollDirection(scroll));
+    } else {
+      window.addEventListener('scroll', () => {
+        onScrollDirection(window.scrollY || window.pageYOffset || 0);
+      }, { passive: true });
+    }
+
+    const announcement = document.querySelector('.announcement-bar');
+    if (announcement && header.closest('.page-hero')) {
+      function syncAnnounceOffset() {
+        const past = announcement.getBoundingClientRect().bottom <= 0;
+        header.classList.toggle('header--past-announce', past);
+      }
+      syncAnnounceOffset();
+      if (lenis) {
+        lenis.on('scroll', syncAnnounceOffset);
+      } else {
+        window.addEventListener('scroll', syncAnnounceOffset, { passive: true });
+      }
+    }
   }
-
-  initHeaderScroll();
 
   // Mobile menu
   function openMobileNav() {
@@ -345,18 +390,20 @@
     success?.classList.remove('hidden');
   });
 
-  // Mega menu — mobile tap support
+  // Mega menu: mobile tap support
   document.querySelectorAll('[data-dropdown]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       if (window.innerWidth < 900) return;
-      if (!header.classList.contains('header--minimal')) return;
       e.preventDefault();
       const id = trigger.dataset.dropdown;
       const menu = document.getElementById(`dropdown-${id}`);
       const isOpen = menu?.classList.contains('open');
 
       closeMegaMenus();
-      if (!isOpen) menu?.classList.add('open');
+      if (!isOpen) {
+        menu?.classList.add('open');
+        syncMenuOpenState();
+      }
     });
   });
 
@@ -389,6 +436,7 @@
   // Init
   window.MetcheI18n?.init();
   initSmoothScroll();
+  initHeaderScroll();
   renderCart();
 
   document.addEventListener('metche:languagechange', () => {

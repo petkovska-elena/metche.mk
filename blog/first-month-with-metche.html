@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your First Month with Metche: What to Expect | Metche</title>
-    <meta name="description" content="A week-by-week guide to settling into a daily raw honey ritual — taste, habit, and how to store your jar." />
+    <meta name="description" content="A practical week-by-week guide to the taste, everyday use, and proper storage of honey." />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Your First Month with Metche: What to Expect | Metche" />
-    <meta property="og:description" content="A week-by-week guide to settling into a daily raw honey ritual — taste, habit, and how to store your jar." />
+    <meta property="og:description" content="A practical week-by-week guide to the taste, everyday use, and proper storage of honey." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
       rel="stylesheet"
     />
     <style>
 /* ============================================
-   Metche — Premium Honey Brand
+   Metche: Premium Honey Brand
    ============================================ */
 
 :root {
@@ -37,7 +37,7 @@
   --color-honey: var(--color-accent);
   --color-honey-dark: var(--color-accent-dark);
 
-  /* Warm caramel tones — no muddy espresso */
+  /* Warm caramel tones: no muddy espresso */
   --color-brown: #8b7355;
   --color-brown-deep: #e5ddd0;
   --color-brown-light: #b5a48f;
@@ -53,7 +53,7 @@
   --color-border: rgba(58, 50, 41, 0.1);
   --color-border-strong: rgba(58, 50, 41, 0.22);
 
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 
   --header-height: 112px;
@@ -250,7 +250,8 @@ em {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 100;
+  transform: translateY(0);
   overflow: visible;
   background: transparent;
   border-bottom: none;
@@ -258,6 +259,7 @@ em {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   transition:
+    transform 0.35s ease,
     background 0.45s ease,
     box-shadow 0.45s ease,
     border-color 0.45s ease,
@@ -581,9 +583,9 @@ em {
   pointer-events: none;
 }
 
-.header.header--minimal .nav-item.has-dropdown:hover .mega-menu,
-.header.header--minimal .nav-item.has-dropdown:focus-within .mega-menu,
-.header.header--minimal .mega-menu.open {
+.header .nav-item.has-dropdown:hover .mega-menu,
+.header .nav-item.has-dropdown:focus-within .mega-menu,
+.header .mega-menu.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -1032,7 +1034,7 @@ em {
 }
 
 .quote-banner blockquote p {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-style: italic;
   max-width: 800px;
@@ -1582,7 +1584,7 @@ em {
 }
 
 .review-card p {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 16px;
@@ -1640,7 +1642,7 @@ em {
 }
 
 .beekeeper-text blockquote {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.25rem;
   font-style: italic;
   border-left: 3px solid var(--color-amber);
@@ -2273,11 +2275,11 @@ em {
 }
 
 .article-hero .hero-content-minimal {
-  padding: 64px 0 56px;
+  padding: 0 0 56px;
 }
 
 .article-hero .container {
-  max-width: 780px;
+  max-width: min(1120px, 100%);
 }
 
 .article-meta {
@@ -2290,7 +2292,7 @@ em {
 }
 
 .article-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 4.2vw, 3.1rem);
   line-height: 1.12;
   letter-spacing: -0.01em;
@@ -2317,7 +2319,7 @@ em {
 }
 
 .article-wrap h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   color: var(--color-text);
   margin: 48px 0 18px;
@@ -2376,10 +2378,13 @@ em {
   border-radius: var(--radius-lg, 16px);
   padding: 40px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article-cta h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   margin: 0 0 10px;
 }
 
@@ -2390,7 +2395,7 @@ em {
 
 @media (max-width: 640px) {
   .article-hero .hero-content-minimal {
-    padding: 44px 0 40px;
+    padding: 0 0 40px;
   }
 
   .article-section {
@@ -2403,11 +2408,11 @@ em {
 }
 
 /* ==========================================================================
-   Blog Article Page — Decorative Layer
+   Blog Article Page: Decorative Layer
    ========================================================================== */
 .article-hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(180deg, var(--color-cream-dark) 0%, var(--color-bg) 100%);
 }
 
@@ -2467,33 +2472,44 @@ em {
 .article-hero .hero-content-minimal {
   position: relative;
   z-index: 1;
-  padding: 72px 0 60px;
+  padding: 0 0 56px;
 }
 
-.article-hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 48px;
-  align-items: center;
+.article-hero .article-hero-copy {
+  padding-top: clamp(28px, 3.5vw, 40px);
 }
+
+/* Image sits flush under the fixed header (header overlays top of art) */
+.article-hero-art {
+  margin-top: 0;
+}
+
 
 .article-hero-art {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .article-hero-art svg {
   width: 100%;
-  max-width: 300px;
+  max-width: none;
   height: auto;
-  filter: drop-shadow(0 24px 40px rgba(61, 52, 44, 0.18));
+  filter: none;
+}
+
+.article-hero-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .article-badges {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
   margin-bottom: 18px;
   flex-wrap: wrap;
 }
@@ -2522,7 +2538,7 @@ em {
 }
 
 .article-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2.1rem, 4.4vw, 3.2rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -2535,7 +2551,7 @@ em {
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   color: var(--color-text-muted);
   max-width: 560px;
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.65;
 }
 
@@ -2551,7 +2567,7 @@ em {
 }
 
 .article-wrap > p:first-of-type::first-letter {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 3.6em;
   font-weight: 600;
   float: left;
@@ -2573,24 +2589,24 @@ em {
 
 .section-icon {
   flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-honey), var(--color-amber-dark));
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 18px rgba(195, 141, 0, 0.28);
+  box-shadow: none;
 }
 
 .section-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--color-white);
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-honey);
 }
 
 .article-wrap h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.4rem, 2.4vw, 1.85rem);
   color: var(--color-text);
   margin: 0;
@@ -2605,7 +2621,7 @@ em {
 }
 
 .pull-quote {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   line-height: 1.55;
@@ -2650,6 +2666,38 @@ em {
   transform: translateX(-3px);
 }
 
+/* Related article cards */
+.related-reading-section {
+  background: var(--color-bg);
+  padding: clamp(72px, 8vw, 112px) 0;
+}
+
+.related-reading-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.related-reading-heading .section-label {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.related-reading-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+.related-reading-section .blog-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .related-reading-section .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Related products strip */
 .related-section {
   background: var(--color-surface);
@@ -2670,7 +2718,7 @@ em {
 }
 
 .related-heading h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   margin: 0;
 }
@@ -2714,7 +2762,7 @@ em {
 }
 
 .related-card h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   margin: 0 0 6px;
 }
@@ -2758,15 +2806,25 @@ em {
   z-index: 1;
 }
 
+.article-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .article-cta h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   margin: 0 0 10px;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .article-cta p {
   color: var(--color-text-muted);
   margin: 0 0 22px;
+  max-width: 520px;
+  text-align: center;
 }
 
 /* Scroll fade-in */
@@ -2782,14 +2840,25 @@ em {
 }
 
 @media (max-width: 900px) {
-  .article-hero-grid {
-    grid-template-columns: 1fr;
+  .article-hero-art {
+      width: 100%;
+    margin: 0;
   }
 
-  .article-hero-art {
-    order: -1;
-    max-width: 200px;
-    margin: 0 auto 12px;
+  .article-wrap p a {
+  color: var(--color-accent-dark);
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.article-wrap p a:hover {
+  color: var(--color-brown);
+}
+
+.article-hero-art img {
+    aspect-ratio: 16 / 10;
   }
 
   .related-grid {
@@ -2800,7 +2869,7 @@ em {
 
 @media (max-width: 640px) {
   .article-hero .hero-content-minimal {
-    padding: 48px 0 40px;
+    padding: 0 0 40px;
   }
 
   .article-section {
@@ -2829,7 +2898,7 @@ em {
 }
 
 .brand-word {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: 0.01em;
@@ -2862,23 +2931,53 @@ em {
   height: 46px;
 }
 
+    
+.related-jar img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.article-hero-art img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 2.2 / 1;
+  max-height: min(56vh, 620px);
+  object-fit: cover;
+  object-position: center 32%;
+  border-radius: 0;
+  box-shadow: none;
+}
+.header.header--hidden {
+  transform: translateY(calc(-100% - 12px));
+  pointer-events: none;
+}
+
+    
+.section-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
     </style>
   </head>
   <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-      <p data-i18n="announcement.text">Our wildflower reserve blend is back — now in reusable glass jars.</p>
-      <a href="../#products" class="announcement-link" data-i18n="announcement.link">Save 25% on multi-jar sets</a>
+      <p data-i18n="announcement.text">25% off every multi-jar set.</p>
+      <a href="../products/all.html" class="announcement-link" data-i18n="announcement.link">View the sets</a>
     </div>
 
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
       <div class="mobile-nav-header">
-        <a href="../index.html" class="brand-lockup" aria-label="Metche home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 40 40" width="30" height="30"><path d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z" fill="var(--color-honey)" fill-opacity="0.22"/><path d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z" fill="none" stroke="var(--color-amber-dark)" stroke-width="1.6"/><circle cx="20" cy="20" r="4.5" fill="var(--color-amber-dark)"/></svg>
-          </span>
-          <span class="brand-word">metche</span>
+        <a href="../index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
+          <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
         </a>
         <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-active="en">
           <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
@@ -2888,16 +2987,20 @@ em {
       </div>
       <nav class="mobile-nav-links">
         <details>
-          <summary>More</summary>
-          <a href="../products/all.html">Products</a>
-          <a href="../products/reserve.html">Reserve Blend</a>
-          <a href="../products/wildflower.html">Wildflower Reserve</a>
-          <a href="../products/highland.html">Highland Gold</a>
-          <a href="../pages/contact.html">Contact</a>
+          <summary data-i18n="nav.shopHoney">Shop Honey</summary>
+          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+          <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+          <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+          <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
         </details>
-        <a href="../#blog" data-i18n="nav.journal">The Honey Journal</a>
-        <a href="../#quiz" data-i18n="nav.selector">Product Selector</a>
-        <a href="../#faq" data-i18n="nav.faq">FAQ</a>
+        <details>
+          <summary data-i18n="nav.explore">Explore</summary>
+          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+          <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+        </details>
+        <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+        <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
+        <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
       </nav>
     </div>
     <div class="overlay" id="overlay"></div>
@@ -2908,16 +3011,16 @@ em {
         <h2 data-i18n="cart.title">Cart</h2>
         <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
       </div>
-      <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend €50 more for free shipping</p>
+      <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend another €{amount} for free delivery</p>
       <div class="cart-items" id="cartItems" data-lenis-prevent>
-        <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
+        <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
       </div>
       <div class="cart-footer">
         <div class="cart-subtotal">
-          <span data-i18n="cart.subtotal">Subtotal</span>
+          <span data-i18n="cart.subtotal">Total</span>
           <span id="cartSubtotal">€0</span>
         </div>
-        <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Check Out</button>
+        <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Order Now</button>
       </div>
     </aside>
 
@@ -2936,37 +3039,40 @@ em {
                 <span></span><span></span><span></span>
               </button>
               <nav class="nav-desktop nav-desktop--left" aria-label="Primary navigation">
-                <ul class="nav-list"></ul>
-              </nav>
-            </div>
-
-            <a href="../index.html" class="header-logo brand-lockup" aria-label="Metche home">
-              <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 40 40" width="36" height="36"><path d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z" fill="var(--color-honey)" fill-opacity="0.22"/><path d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z" fill="none" stroke="var(--color-amber-dark)" stroke-width="1.6"/><circle cx="20" cy="20" r="5" fill="var(--color-amber-dark)"/></svg>
-              </span>
-              <span class="brand-word">metche</span>
-            </a>
-
-            <div class="header-side header-side--right">
-              <nav class="nav-desktop nav-desktop--right" aria-label="Secondary navigation">
                 <ul class="nav-list">
                   <li class="nav-item has-dropdown">
-                    <button class="nav-link" data-dropdown="learn" data-i18n="nav.learn">Learn</button>
-                    <div class="mega-menu mega-menu--simple" id="dropdown-learn">
+                    <button class="nav-link" data-dropdown="shop-honey" data-i18n="nav.shopHoney">Shop Honey</button>
+                    <div class="mega-menu mega-menu--simple" id="dropdown-shop-honey">
                       <div class="mega-menu-inner">
                         <div class="mega-links mega-links--column">
-                          <a href="../#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
-                          <a href="../#blog" data-i18n="nav.journal">The Honey Journal</a>
-                          <a href="../#quiz" data-i18n="nav.selector">Product Selector</a>
-                          <a href="../#story" data-i18n="nav.apiaries">Our Apiaries</a>
-                          <a href="../#faq" data-i18n="nav.faq">FAQ</a>
+                          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+                          <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+                          <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+                          <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
                         </div>
-                        <p class="mega-desc" data-i18n="mega.learn.desc">Every Metche batch is traced to a single harvest season and the beekeeper who tended it.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item has-dropdown">
+                    <button class="nav-link" data-dropdown="explore" data-i18n="nav.explore">Explore</button>
+                    <div class="mega-menu mega-menu--simple" id="dropdown-explore">
+                      <div class="mega-menu-inner">
+                        <div class="mega-links mega-links--column">
+                          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+                          <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+                        </div>
                       </div>
                     </div>
                   </li>
                 </ul>
               </nav>
+            </div>
+
+            <a href="../index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
+              <img src="../LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
+            </a>
+
+            <div class="header-side header-side--right">
               <div class="lang-switcher" role="group" aria-label="Language" data-active="en">
                 <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
                 <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
@@ -2985,38 +3091,21 @@ em {
         </header>
 
         <div class="hero-content-minimal">
+          <div class="article-hero-art">
+                <img src="../images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.jpg" alt="">
+              </div>
           <div class="container">
-            <div class="article-hero-grid">
-              <div class="article-hero-copy">
+            <div class="article-hero-copy">
                 <div class="article-badges">
-                  <p class="article-meta" data-i18n="post.firstmonth.meta">Journal | January 8, 2024</p>
+                  <p class="article-meta" data-i18n="post.firstmonth.meta">Article | January 8, 2024</p>
                   <span class="article-readtime" data-readtime="4">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
                     <span class="readtime-text">4 min read</span>
                   </span>
                 </div>
                 <h1 data-i18n="post.firstmonth.title">Your First Month with Metche: What to Expect</h1>
-                <p class="hero-sub" data-i18n="post.firstmonth.subtitle">A week-by-week guide to settling into a daily honey ritual.</p>
+                <p class="hero-sub" data-i18n="post.firstmonth.subtitle">A practical week-by-week guide to the taste, everyday use, and proper storage of honey.</p>
               </div>
-              <div class="article-hero-art" aria-hidden="true">
-                <svg viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="jarGradfirstmonth" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="var(--color-honey)"/>
-                      <stop offset="100%" stop-color="var(--color-amber-dark)"/>
-                    </linearGradient>
-                  </defs>
-                  <ellipse cx="110" cy="228" rx="70" ry="12" fill="var(--color-text)" opacity="0.06"/>
-                  <rect x="40" y="78" width="140" height="142" rx="26" fill="url(#jarGradfirstmonth)"/>
-                  <rect x="40" y="78" width="140" height="34" rx="16" fill="var(--color-cream)" opacity="0.35"/>
-                  <rect x="55" y="36" width="110" height="46" rx="14" fill="var(--color-amber-dark)"/>
-                  <rect x="70" y="14" width="80" height="26" rx="8" fill="var(--color-brown)"/>
-                  <path d="M110 82 C 96 118, 142 130, 122 168 C 108 192, 134 204, 118 220" stroke="var(--color-cream)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.55"/>
-                  <circle cx="150" cy="150" r="5" fill="var(--color-cream)" opacity="0.5"/>
-                  <circle cx="70" cy="180" r="4" fill="var(--color-cream)" opacity="0.4"/>
-                </svg>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -3028,52 +3117,49 @@ em {
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 6 7 10 7 14a7 7 0 11-14 0c0-4 3-8 7-14z"/></svg></span>
-                <h2 data-i18n="post.firstmonth.h1">Week One — Getting Used to the Taste</h2>
+                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <h2 data-i18n="post.firstmonth.h1">Week One: Getting Used to the Taste</h2>
               </div>
-              <p data-i18n="post.firstmonth.p1">Raw honey tastes different from what most people grew up with. It's less uniformly sweet and more layered — floral on the first spoon, then a deeper caramel or earthy note by the finish. Give your palate a few days to adjust; most customers say the "aha" moment happens somewhere around day four or five.</p>
+              <p data-i18n-html="post.firstmonth.p1">Your first spoonful of raw honey may surprise you. The taste is not uniformly sweet like many industrial blends: floral notes come first, followed by a deeper, warm aroma, while the finish depends on the harvest and the plants around Kalanjevo. Read <a href="./why-honey-tastes-richer.html">why raw honey is thicker and richer</a>, and give your palate time to recognise the difference. During the first week, try it on its own, on bread, and in warm tea. That is the easiest way to discover how you enjoy it most.</p>
             </div>
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 6 7 10 7 14a7 7 0 11-14 0c0-4 3-8 7-14z"/></svg></span>
-                <h2 data-i18n="post.firstmonth.h2">Week Two — Building the Habit</h2>
+                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <h2 data-i18n="post.firstmonth.h2">Week Two: The Habit Takes Hold</h2>
               </div>
-              <p data-i18n="post.firstmonth.p2">This is when a fixed daily moment helps most: a spoonful in your morning tea, over breakfast, or straight from the jar before bed. Attaching it to something you already do daily is the easiest way to make it stick without relying on memory alone.</p>
+              <p data-i18n-html="post.firstmonth.p2">You do not need a strict schedule in the second week. It is enough to connect honey with a habit you already have: a spoonful in your morning tea, a thin layer on bread and butter, or a little honey with yoghurt. Choose a jar from <a href="../products/all.html">our raw honey range</a> according to the taste you prefer, and keep it somewhere you will notice easily. When honey becomes part of a familiar meal, the habit forms naturally and does not depend on reminders.</p>
             </div>
 
             <blockquote class="pull-quote fade-up" data-i18n="post.firstmonth.quote">The habit matters more than the amount.</blockquote>
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 6 7 10 7 14a7 7 0 11-14 0c0-4 3-8 7-14z"/></svg></span>
-                <h2 data-i18n="post.firstmonth.h3">Weeks Three and Four — Noticing the Difference</h2>
+                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <h2 data-i18n="post.firstmonth.h3">Weeks Three and Four: What Customers Tell Us</h2>
               </div>
-              <p data-i18n="post.firstmonth.p3">By this point, many people report steadier energy through the afternoon and less of the crash that comes with refined sugar. These are subjective, individual observations rather than guarantees, but they're the most common pattern we hear about in customer feedback.</p>
+              <p data-i18n="post.firstmonth.p3">By the third or fourth week, you will already know which amount and way of using honey suit you. Some customers tell us that they have found it easier to replace refined sugar in their tea or breakfast and that they prefer the gentler sweetness. Others notice the biggest difference in the taste and how satisfied they feel after a meal. These are personal experiences, not a promise that everyone will feel the same way. The best sign that the habit suits you is that it fits easily into your day and that you enjoy it without overdoing it.</p>
             </div>
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 6 7 10 7 14a7 7 0 11-14 0c0-4 3-8 7-14z"/></svg></span>
-                <h2 data-i18n="post.firstmonth.h4">Storing Your Jar for the Long Run</h2>
+                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <h2 data-i18n="post.firstmonth.h4">How to Store the Jar</h2>
               </div>
-              <p data-i18n="post.firstmonth.p4">Keep the jar in a cool, dark cupboard rather than the fridge. Crystallization is a normal, expected sign of raw, unfiltered honey — not spoilage. If you prefer it smooth, sit the closed jar in a bowl of warm water for a few minutes; never microwave it, as heat destroys the enzymes you're trying to preserve.</p>
+              <p data-i18n="post.firstmonth.p4">Keep the jar tightly closed in a dry, dark place at room temperature. Refrigeration is not necessary and may only speed up crystallisation. If the honey becomes cloudy or crystallises, that does not mean it has spoiled; crystallisation is natural in raw honey. To soften it again, place the closed jar in a bowl of warm, but not boiling, water and wait a few minutes. Do not use a microwave or heat it directly, because strong heat changes the aroma, texture, and some of its natural properties.</p>
             </div>
 
             <div class="article-cta fade-up">
-              <h3 data-i18n="cta.title">Ready to find your perfect jar?</h3>
-              <p data-i18n="cta.desc">Take our Product Selector quiz — answer three questions and we'll recommend the ideal honey for you.</p>
-              <a href="../#quiz" class="btn btn-primary" data-i18n="cta.button">Open Product Selector</a>
+              <h3 data-i18n="cta.title">Not Sure Which Honey to Choose?</h3>
+              <p data-i18n="cta.desc">Answer three short questions and we will recommend a honey based on your taste.</p>
+              <a href="../#quiz" class="btn btn-primary" data-i18n="cta.button">Start</a>
             </div>
           </div>
 
           <hr class="article-divider" />
 
           <div class="article-back-row">
-            <a href="../#blog" class="article-back" data-i18n="article.back">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-              Back to the Honey Journal
-            </a>
+            <a href="./index.html" class="article-back" data-i18n="article.back">Back to the Articles</a>
           </div>
         </div>
       </section>
@@ -3082,31 +3168,59 @@ em {
       <section class="related-section">
         <div class="container">
           <div class="related-heading fade-up">
-            <span class="section-label" data-i18n="blog.label">Honey Journal</span>
-            <h3 data-i18n="related.heading">Mentioned in this article</h3>
+            <span class="section-label" data-i18n="blog.label">About Honey</span>
+            <h3 data-i18n="related.heading">Mentioned in the Article</h3>
           </div>
           <div class="related-grid">
             <div class="related-card fade-up">
-              <div class="related-jar"><svg viewBox="0 0 48 56" fill="none"><rect x="6" y="16" width="36" height="34" rx="8" fill="var(--color-honey)"/><rect x="12" y="6" width="24" height="12" rx="4" fill="var(--color-amber-dark)"/></svg></div>
-              <h4 data-i18n="featured.reserve.title">Reserve Blend, 500g</h4>
-              <p class="related-sub" data-i18n="featured.reserve.sub">Raw · Unfiltered · Cold-bottled</p>
+              <div class="related-jar"><img src="../images/products/reserve-blend.jpg" alt="Floral Bouquet"></div>
+              <h4 data-i18n="featured.reserve.title">Floral Bouquet, 500g</h4>
+              <p class="related-sub" data-i18n="featured.reserve.sub">Raw · Unfiltered · Cold-filled</p>
               <span class="price">€14</span>
-              <button class="btn btn-outline add-to-cart" data-id="reserve-blend" data-name="Reserve Blend, 500g" data-price="14">Add to Cart — €14</button>
+              <button class="btn btn-outline add-to-cart" data-id="reserve-blend" data-name="Floral Bouquet, 500g" data-price="14">Add to Cart: €14</button>
             </div>
             <div class="related-card fade-up">
-              <div class="related-jar"><svg viewBox="0 0 48 56" fill="none"><rect x="6" y="16" width="36" height="34" rx="8" fill="var(--color-amber-dark)"/><rect x="12" y="6" width="24" height="12" rx="4" fill="var(--color-brown)"/></svg></div>
-              <h4 data-i18n="featured.highland.title">Highland Gold, 380g</h4>
-              <p class="related-sub" data-i18n="featured.highland.sub">Raw · Highland single-origin</p>
+              <div class="related-jar"><img src="../images/products/highland-gold.jpg" alt="Mountain Honey"></div>
+              <h4 data-i18n="featured.highland.title">Mountain Honey, 380g</h4>
+              <p class="related-sub" data-i18n="featured.highland.sub">Raw · From mountain pastures</p>
               <span class="price">€18</span>
-              <button class="btn btn-outline add-to-cart" data-id="highland-gold" data-name="Highland Gold, 380g" data-price="18">Add to Cart — €18</button>
+              <button class="btn btn-outline add-to-cart" data-id="highland-gold" data-name="Mountain Honey, 380g" data-price="18">Add to Cart: €18</button>
             </div>
             <div class="related-card fade-up">
-              <div class="related-jar"><svg viewBox="0 0 48 56" fill="none"><rect x="6" y="16" width="36" height="34" rx="8" fill="var(--color-green)"/><rect x="12" y="6" width="24" height="12" rx="4" fill="var(--color-amber-dark)"/></svg></div>
-              <h4 data-i18n="featured.wildflower.title">Wildflower Light, 340g</h4>
-              <p class="related-sub" data-i18n="featured.wildflower.sub">Raw · Mild floral profile</p>
+              <div class="related-jar"><img src="../images/products/morning-glow.jpg" alt="Meadow Honey"></div>
+              <h4 data-i18n="featured.wildflower.title">Meadow Honey, 340g</h4>
+              <p class="related-sub" data-i18n="featured.wildflower.sub">Raw · Mild meadow taste</p>
               <span class="price">€12</span>
-              <button class="btn btn-outline add-to-cart" data-id="wildflower-light" data-name="Wildflower Light, 340g" data-price="12">Add to Cart — €12</button>
+              <button class="btn btn-outline add-to-cart" data-id="wildflower-light" data-name="Meadow Honey, 340g" data-price="12">Add to Cart: €12</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Blog Articles -->
+      <section class="section related-reading-section">
+        <div class="container">
+          <div class="related-reading-heading fade-up">
+            <span class="section-label" data-i18n="related.blogs.label">Read More</span>
+            <h2 data-i18n="related.blogs.title">More Articles About Honey</h2>
+          </div>
+          <div class="blog-grid">
+            <article class="blog-card fade-up">
+              <a href="./raw-honey-prebiotic.html" class="blog-card-link">
+                <img src="../images/honey/aaron-burden-2xhOYKK-jAM-unsplash.jpg" alt="Honey and wellness" data-i18n-alt="alt.blog.0" style="object-position: 54% 46%">
+              </a>
+              <div class="blog-meta" data-i18n-blog="0.meta">Article | March 12, 2025</div>
+              <h3 data-i18n-blog="0.title">Raw Honey and Digestion: What People Experience</h3>
+              <a href="./raw-honey-prebiotic.html" class="link-arrow" data-i18n="blog.readMore">Read More</a>
+            </article>
+            <article class="blog-card fade-up">
+              <a href="./why-honey-tastes-richer.html" class="blog-card-link">
+                <img src="../images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture" data-i18n-alt="alt.blog.2" style="object-position: center 30%">
+              </a>
+              <div class="blog-meta" data-i18n-blog="2.meta">Article | November 3, 2025</div>
+              <h3 data-i18n-blog="2.title">Why Raw Honey Is Thicker and Richer</h3>
+              <a href="./why-honey-tastes-richer.html" class="link-arrow" data-i18n="blog.readMore">Read More</a>
+            </article>
           </div>
         </div>
       </section>
@@ -3121,7 +3235,7 @@ em {
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-newsletter">
-            <p class="footer-newsletter-text" data-i18n="footer.newsletter">Get the latest on all things honey and be the first for exclusive offers.</p>
+            <p class="footer-newsletter-text" data-i18n="footer.newsletter">Sign up for news, honey tips, and first access to offers.</p>
             <form class="footer-newsletter-form" id="newsletterForm">
               <div class="footer-input-wrap">
                 <input type="email" placeholder="Email Address" required aria-label="Email address" data-i18n-placeholder="footer.email" />
@@ -3131,39 +3245,37 @@ em {
               </div>
             </form>
             <div class="footer-fda-box">
-              <p data-i18n="footer.fda">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
+              <p data-i18n="footer.fda">*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease.</p>
             </div>
-            <p class="footer-newsletter-success hidden" id="newsletterSuccess" data-i18n="footer.thanks">Thanks — you're on the list.</p>
+            <p class="footer-newsletter-success hidden" id="newsletterSuccess" data-i18n="footer.thanks">Thank you, you are on the list.</p>
           </div>
 
           <div class="footer-nav">
             <div class="footer-col">
               <h4 data-i18n="footer.shop">Shop Honey</h4>
-              <a href="../#products" data-i18n="nav.allJars">All Jars</a>
-              <a href="../#products" data-i18n="nav.singleOrigin">Single-Origin</a>
-              <a href="../#grades" data-i18n="nav.rawHoney">What Is Raw Honey?</a>
-              <a href="../#products" data-i18n="nav.shopAll">Shop All</a>
+              <a href="../products/all.html" data-i18n="nav.allJars">All Jars</a>
+              <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+              <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+              <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
             </div>
             <div class="footer-col">
-              <h4 data-i18n="footer.learn">Learn</h4>
-              <a href="../#story" data-i18n="nav.origins">Our Origins</a>
+              <h4 data-i18n="footer.learn">Learn More</h4>
               <a href="../#story" data-i18n="nav.apiaries">Our Apiaries</a>
-              <a href="../#blog" data-i18n="nav.journal">The Honey Journal</a>
-              <a href="../#quiz" data-i18n="nav.selector">Product Selector</a>
+              <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+              <a href="./raw-honey-prebiotic.html" data-i18n="nav.blog.prebiotic">Raw Honey and Digestion</a>
+              <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
             </div>
             <div class="footer-col">
               <h4 data-i18n="footer.support">Support</h4>
-              <a href="../#faq" data-i18n="nav.faq">FAQ</a>
-              <a href="../pages/contact.html" data-i18n="footer.contact">Contact Us</a>
-              <a href="../" data-i18n="footer.returns">Returns &amp; Exchanges</a>
-              <a href="../" data-i18n="footer.locator">Store Locator</a>
+              <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+              <a href="../pages/contact.html" data-i18n="footer.contact">Contact</a>
+              <a href="../" data-i18n="footer.returns">Returns and Exchanges</a>
+              <a href="../" data-i18n="footer.locator">Where to Find Us</a>
             </div>
             <div class="footer-col">
-              <h4 data-i18n="footer.social">Social</h4>
-              <a href="#" data-i18n-social="social.instagram" aria-label="Instagram">Instagram</a>
-              <a href="#" data-i18n-social="social.tiktok" aria-label="TikTok">TikTok</a>
-              <a href="#" data-i18n-social="social.facebook" aria-label="Facebook">Facebook</a>
-              <a href="#" data-i18n-social="social.youtube" aria-label="YouTube">YouTube</a>
+              <h4 data-i18n="footer.social">Follow Us</h4>
+              <a href="https://www.instagram.com/metche.mk/" target="_blank" rel="noopener noreferrer" data-i18n-social="social.instagram" aria-label="Instagram">Instagram</a>
+              <a href="https://www.facebook.com/metche.mk/" target="_blank" rel="noopener noreferrer" data-i18n-social="social.facebook" aria-label="Facebook">Facebook</a>
             </div>
           </div>
         </div>
@@ -3173,11 +3285,11 @@ em {
         </div>
 
         <div class="footer-bar">
-          <p class="footer-tagline" data-i18n="footer.tagline">The quiet sweetness behind your steadiest days.</p>
-          <p class="footer-copy" data-i18n="footer.copy">&copy; All Rights Reserved 2026</p>
+          <p class="footer-tagline" data-i18n="footer.tagline">Natural honey from Macedonian meadows.</p>
+          <p class="footer-copy" data-i18n="footer.copy">© All rights reserved 2026</p>
           <div class="footer-legal">
-            <a href="#" data-i18n="footer.terms">Terms</a>
-            <a href="#" data-i18n="footer.privacy">Privacy</a>
+            <a href="../pages/terms.html" data-i18n="footer.terms">Terms</a>
+            <a href="../pages/privacy.html" data-i18n="footer.privacy">Privacy</a>
           </div>
         </div>
       </div>
@@ -3185,7 +3297,7 @@ em {
 
     <script>
 /**
- * Metche — i18n (English + Macedonian)
+ * Metche: i18n (English + Macedonian)
  */
 (function () {
   'use strict';
@@ -3194,197 +3306,212 @@ em {
 
   const translations = {
     en: {
-      'meta.title': 'Metche | Pure Raw Honey, Harvested with Care',
-      'meta.description': 'Metche offers small-batch raw honey from wildflower meadows. Traceable, unfiltered, and crafted for everyday wellness rituals.',
-      'meta.ogImageAlt': 'Metche — pure raw honey harvested with care',
+      'meta.title': "Metche | Pure Raw Honey from Macedonia",
+      'meta.description': "Metche is a family beekeeping brand. Raw honey from our meadows and mountain pastures: unheated, unfiltered, and harvested as it should be.",
+      'meta.ogImageAlt': "Metche: pure raw honey, carefully harvested",
 
       'brand.wordmark': 'metche',
       'brand.logo': 'Metche',
 
-      'announcement.text': 'Our wildflower reserve blend is back — now in reusable glass jars.',
-      'announcement.link': 'Save 25% on multi-jar sets',
+      'announcement.text': "25% off every multi-jar set.",
+      'announcement.link': "View the sets",
 
       'nav.shopHoney': 'Shop Honey',
       'nav.learn': 'Learn',
-      'nav.allJars': 'All Jars',
-      'nav.singleOrigin': 'Single-Origin',
+      'nav.explore': 'Explore',
+      'nav.allJars': "All Jars",
+      'nav.singleOrigin': "From One Place",
       'nav.rawHoney': 'What Is Raw Honey?',
-      'nav.shopAll': 'Shop All',
-      'nav.origins': 'Our Origins',
-      'nav.apiaries': 'Our Apiaries',
-      'nav.journal': 'The Honey Journal',
-      'nav.selector': 'Product Selector',
-      'nav.faq': 'FAQ',
+      'nav.shopAll': "Full Range",
+      'nav.products': 'All Products',
+      'nav.product.reserve': "Floral Bouquet",
+      'nav.product.wildflower': "Meadow Honey",
+      'nav.product.highland': "Mountain Honey",
+      'nav.blog.prebiotic': "Raw Honey and Digestion",
+      'nav.blog.firstMonth': "First Month with Metche",
+      'nav.blog.richer': "Why Raw Honey Tastes Richer",
+      'nav.origins': "Where Our Honey Grows",
+      'nav.apiaries': "Our Apiaries",
+      'nav.journal': "About Honey",
+      'nav.selector': "Help Me Choose",
+      'nav.faq': "Questions and Answers",
 
-      'mega.shop.desc': 'Drawn from alpine meadows and sun-warmed apiaries, Metche honey is unheated, unblended, and bottled at peak floral intensity.',
-      'mega.learn.desc': 'Every Metche batch is traced to a single harvest season and the beekeeper who tended it.',
-      'badge.bestseller': 'Best Seller',
-      'badge.limited': 'Limited',
+      'mega.shop.desc': "From Macedonian meadows and apiaries: our honey is not heated or blended, and it is jarred when the flowers are at their peak.",
+      'mega.learn.desc': "Every jar can be traced to one harvest and the beekeeper who tended it.",
+      'badge.bestseller': "Most Popular",
+      'badge.limited': "Limited Quantity",
 
-      'hero.title': 'Honey Worth Slowing Down For.',
-      'hero.sub': 'Small-batch raw honey from wildflower meadows — unfiltered, traceable, and bottled at the peak of the bloom.',
+      'hero.title': "Honey to Remember.",
+      'hero.sub': "Raw Macedonian honey from our meadows and pastures: pure, unfiltered, and jarred when the flowers are at their peak.",
       'hero.cta.shop': 'Shop Raw Honey',
-      'hero.cta.selector': 'Product Selector',
-      'hero.reviews': '41 verified 5-star reviews',
+      'hero.cta.selector': "Help Me Choose",
+      'hero.reviews': "41 five-star customer reviews",
 
-      'products.title': 'Raw Honey Jars',
-      'products.shopAll': 'SHOP ALL',
+      'products.title': "Our Jars",
+      'products.shopAll': "VIEW ALL",
 
-      'meet.title': 'Meet Metche',
-      'meet.text': 'Born in high-country apiaries and known for its <em>naturally complex floral character</em>, <em>slow-crystallized texture</em>, and <em>antioxidant-rich pollen</em>, this <em>ethically harvested</em> honey is more than a pantry staple. It\'s a quiet daily ritual.',
+      'meet.title': "About Metche",
+      'meet.text': "We harvest our honey from the mountain pastures and flower meadows around Kalanjevo. It is known for its <em>full floral taste</em>, <em>slow crystallisation</em>, and <em>pollen that stays in the jar</em>. This is not just another sweetener: it is honey straight from the apiary, made for every day.",
 
-      'grades.heading': 'In raw honey, floral intensity reflects depth of flavor and natural compounds.',
-      'grades.tab.reserve': 'Reserve Blend',
-      'grades.tab.highland': 'Highland Gold',
-      'grades.tab.wildflower': 'Wildflower Light',
-      'grades.disclaimer': '*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Many customers notice subtle benefits within a few weeks of consistent use.',
-      'grades.reserve.0': 'Buttery caramel finish with meadow florals',
-      'grades.reserve.1': 'Rich in enzymes and natural prebiotics',
-      'grades.reserve.2': 'Steady, clean energy without the crash',
-      'grades.reserve.3': 'Supports everyday immune balance*',
-      'grades.reserve.4': 'Gentle on digestion and gut comfort*',
-      'grades.reserve.5': 'Helps soothe seasonal inflammation*',
-      'grades.highland.0': 'Deep amber color with toasted oak notes',
-      'grades.highland.1': 'Higher pollen density from alpine blooms',
-      'grades.highland.2': 'Long-lasting sweetness, spoon-coating texture',
-      'grades.highland.3': 'Ideal for active mornings and recovery*',
-      'grades.highland.4': 'Supports digestive regularity*',
-      'grades.highland.5': 'Helps maintain a calm inflammatory response*',
-      'grades.wildflower.0': 'Light, luminous gold with citrus lift',
-      'grades.wildflower.1': 'Delicate floral aroma from mixed meadows',
-      'grades.wildflower.2': 'Easy everyday spoonful for the whole family',
-      'grades.wildflower.3': 'Gentle immune support for daily use*',
-      'grades.wildflower.4': 'Promotes comfortable digestion*',
-      'grades.wildflower.5': 'Balances energy through the afternoon*',
+      'grades.heading': "With raw honey, the flowers visited by the bees can be tasted in both its flavour and its texture.",
+      'grades.tab.reserve': "Floral Bouquet",
+      'grades.tab.highland': "Mountain Honey",
+      'grades.tab.wildflower': "Meadow Honey",
+      'grades.disclaimer': "*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease. Many customers notice a change after a few weeks of regular use.",
+      'grades.reserve.0': "Soft caramel finish with meadow flowers",
+      'grades.reserve.1': "Rich in enzymes and natural prebiotics",
+      'grades.reserve.2': "Clean energy without the afternoon crash",
+      'grades.reserve.3': "Everyday support*",
+      'grades.reserve.4': "Gentle on the stomach*",
+      'grades.reserve.5': "Helpful when the seasons change*",
+      'grades.highland.0': "Deep amber gold with a fuller note",
+      'grades.highland.1': "More pollen from mountain flowers",
+      'grades.highland.2': "Thick honey with long-lasting sweetness",
+      'grades.highland.3': "Good for active mornings*",
+      'grades.highland.4': "Supports regular digestion*",
+      'grades.highland.5': "Helpful when the body feels tired*",
+      'grades.wildflower.0': "Light golden colour with a mild, fresh taste",
+      'grades.wildflower.1': "Soft aroma from mixed meadows",
+      'grades.wildflower.2': "An easy daily spoonful for the whole family",
+      'grades.wildflower.3': "Gentle support*",
+      'grades.wildflower.4': "Comfortable digestion*",
+      'grades.wildflower.5': "Steady energy throughout the day*",
 
-      'featured.badge': '#1 best seller',
-      'featured.reserve.title': 'Reserve Blend, 500g',
-      'featured.reserve.sub': 'Raw · Unfiltered · Cold-bottled',
-      'featured.reserve.desc': 'Multi-floral alpine blend. Amber glass, batch-coded, never heated above 40°C.',
-      'featured.highland.title': 'Highland Gold, 380g',
-      'featured.highland.sub': 'Raw · Highland single-origin',
-      'featured.highland.desc': 'High-altitude wildflower honey. Higher pollen density, deep amber profile.',
-      'featured.wildflower.title': 'Wildflower Light, 340g',
-      'featured.wildflower.sub': 'Raw · Mild floral profile',
-      'featured.wildflower.desc': 'Lower viscosity, light wildflower notes. Cold-bottled, single-harvest batch.',
-      'featured.addCart': 'Add to Cart — €{price}',
+      'featured.badge': "#1 most popular",
+      'featured.reserve.title': "Floral Bouquet, 500g",
+      'featured.reserve.sub': "Raw · Unfiltered · Cold-filled",
+      'featured.reserve.desc': "A blend of several flowers. Dark glass, batch code, never heated above 40°C.",
+      'featured.highland.title': "Mountain Honey, 380g",
+      'featured.highland.sub': "Raw · From mountain pastures",
+      'featured.highland.desc': "Honey from high meadows. Thicker, richer, and deeper in colour.",
+      'featured.wildflower.title': "Meadow Honey, 340g",
+      'featured.wildflower.sub': "Raw · Mild meadow taste",
+      'featured.wildflower.desc': "Lighter, with soft meadow notes. Cold-filled from a single harvest.",
+      'featured.addCart': 'Add to Cart: €{price}',
 
-      'compare.label': 'COMPARE US',
-      'compare.title': 'How Metche Compares',
-      'compare.intro': 'Plenty of jars say "raw" or "pure" — but the details vary. Here\'s an honest look at how our small batches stack up against other raw honeys and typical supermarket options.',
+      'compare.label': "COMPARISON",
+      'compare.title': "What Sets Us Apart from Other Honey",
+      'compare.intro': "Many jars say “raw” or “pure”, but they are not all the same. Here is an honest look at how our honey differs from other raw honey and ordinary supermarket honey.",
       'compare.col.metche': 'Metche',
-      'compare.col.other': 'Other Raw',
-      'compare.col.regular': 'Regular Honey',
-      'compare.row.0': 'Protective Amber Glass Packaging',
-      'compare.row.1': 'Third-Party Tested for Purity',
-      'compare.row.2': 'Pesticide Residue-Free Certified',
-      'compare.row.3': '100% Traceable to Hive',
-      'compare.row.4': 'Ethical Beekeeping Standard',
+      'compare.col.other': "Other Raw Honey",
+      'compare.col.regular': "Regular Honey",
+      'compare.row.0': "Dark glass that protects the honey",
+      'compare.row.1': "Tested for purity",
+      'compare.row.2': "Free from pesticide residue",
+      'compare.row.3': "The source apiary is known",
+      'compare.row.4': "Beekeeping that cares for the bees",
 
-      'taste.title': 'Metche\'s Taste',
-      'taste.intro': 'Smooth and creamy, similar to a rich buttery caramel — enjoy straight from the jar.',
+      'taste.title': "What Metche Tastes Like",
+      'taste.intro': "Thick and creamy, like soft caramel: best enjoyed straight from the spoon.",
       'taste.caramel.title': 'Caramel',
-      'taste.caramel.desc': 'Rich and toasted — the dominant note on the first spoon.',
+      'taste.caramel.desc': "Rich, toasted flavour: noticeable from the very first spoonful.",
       'taste.floral.title': 'Floral',
-      'taste.floral.desc': 'Light and fresh — a subtle sweetness from seasonal wildflowers.',
+      'taste.floral.desc': "Light and fresh: gentle sweetness from meadow flowers.",
       'taste.creamy.title': 'Creamy',
-      'taste.creamy.desc': 'Dense, smooth, spoon-coating — never runny.',
+      'taste.creamy.desc': "Thick and smooth, it coats the spoon without running.",
       'taste.earthy.title': 'Earthy',
-      'taste.earthy.desc': 'A deeper, grounded finish — the mark of unheated raw honey.',
+      'taste.earthy.desc': "A deeper finish: the mark of unheated honey.",
 
-      'reviews.title': 'Loved by 41 verified 5-star reviews',
-      'reviews.0': '"Replace every sweetener in your kitchen. You\'ll taste the difference on day one."',
-      'reviews.1': '"I take a spoonful every single morning. It\'s become non-negotiable."',
-      'reviews.2': '"More steady energy, better focus — I didn\'t expect honey to feel this intentional."',
-      'reviews.3': '"It really is different. Creamier, deeper, worth every penny."',
-      'reviews.4': '"The best honey I\'ve ever had. Full stop."',
+      'reviews.title': "41 Five-Star Reviews from Our Customers",
+      'reviews.0': "“Since we found Metche, we hardly use sugar anymore. You can taste the difference from the very first spoonful.”",
+      'reviews.1': "“One spoonful every morning. It has become a staple in our home, just like bread.”",
+      'reviews.2': "“My energy feels steadier throughout the day, without that afternoon crash. I never thought honey could suit me this well.”",
+      'reviews.3': "“This is a different kind of honey. Creamier, richer, and worth every denar.”",
+      'reviews.4': "“The best Macedonian honey I have tried. Full stop.”",
+      'reviews.0.cite': "Ana from Skopje",
+      'reviews.1.cite': "Marija from Bitola",
+      'reviews.2.cite': "Goran from Kumanovo",
+      'reviews.3.cite': "Vesna from Ohrid",
+      'reviews.4.cite': "Zorana from Štip",
 
-      'beekeeper.intro': 'Our beekeepers follow the <em>Art of Gentle Harvesting</em> — a tradition that puts hive health and meadow biodiversity ahead of volume.',
-      'beekeeper.name': 'Meet Tomas',
-      'beekeeper.text': 'Introducing Tomas, one of Metche\'s founding master beekeepers from the remote highland valleys where our Reserve Blend is born.',
-      'beekeeper.quote': '"What sets beekeeping apart here is that it doesn\'t just produce honey — it sustains the entire landscape around us."',
-      'beekeeper.sig': 'Master Beekeeper, Metche',
-      'beekeeper.cta': 'Our Story',
+      'beekeeper.intro': "Our beekeepers work the traditional way, with <em>gentle harvesting</em>: the health of the bees and the meadow comes first, and the harvest quantity comes second.",
+      'beekeeper.name': "Meet Jovica",
+      'beekeeper.text': "Jovica is one of the first beekeepers we worked with. He was born in Negotino, and his apiaries stand on the slopes of Serta, where our Floral Bouquet is born.",
+      'beekeeper.quote': "“Beekeeping is not only about honey. If you care for the bees properly, you care for the whole landscape around them.”",
+      'beekeeper.sig': "Beekeeper, Metche",
+      'beekeeper.cta': "Our Story",
 
-      'blog.title': 'Discover What Makes Raw Honey Different',
-      'blog.label': 'Honey Journal',
-      'blog.0.meta': 'Journal | March 12, 2025',
-      'blog.0.title': 'Raw Honey as a Natural Prebiotic: What the Research Says',
-      'blog.1.meta': 'Journal | January 8, 2024',
-      'blog.1.title': 'Your First Month with Metche: What to Expect',
-      'blog.2.meta': 'Journal | November 3, 2025',
-      'blog.2.title': 'Why Raw Honey Tastes Richer: The Science Behind the Texture',
-      'blog.readMore': 'Read More',
+      'blog.title': "Why Raw Honey Is Different",
+      'blog.label': "About Honey",
+      'blog.page.title': "About Honey",
+      'blog.page.subtitle': "Short articles about raw honey, everyday habits, and the meadows behind every jar.",
+      'blog.0.meta': "Article | March 12, 2025",
+      'blog.0.title': "Raw Honey and Digestion: What People Experience",
+      'blog.1.meta': "Article | January 8, 2024",
+      'blog.1.title': "Your First Month with Metche: What to Expect",
+      'blog.2.meta': "Article | November 3, 2025",
+      'blog.2.title': "Why Raw Honey Is Thicker and Richer",
+      'blog.readMore': "Read More",
 
-      'quiz.section.title': 'Need help choosing?',
-      'quiz.section.desc': 'Answer three questions — we\'ll recommend a SKU by profile and size.',
-      'quiz.section.cta': 'Open Product Selector',
-      'quiz.title': 'Product Selector',
-      'quiz.q1': 'What matters most to you?',
-      'quiz.q1.a': 'Everyday gentle wellness',
-      'quiz.q1.b': 'Balanced, medium intensity',
-      'quiz.q1.c': 'Deep, bold flavor',
-      'quiz.q2': 'When do you reach for honey?',
-      'quiz.q2.a': 'Morning tea or toast',
-      'quiz.q2.b': 'Afternoon energy',
-      'quiz.q2.c': 'Evening wind-down',
-      'quiz.q3': 'How do you like your honey?',
-      'quiz.q3.a': 'Light and floral',
-      'quiz.q3.b': 'Creamy and caramel',
-      'quiz.q3.c': 'Dark and complex',
-      'quiz.result.label': 'We recommend',
+      'quiz.section.title': "Not Sure What to Choose?",
+      'quiz.section.desc': "Answer three short questions and we will tell you which honey suits you.",
+      'quiz.section.cta': "Start",
+      'quiz.title': "Help Me Choose",
+      'quiz.q1': "What matters most to you?",
+      'quiz.q1.a': "Mild honey for every day",
+      'quiz.q1.b': "Medium, balanced flavour",
+      'quiz.q1.c': "Strong, deeper honey",
+      'quiz.q2': "When do you usually eat it?",
+      'quiz.q2.a': "In the morning with tea or bread",
+      'quiz.q2.b': "In the afternoon for energy",
+      'quiz.q2.c': "In the evening, at a slower pace",
+      'quiz.q3': "What kind of honey are you looking for?",
+      'quiz.q3.a': "Light and floral",
+      'quiz.q3.b': "Creamy and caramel-like",
+      'quiz.q3.c': "Dark and full-bodied",
+      'quiz.result.label': "We Recommend",
       'quiz.progress': '{step} / 3',
-      'quiz.complete': 'Complete',
+      'quiz.complete': "Done",
 
-      'footer.newsletter': 'Get the latest on all things honey and be the first for exclusive offers.',
-      'footer.email': 'Email Address',
-      'footer.fda': '*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.',
-      'footer.thanks': 'Thanks — you\'re on the list.',
-      'footer.shop': 'Shop Honey',
-      'footer.learn': 'Learn',
+      'footer.newsletter': "Sign up for news, honey tips, and first access to offers.",
+      'footer.email': "Email",
+      'footer.fda': "*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease.",
+      'footer.thanks': "Thank you, you are on the list.",
+      'footer.shop': "Shop Honey",
+      'footer.learn': "Learn More",
       'footer.support': 'Support',
-      'footer.social': 'Social',
-      'footer.contact': 'Contact Us',
-      'footer.returns': 'Returns & Exchanges',
-      'footer.locator': 'Store Locator',
-      'footer.tagline': 'The quiet sweetness behind your steadiest days.',
-      'footer.copy': '© All Rights Reserved 2026',
+      'footer.social': "Follow Us",
+      'footer.contact': "Contact",
+      'footer.returns': "Returns and Exchanges",
+      'footer.locator': "Where to Find Us",
+      'footer.tagline': "Natural honey from Macedonian meadows.",
+      'footer.copy': "© All rights reserved 2026",
       'footer.terms': 'Terms',
       'footer.privacy': 'Privacy',
 
       'cart.title': 'Cart',
-      'cart.subtotal': 'Subtotal',
-      'cart.checkout': 'Check Out',
-      'cart.empty': 'Your cart is empty',
-      'cart.shipping.remaining': 'Spend €{amount} more for free shipping',
-      'cart.shipping.free': 'You qualify for free shipping!',
+      'cart.subtotal': "Total",
+      'cart.checkout': "Order Now",
+      'cart.empty': "The cart is empty",
+      'cart.shipping.remaining': "Spend another €{amount} for free delivery",
+      'cart.shipping.free': "You have free delivery!",
       'cart.remove': 'Remove',
-      'cart.checkout.alert': 'Thank you for your order! Checkout is a demo — connect your payment provider to go live.',
+      'cart.checkout.alert': "Thank you for your order! Payment is a demo: connect the payment system.",
 
-      'product.reserve-ritual.name': 'Reserve Blend, 500g',
-      'product.reserve-ritual.grade': 'Reserve Blend',
-      'product.morning-glow.name': 'Wildflower Light, 340g',
-      'product.morning-glow.grade': 'Wildflower Light',
-      'product.highland-deep.name': 'Highland Gold, 2×250g',
-      'product.highland-deep.grade': 'Highland Gold',
-      'product.reserve-blend.name': 'Reserve Blend, 500g',
-      'product.highland-gold.name': 'Highland Gold, 380g',
-      'product.wildflower-light.name': 'Wildflower Light, 340g',
-      'product.mega.reserve': 'Reserve Blend, 500g',
-      'product.mega.highland': 'Highland Gold, 380g',
+      'product.reserve-ritual.name': "Floral Bouquet, 500g",
+      'product.reserve-ritual.grade': "Floral Bouquet",
+      'product.morning-glow.name': "Meadow Honey, 340g",
+      'product.morning-glow.grade': "Meadow Honey",
+      'product.highland-deep.name': "Mountain Honey, 2×250g",
+      'product.highland-deep.grade': "Mountain Honey",
+      'product.reserve-blend.name': "Floral Bouquet, 500g",
+      'product.highland-gold.name': "Mountain Honey, 380g",
+      'product.wildflower-light.name': "Meadow Honey, 340g",
+      'product.mega.reserve': "Floral Bouquet, 500g",
+      'product.mega.highland': "Mountain Honey, 380g",
 
-      'quiz.result.wildflower.title': 'Wildflower Light, 340g',
-      'quiz.result.wildflower.desc': 'Lower viscosity, mild floral profile. Raw, cold-bottled.',
-      'quiz.result.reserve.title': 'Reserve Blend, 500g',
-      'quiz.result.reserve.desc': 'Multi-floral alpine blend. Raw, unfiltered, cold-bottled.',
-      'quiz.result.highland.title': 'Highland Gold, 380g',
-      'quiz.result.highland.desc': 'High-altitude single-origin. Higher pollen density, deep amber.',
-      'quiz.result.light.desc': 'Light wildflower notes. Single-harvest batch.',
-      'quiz.result.creamy.desc': 'Medium viscosity, multi-floral. Never heated above 40°C.',
-      'quiz.result.bold.desc': 'Highland wildflower, deep amber. Highest pollen density in range.',
-      'quiz.result.morning.desc': 'Mild floral profile, lower viscosity. Raw, cold-bottled.',
-      'quiz.result.afternoon.desc': 'Multi-floral blend. Batch-coded, amber glass packaging.',
-      'quiz.result.evening.desc': 'Light wildflower honey. Single-origin, cold-bottled.',
+      'quiz.result.wildflower.title': "Meadow Honey, 340g",
+      'quiz.result.wildflower.desc': "Lighter, with a mild meadow taste. Raw and cold-filled.",
+      'quiz.result.reserve.title': "Floral Bouquet, 500g",
+      'quiz.result.reserve.desc': "A blend of several flowers. Raw, unfiltered, and cold-filled.",
+      'quiz.result.highland.title': "Mountain Honey, 380g",
+      'quiz.result.highland.desc': "From mountain pastures. Thicker, with a deeper colour.",
+      'quiz.result.light.desc': "Soft meadow notes. From one harvest.",
+      'quiz.result.creamy.desc': "Medium thickness with a mixed floral taste. Never above 40°C.",
+      'quiz.result.bold.desc': "Mountain honey, deep amber gold. Our thickest.",
+      'quiz.result.morning.desc': "Mild meadow profile. Raw and cold-filled.",
+      'quiz.result.afternoon.desc': "A blend of several flowers. Batch-coded in dark glass.",
+      'quiz.result.evening.desc': "Light meadow honey. From one place and cold-filled.",
 
       'aria.openMenu': 'Open menu',
       'aria.closeMenu': 'Close menu',
@@ -3397,20 +3524,20 @@ em {
       'aria.language': 'Language',
       'aria.navPrimary': 'Primary navigation',
       'aria.navSecondary': 'Secondary navigation',
-      'alt.hero': 'Bee on wildflower — raw honey harvest',
-      'alt.beekeeper': 'Beekeeper inspecting a hive frame',
-      'alt.masterBeekeeper': 'Master beekeeper in the field',
-      'alt.product.reserveRitual': 'Reserve Blend, 500g raw honey',
-      'alt.product.morningGlow': 'Wildflower Light, 340g raw honey',
-      'alt.product.highlandDeep': 'Highland Gold, 2×250g raw honey',
-      'alt.mega.reserve': 'Reserve Blend raw honey jar',
-      'alt.mega.highland': 'Highland Gold raw honey jar',
-      'alt.compare.bee': 'Honeybee',
-      'alt.compare.honeycomb': 'Raw honeycomb',
-      'alt.compare.wildflowers': 'Wildflowers',
-      'alt.blog.0': 'Honey and wellness',
-      'alt.blog.1': 'First jar of honey',
-      'alt.blog.2': 'Creamy honey texture',
+      'alt.hero': "Bee on a meadow flower: raw honey harvest",
+      'alt.beekeeper': "Beekeeper inspecting the honeycomb",
+      'alt.masterBeekeeper': "Beekeeper in the field",
+      'alt.product.reserveRitual': "Floral Bouquet, 500g raw honey",
+      'alt.product.morningGlow': "Meadow Honey, 340g raw honey",
+      'alt.product.highlandDeep': "Mountain Honey, 2×250g raw honey",
+      'alt.mega.reserve': "Jar of Floral Bouquet",
+      'alt.mega.highland': "Jar of Mountain Honey",
+      'alt.compare.bee': "Bee",
+      'alt.compare.honeycomb': "Raw honeycomb",
+      'alt.compare.wildflowers': "Meadow flowers",
+      'alt.blog.0': "Honey and everyday life",
+      'alt.blog.1': "First jar of honey",
+      'alt.blog.2': "Creamy honey texture",
       'social.instagram': 'Instagram',
       'social.tiktok': 'TikTok',
       'social.facebook': 'Facebook',
@@ -3418,221 +3545,236 @@ em {
     },
 
     mk: {
-      'meta.title': 'Метче | Чист суров мед, бережно собран',
-      'meta.description': 'Метче нуди мал сериски суров мед од ливадски цветни ливади. Следлив, нефилтриран и флашен за секојдневни ритуали.',
-      'meta.ogImageAlt': 'Метче — чист суров мед, бережно собран',
+      'meta.title': 'Метче | Чист суров мед од Македонија',
+      'meta.description': 'Метче е семеен пчеларски бренд. Суров мед од нашите ливади и планински пасишта: негреан, нефилтриран и собран како што треба.',
+      'meta.ogImageAlt': 'Метче: чист суров мед, собран со грижа',
 
       'brand.wordmark': 'метче',
       'brand.logo': 'Метче',
 
-      'announcement.text': 'Нашата резервна ливадска мешавина е повторно достапна — сега во реупотребливи стаклени тегли.',
-      'announcement.link': 'Заштедете 25% на сетови со повеќе тегли',
+      'announcement.text': 'Попуст од 25% на секој сет со повеќе тегли.',
+      'announcement.link': 'Погледнете ги сетовите',
 
       'nav.shopHoney': 'Купи мед',
       'nav.learn': 'Дознај',
+      'nav.explore': 'Откриј',
       'nav.allJars': 'Сите тегли',
-      'nav.singleOrigin': 'Единечен потекло',
+      'nav.singleOrigin': 'Од едно место',
       'nav.rawHoney': 'Што е суров мед?',
-      'nav.shopAll': 'Купи сè',
-      'nav.origins': 'Наш потекло',
-      'nav.apiaries': 'Наши пчеларни',
-      'nav.journal': 'Дневник за мед',
-      'nav.selector': 'Избор на производ',
-      'nav.faq': 'ЧПП',
+      'nav.shopAll': 'Цел асортиман',
+      'nav.products': 'Сите производи',
+      'nav.product.reserve': 'Цветен букет',
+      'nav.product.wildflower': 'Ливадски мед',
+      'nav.product.highland': 'Планински мед',
+      'nav.blog.prebiotic': 'Суров мед и варењето',
+      'nav.blog.firstMonth': 'Прв месец со Метче',
+      'nav.blog.richer': 'Зошто медот е побогат',
+      'nav.origins': 'Каде расте медот',
+      'nav.apiaries': 'Нашите пчеларници',
+      'nav.journal': 'За медот',
+      'nav.selector': 'Помош при избор',
+      'nav.faq': 'Прашања и одговори',
 
-      'mega.shop.desc': 'Од алпски ливади и сончеви пчеларни — медот на Метче е незагреан, немешан и флашен на врвот на цветот.',
-      'mega.learn.desc': 'Секоја серија на Метче е поврзана со една берба и пчеларот што ја негувал.',
-      'badge.bestseller': 'Најпродаван',
-      'badge.limited': 'Ограничено',
+      'mega.shop.desc': 'Од македонски ливади и пчеларници: нашиот мед не се загрева, не се меша и се полни во тегла додека цветот е најсилен.',
+      'mega.learn.desc': 'Секоја тегла може да се следи до една берба и до пчеларот што ја водел.',
+      'badge.bestseller': 'Најбарана',
+      'badge.limited': 'Ограничена количина',
 
-      'hero.title': 'Мед за кој вреди да се забавите.',
-      'hero.sub': 'Мал сериски суров мед од ливадски цветни ливади — нефилтриран, следлив и флашен на врвот на цветот.',
+      'hero.title': 'Мед што се памети.',
+      'hero.sub': 'Суров македонски мед од нашите ливади и пасишта: чист, нефилтриран и полнет додека цветот е најсилен.',
       'hero.cta.shop': 'Купи суров мед',
-      'hero.cta.selector': 'Избор на производ',
-      'hero.reviews': '41 верификувани рецензии со 5 ѕвезди',
+      'hero.cta.selector': 'Помош при избор',
+      'hero.reviews': '41 петѕвездени оценки од купувачи',
 
-      'products.title': 'Тегли со суров мед',
-      'products.shopAll': 'КУПИ СÈ',
+      'products.title': 'Нашите тегли',
+      'products.shopAll': 'ВИДИ СЀ',
 
-      'meet.title': 'Запознајте го Метче',
-      'meet.text': 'Роден во планински пчеларни, познат по <em>природно сложен цветен карактер</em>, <em>бавна кристализација</em> и <em>полен богат со антиоксиданси</em> — овој <em>етички собран</em> мед е повеќе од основна намирница. Тоа е тивок дневен ритуал.',
+      'meet.title': 'За Метче',
+      'meet.text': 'Медот го береме од планинските пасишта и цветните ливади околу Калањево. Го познаваат по <em>полн цветен вкус</em>, <em>бавно стврднување</em> и <em>полен што останува во теглата</em>. Ова не е обичен засладувач: ова е мед како од пчеларница, за секој ден.',
 
-      'grades.heading': 'Кај суровиот мед, цветниот интензитет ја одразува длабочината на вкусот и природните соединенија.',
-      'grades.tab.reserve': 'Резервен микс',
-      'grades.tab.highland': 'Планинско злато',
-      'grades.tab.wildflower': 'Ливадски лесен',
-      'grades.disclaimer': '*Овие тврдења не се оценети од Администрацијата за храна и лекови (FDA). Производот не е наменет за дијагностицирање, лечење, излекување или спречување на болести. Многу корисници забележуваат благодети по неколку недели редовна употреба.',
-      'grades.reserve.0': 'Путерест карамел завршеток со ливадски цветови',
+      'grades.heading': 'Кај суровиот мед, цветот што го сечат пчелите се чувствува и во вкусот, и во густината.',
+      'grades.tab.reserve': 'Цветен букет',
+      'grades.tab.highland': 'Планински мед',
+      'grades.tab.wildflower': 'Ливадски мед',
+      'grades.disclaimer': '*Овие тврдења не се оценети од Агенцијата за храна и ветеринарство. Производот не е лек и не е наменет за дијагноза, лекување или спречување на болести. Многу купувачи чувствуваат промена по неколку недели редовна употреба.',
+      'grades.reserve.0': 'Мек карамелест завршеток со ливадски цветови',
       'grades.reserve.1': 'Богат со ензими и природни пребиотици',
-      'grades.reserve.2': 'Стабилна, чиста енергија без пад',
-      'grades.reserve.3': 'Поддршка на секојдневен имунитет*',
-      'grades.reserve.4': 'Нежен за варењето и цревата*',
-      'grades.reserve.5': 'Помага при сезонска воспаленост*',
-      'grades.highland.0': 'Длабок килибарен тон со нотки на даб',
-      'grades.highland.1': 'Поголема густина на полен од алпски цветови',
-      'grades.highland.2': 'Долготрајна слаткост, густа текстура',
-      'grades.highland.3': 'Идеален за активни утра и обнова*',
-      'grades.highland.4': 'Поддршка на редовно варење*',
-      'grades.highland.5': 'Помага во смирување на воспаление*',
-      'grades.wildflower.0': 'Светло златна боја со цитрусна нота',
-      'grades.wildflower.1': 'Нежен цветен аромат од мешани ливади',
+      'grades.reserve.2': 'Чиста енергија без оној пад попладне',
+      'grades.reserve.3': 'Поддршка во секојдневието*',
+      'grades.reserve.4': 'Нежен кон стомакот*',
+      'grades.reserve.5': 'Помага кога се менува сезоната*',
+      'grades.highland.0': 'Темно килибарно злато со подлабока нота',
+      'grades.highland.1': 'Повеќе полен од планински цветови',
+      'grades.highland.2': 'Густ мед, слаткоста долго останува',
+      'grades.highland.3': 'Добар за активни утра*',
+      'grades.highland.4': 'Поддршка за редовно варење*',
+      'grades.highland.5': 'Помага кога телото е заморено*',
+      'grades.wildflower.0': 'Светла златна боја со благ, свеж вкус',
+      'grades.wildflower.1': 'Мек мирис од мешани ливади',
       'grades.wildflower.2': 'Лесна дневна доза за целото семејство',
-      'grades.wildflower.3': 'Нежна имунолошка поддршка*',
-      'grades.wildflower.4': 'Поддршка на удобно варење*',
-      'grades.wildflower.5': 'Балансира енергија низ попладнево*',
+      'grades.wildflower.3': 'Нежна поддршка*',
+      'grades.wildflower.4': 'Удобно варење*',
+      'grades.wildflower.5': 'Рамномерна енергија преку ден*',
 
-      'featured.badge': '#1 најпродаван',
-      'featured.reserve.title': 'Резервен микс, 500г',
-      'featured.reserve.sub': 'Суров · Нефилтриран · Ладно флашен',
-      'featured.reserve.desc': 'Мулти-цветна алпска мешавина. Килибарно стакло, шифра на серија, никогаш над 40°C.',
-      'featured.highland.title': 'Планинско злато, 380г',
-      'featured.highland.sub': 'Суров · Планинско единечно потекло',
-      'featured.highland.desc': 'Планински ливадски мед. Поголема густина на полен, длабок килибарен профил.',
-      'featured.wildflower.title': 'Ливадски лесен, 340г',
-      'featured.wildflower.sub': 'Суров · Благ цветен профил',
-      'featured.wildflower.desc': 'Пониска вискозност, лесни ливадски ноти. Ладно флашен, една берба.',
-      'featured.addCart': 'Додај во кошничка — €{price}',
+      'featured.badge': '#1 најбарана',
+      'featured.reserve.title': 'Цветен букет, 500г',
+      'featured.reserve.sub': 'Суров · Нефилтриран · Ладно полнет',
+      'featured.reserve.desc': 'Мешавина од повеќе цветови. Темно стакло, шифра на серија, никогаш над 40°C.',
+      'featured.highland.title': 'Планински мед, 380г',
+      'featured.highland.sub': 'Суров · Од планински пасишта',
+      'featured.highland.desc': 'Мед од високи ливади. Погуст, побогат, подлабока боја.',
+      'featured.wildflower.title': 'Ливадски мед, 340г',
+      'featured.wildflower.sub': 'Суров · Благ ливадски вкус',
+      'featured.wildflower.desc': 'Полесен, со меки ливадски ноти. Ладно полнет, од една берба.',
+      'featured.addCart': 'Додај во кошничка: €{price}',
 
       'compare.label': 'СПОРЕДБА',
-      'compare.title': 'Како се споредува Метче',
-      'compare.intro': 'Многу тегли велат „суров" или „чист" — но деталите се разликуваат. Еве искрен преглед на нашите мали серии според друг суров мед и стандардни супермаркет опции.',
+      'compare.title': 'Што нè дели од другиот мед',
+      'compare.intro': 'Многу тегли пишуваат „суров“ или „чист“, ама не е сѐ исто. Еве искрено како се разликува нашиот мед од друг суров и од обичниот супермаркет-мед.',
       'compare.col.metche': 'Метче',
       'compare.col.other': 'Друг суров',
       'compare.col.regular': 'Обичен мед',
-      'compare.row.0': 'Заштитно килибарно стакло',
-      'compare.row.1': 'Независно тестиран за чистота',
-      'compare.row.2': 'Сертификат без пестициди',
-      'compare.row.3': '100% следливост до пчеларник',
-      'compare.row.4': 'Етички стандард за пчеларство',
+      'compare.row.0': 'Темно стакло што го чува медот',
+      'compare.row.1': 'Проверен за чистота',
+      'compare.row.2': 'Без остатоци од пестициди',
+      'compare.row.3': 'Се знае од кој пчеларник е',
+      'compare.row.4': 'Пчеларство со грижа за пчелите',
 
-      'taste.title': 'Вкусот на Метче',
-      'taste.intro': 'Мазен и кремав, сличен на богат путерест карамел — уживајте директно од теглата.',
+      'taste.title': 'Каков вкус има Метче',
+      'taste.intro': 'Густ и кремав, како мек карамел: најдобар право од лажица.',
       'taste.caramel.title': 'Карамел',
-      'taste.caramel.desc': 'Богат и печен — доминантна нота на првата лажица.',
+      'taste.caramel.desc': 'Богат, печен вкус: се чувствува уште на првата лажица.',
       'taste.floral.title': 'Цветен',
-      'taste.floral.desc': 'Лесен и свеж — блага слаткост од сезонски ливадски цветови.',
+      'taste.floral.desc': 'Лесен и свеж: блага слаткост од ливадски цветови.',
       'taste.creamy.title': 'Кремав',
-      'taste.creamy.desc': 'Густ, мазен, покрива лажицата — никогаш течен.',
+      'taste.creamy.desc': 'Густ, мазен, ја облекува лажицата, не се истура.',
       'taste.earthy.title': 'Земјен',
-      'taste.earthy.desc': 'Подлабок, основен завршеток — белег на незагреан суров мед.',
+      'taste.earthy.desc': 'Подлабок завршеток: вака се познава незагреаниот мед.',
 
-      'reviews.title': 'Обожаван од 41 верификувани рецензии со 5 ѕвезди',
-      'reviews.0': '„Заменете го секој засладувач во кујната. Разликата ја чувствувате од првиот ден."',
-      'reviews.1': '„Секое утро земам по лажица. Стана незаменливо."',
-      'reviews.2': '„Постабилна енергија, подобар фокус, не очекував мед да биде вака намерен."',
-      'reviews.3': '„Навистина е различен. Покремав, подлабок, вреди секој евро."',
-      'reviews.4': '„Најдобриот мед што го имам пробано. Точка."',
+      'reviews.title': '41 оценки со пет ѕвезди од нашите купувачи',
+      'reviews.0': '„Откако го најдовме Метче, шеќерот речиси не го користиме. Разликата ја чувствуваш уште од првата лажица.“',
+      'reviews.1': '„Секое утро по една лажичка. Стана навика во куќата, како лебот.“',
+      'reviews.2': '„Преку ден имам порамномерна енергија, без оној пад попладне. Не мислев дека медот може вака да ми легне.“',
+      'reviews.3': '„Друг мед е ова. Покремав, побогат, вреди секој денар.“',
+      'reviews.4': '„Најдобриот македонски мед што сум пробала. Точка.“',
+      'reviews.0.cite': 'Ана од Скопје',
+      'reviews.1.cite': 'Марија од Битола',
+      'reviews.2.cite': 'Горан од Куманово',
+      'reviews.3.cite': 'Весна од Охрид',
+      'reviews.4.cite': 'Зорана од Штип',
 
-      'beekeeper.intro': 'Нашите пчелари го следат <em>Уметноста на нежното берење</em> — традиција што ја става здравјето на пчелите и биоразновидноста пред количината.',
-      'beekeeper.name': 'Запознајте го Томас',
-      'beekeeper.text': 'Томас е еден од основачките мајстор-пчелари на Метче, од далечните планински долини каде се раѓа нашиот Резервен микс.',
-      'beekeeper.quote': '„Она што го прави пчеларството посебно е што не произведува само мед — го одржува целиот пејзаж околу нас."',
-      'beekeeper.sig': 'Мајстор-пчелар, Метче',
+      'beekeeper.intro': 'Нашите пчелари работат по старо, со <em>нежно берење</em>: прво здравјето на пчелите и ливадата, па дури потоа количината.',
+      'beekeeper.name': 'Запознајте го Јовица',
+      'beekeeper.text': 'Јовица е еден од првите пчелари со кои работиме. Роден е во Неготино, а неговите пчеларници се на падините на Серта, каде се раѓа нашиот Цветен букет.',
+      'beekeeper.quote': '„Пчеларството не е само мед. Ако ги чуваш пчелите како што треба, ја чуваш и целата околина.“',
+      'beekeeper.sig': 'Пчелар, Метче',
       'beekeeper.cta': 'Нашата приказна',
 
-      'blog.title': 'Откријте што го прави суровиот мед различен',
-      'blog.label': 'Дневник за мед',
-      'blog.0.meta': 'Дневник | 12 март 2025',
-      'blog.0.title': 'Суров мед како природен пребиотик: што вели истражувањето',
-      'blog.1.meta': 'Дневник | 8 јануари 2024',
-      'blog.1.title': 'Вашиот прв месец со Метче: што да очекувате',
-      'blog.2.meta': 'Дневник | 3 ноември 2025',
-      'blog.2.title': 'Зошто суровиот мед вкусува побогато: науката зад текстурата',
+      'blog.title': 'Зошто суровиот мед е друг',
+      'blog.label': 'За медот',
+      'blog.page.title': 'За медот',
+      'blog.page.subtitle': 'Кратки текстови за суров мед, секојдневни навики и ливадите зад секоја тегла.',
+      'blog.0.meta': 'Текст | 12 март 2025',
+      'blog.0.title': 'Суров мед и варењето: што кажуваат искуствата',
+      'blog.1.meta': 'Текст | 8 јануари 2024',
+      'blog.1.title': 'Првиот месец со Метче: што да очекувате',
+      'blog.2.meta': 'Текст | 3 ноември 2025',
+      'blog.2.title': 'Зошто суровиот мед е погуст и побогат',
       'blog.readMore': 'Прочитај повеќе',
 
-      'quiz.section.title': 'Ви треба помош при избор?',
-      'quiz.section.desc': 'Одговорете на три прашања — ќе препорачаме производ според профил и големина.',
-      'quiz.section.cta': 'Отвори избор на производ',
-      'quiz.title': 'Избор на производ',
-      'quiz.q1': 'Што е најважно за вас?',
-      'quiz.q1.a': 'Секојдневна нежна употреба',
-      'quiz.q1.b': 'Балансиран, среден интензитет',
-      'quiz.q1.c': 'Длабок, смел вкус',
-      'quiz.q2': 'Кога го користите медот?',
-      'quiz.q2.a': 'Утрински чај или тост',
-      'quiz.q2.b': 'Попладневна енергија',
-      'quiz.q2.c': 'Вечерен одмор',
-      'quiz.q3': 'Каков мед сакате?',
+      'quiz.section.title': 'Не сте сигурни што да изберете?',
+      'quiz.section.desc': 'Три кратки прашања и ќе ви кажеме кој мед ви одговара.',
+      'quiz.section.cta': 'Започни',
+      'quiz.title': 'Помош при избор',
+      'quiz.q1': 'Што ви е најважно?',
+      'quiz.q1.a': 'Мек, секојдневен мед',
+      'quiz.q1.b': 'Среден, балансиран вкус',
+      'quiz.q1.c': 'Силен, подлабок мед',
+      'quiz.q2': 'Кога најчесто го јадете?',
+      'quiz.q2.a': 'Наутро со чај или леб',
+      'quiz.q2.b': 'Попладне за енергија',
+      'quiz.q2.c': 'Навечер, побавно',
+      'quiz.q3': 'Каков мед барате?',
       'quiz.q3.a': 'Лесен и цветен',
-      'quiz.q3.b': 'Кремав и карамел',
-      'quiz.q3.c': 'Темен и сложен',
-      'quiz.result.label': 'Препорачуваме',
+      'quiz.q3.b': 'Кремав и карамелест',
+      'quiz.q3.c': 'Темен и полн',
+      'quiz.result.label': 'Ви го препорачуваме',
       'quiz.progress': '{step} / 3',
-      'quiz.complete': 'Завршено',
+      'quiz.complete': 'Готово',
 
-      'footer.newsletter': 'Добијте ги најновите вести за мед и ексклузивни понуди.',
+      'footer.newsletter': 'Пријавете се за новости, совети за мед и први понуди.',
       'footer.email': 'Е-пошта',
-      'footer.fda': '*Овие тврдења не се оценети од Администрацијата за храна и лекови. Производот не е наменет за дијагностицирање, лечење, излекување или спречување на болести.',
-      'footer.thanks': 'Благодариме — сте на листата.',
+      'footer.fda': '*Овие тврдења не се оценети од Агенцијата за храна и ветеринарство. Производот не е лек и не е наменет за дијагноза, лекување или спречување на болести.',
+      'footer.thanks': 'Благодариме, сте на листата.',
       'footer.shop': 'Купи мед',
-      'footer.learn': 'Дознај',
+      'footer.learn': 'Дознај повеќе',
       'footer.support': 'Поддршка',
-      'footer.social': 'Социјални мрежи',
+      'footer.social': 'Следете не',
       'footer.contact': 'Контакт',
       'footer.returns': 'Враќања и замени',
-      'footer.locator': 'Продавници',
-      'footer.tagline': 'Тивката слаткост зад вашите најстабилни денови.',
+      'footer.locator': 'Каде да најдете',
+      'footer.tagline': 'Природен мед од македонски ливади.',
       'footer.copy': '© Сите права задржани 2026',
       'footer.terms': 'Услови',
       'footer.privacy': 'Приватност',
 
       'cart.title': 'Кошничка',
-      'cart.subtotal': 'Меѓузбир',
-      'cart.checkout': 'Наплата',
-      'cart.empty': 'Вашата кошничка е празна',
+      'cart.subtotal': 'Вкупно',
+      'cart.checkout': 'Нарачај',
+      'cart.empty': 'Кошничката е празна',
       'cart.shipping.remaining': 'Потрошете уште €{amount} за бесплатна достава',
-      'cart.shipping.free': 'Имате право на бесплатна достава!',
+      'cart.shipping.free': 'Имате бесплатна достава!',
       'cart.remove': 'Отстрани',
-      'cart.checkout.alert': 'Ви благодариме за нарачката! Наплатата е демо — поврзете го вашиот платежен систем.',
+      'cart.checkout.alert': 'Ви благодариме за нарачката! Наплатата е демо: поврзете го платежниот систем.',
 
-      'product.reserve-ritual.name': 'Резервен микс, 500г',
-      'product.reserve-ritual.grade': 'Резервен микс',
-      'product.morning-glow.name': 'Ливадски лесен, 340г',
-      'product.morning-glow.grade': 'Ливадски лесен',
-      'product.highland-deep.name': 'Планинско злато, 2×250г',
-      'product.highland-deep.grade': 'Планинско злато',
-      'product.reserve-blend.name': 'Резервен микс, 500г',
-      'product.highland-gold.name': 'Планинско злато, 380г',
-      'product.wildflower-light.name': 'Ливадски лесен, 340г',
-      'product.mega.reserve': 'Резервен микс, 500г',
-      'product.mega.highland': 'Планинско злато, 380г',
+      'product.reserve-ritual.name': 'Цветен букет, 500г',
+      'product.reserve-ritual.grade': 'Цветен букет',
+      'product.morning-glow.name': 'Ливадски мед, 340г',
+      'product.morning-glow.grade': 'Ливадски мед',
+      'product.highland-deep.name': 'Планински мед, 2×250г',
+      'product.highland-deep.grade': 'Планински мед',
+      'product.reserve-blend.name': 'Цветен букет, 500г',
+      'product.highland-gold.name': 'Планински мед, 380г',
+      'product.wildflower-light.name': 'Ливадски мед, 340г',
+      'product.mega.reserve': 'Цветен букет, 500г',
+      'product.mega.highland': 'Планински мед, 380г',
 
-      'quiz.result.wildflower.title': 'Ливадски лесен, 340г',
-      'quiz.result.wildflower.desc': 'Пониска вискозност, благ цветен профил. Суров, ладно флашен.',
-      'quiz.result.reserve.title': 'Резервен микс, 500г',
-      'quiz.result.reserve.desc': 'Мулти-цветна алпска мешавина. Суров, нефилтриран, ладно флашен.',
-      'quiz.result.highland.title': 'Планинско злато, 380г',
-      'quiz.result.highland.desc': 'Планинско единечно потекло. Поголема густина на полен, длабок килибар.',
-      'quiz.result.light.desc': 'Лесни ливадски ноти. Една берба.',
-      'quiz.result.creamy.desc': 'Средна вискозност, мулти-цветен. Никогаш над 40°C.',
-      'quiz.result.bold.desc': 'Планински ливадски мед, длабок килибар. Највисока густина на полен.',
-      'quiz.result.morning.desc': 'Благ цветен профил, пониска вискозност. Суров, ладно флашен.',
-      'quiz.result.afternoon.desc': 'Мулти-цветна мешавина. Шифра на серија, килибарно стакло.',
-      'quiz.result.evening.desc': 'Лесен ливадски мед. Единечно потекло, ладно флашен.',
+      'quiz.result.wildflower.title': 'Ливадски мед, 340г',
+      'quiz.result.wildflower.desc': 'Полесен, благ ливадски вкус. Суров, ладно полнет.',
+      'quiz.result.reserve.title': 'Цветен букет, 500г',
+      'quiz.result.reserve.desc': 'Мешавина од повеќе цветови. Суров, нефилтриран, ладно полнет.',
+      'quiz.result.highland.title': 'Планински мед, 380г',
+      'quiz.result.highland.desc': 'Од планински пасишта. Погуст, подлабока боја.',
+      'quiz.result.light.desc': 'Меки ливадски ноти. Од една берба.',
+      'quiz.result.creamy.desc': 'Средна густина, мешан цветен вкус. Никогаш над 40°C.',
+      'quiz.result.bold.desc': 'Планински мед, длабоко килибарно злато. Најгуст.',
+      'quiz.result.morning.desc': 'Благ ливадски профил. Суров, ладно полнет.',
+      'quiz.result.afternoon.desc': 'Мешавина од повеќе цветови. Со шифра и темно стакло.',
+      'quiz.result.evening.desc': 'Лесен ливадски мед. Од едно место, ладно полнет.',
 
       'aria.openMenu': 'Отвори мени',
       'aria.closeMenu': 'Затвори мени',
       'aria.openCart': 'Отвори кошничка',
       'aria.closeCart': 'Затвори кошничка',
-      'aria.closeQuiz': 'Затвори избор',
+      'aria.closeQuiz': 'Затвори',
       'aria.home': 'Метче почетна',
-      'aria.subscribe': 'Претплати се',
+      'aria.subscribe': 'Пријави се',
       'aria.email': 'Е-пошта',
       'aria.language': 'Јазик',
       'aria.navPrimary': 'Главна навигација',
       'aria.navSecondary': 'Споредна навигација',
-      'alt.hero': 'Пчела на ливадски цвет — берба на суров мед',
-      'alt.beekeeper': 'Пчелар го прегледува рамката од пчеларник',
-      'alt.masterBeekeeper': 'Мајстор-пчелар на терен',
-      'alt.product.reserveRitual': 'Резервен микс, 500г суров мед',
-      'alt.product.morningGlow': 'Ливадски лесен, 340г суров мед',
-      'alt.product.highlandDeep': 'Планинско злато, 2×250г суров мед',
-      'alt.mega.reserve': 'Тегла со Резервен микс суров мед',
-      'alt.mega.highland': 'Тегла со Планинско злато суров мед',
+      'alt.hero': 'Пчела на ливадски цвет: берба на суров мед',
+      'alt.beekeeper': 'Пчелар го прегледува саќето',
+      'alt.masterBeekeeper': 'Пчелар на терен',
+      'alt.product.reserveRitual': 'Цветен букет, 500г суров мед',
+      'alt.product.morningGlow': 'Ливадски мед, 340г суров мед',
+      'alt.product.highlandDeep': 'Планински мед, 2×250г суров мед',
+      'alt.mega.reserve': 'Тегла Цветен букет',
+      'alt.mega.highland': 'Тегла Планински мед',
       'alt.compare.bee': 'Пчела',
-      'alt.compare.honeycomb': 'Сурова саќе',
+      'alt.compare.honeycomb': 'Сурово саќе',
       'alt.compare.wildflowers': 'Ливадски цветови',
-      'alt.blog.0': 'Мед и добросостојба',
+      'alt.blog.0': 'Мед и секојдневие',
       'alt.blog.1': 'Прва тегла мед',
       'alt.blog.2': 'Кремава текстура на мед',
       'social.instagram': 'Инстаграм',
@@ -3644,220 +3786,224 @@ em {
 
   // Contact page translations
   translations.en = Object.assign({}, translations.en, {
-    'contact.hero.title': 'Get in Touch',
-    'contact.hero.sub': "We're here to help. Reach out with questions, feedback, or just to say hello.",
-    'contact.form.title': 'Send us a Message',
-    'contact.form.desc': "We'll get back to you as soon as possible, typically within 24 hours.",
-    'contact.form.name': 'Name',
-    'contact.form.email': 'Email Address',
-    'contact.form.subject': 'Subject',
-    'contact.form.message': 'Message',
-    'contact.form.submit': 'Send Message',
-    'contact.form.success': "Thank you for reaching out. We'll be in touch soon.",
-    'contact.details.title': 'Other Ways to Reach Us',
+    'contact.hero.title': "Contact",
+    'contact.hero.sub': "We are here. Write to us about an order, delivery, or simply to ask something about the honey.",
+    'contact.form.title': "Send Us a Message",
+    'contact.form.desc': "We usually reply the same day, and within 24 hours at the latest.",
+    'contact.form.name': "Full Name",
+    'contact.form.email': "Email",
+    'contact.form.subject': "What Is It About?",
+    'contact.form.message': "Message",
+    'contact.form.submit': "Send",
+    'contact.form.success': "Received. We will get back to you soon.",
+    'contact.details.title': "Other Ways to Contact Us",
     'contact.details.email': 'Email',
     'contact.details.phone': 'Phone',
-    'contact.details.location': 'Location',
-    'contact.details.address': 'Wildflower Valley, Highland Region\nPchinja, North Macedonia',
-    'contact.details.hours': 'Business Hours',
-    'contact.details.schedule': 'Monday – Friday: 9 AM – 6 PM\nSaturday: 10 AM – 4 PM\nSunday: Closed',
-    'contact.faq.title': 'Frequently Asked Questions',
-    'contact.faq.intro': "Find answers to common questions below. If you don't find what you're looking for, feel free to reach out directly.",
-    'contact.faq.q1.question': 'What is the difference between raw and regular honey?',
-    'contact.faq.q1.answer': "Raw honey is unheated and unfiltered, preserving enzymes, pollen, and natural compounds that heating removes. Regular honey is often pasteurized and blended. Metche's raw honey is bottled at the peak of bloom, never heated above 40°C.",
-    'contact.faq.q2.question': 'How should I store Metche honey?',
-    'contact.faq.q2.answer': 'Store in a cool, dark place at room temperature. Honey naturally crystallizes over time — this is a sign of quality and purity. If you prefer a softer texture, gently warm the jar in warm water. Never microwave or heat above 40°C, as this damages the natural compounds.',
-    'contact.faq.q3.question': 'Do you offer international shipping?',
-    'contact.faq.q3.answer': 'Currently, we ship throughout Europe with standard and express options. International orders outside Europe are being evaluated. Contact us for specific shipping inquiries or custom orders.',
-    'contact.faq.q4.question': 'What is your return policy?',
-    'contact.faq.q4.answer': "We stand behind the quality of our honey. If you're not completely satisfied within 30 days of purchase, we offer a full refund or replacement. Unopened jars can be returned for any reason.",
-    'contact.faq.q5.question': 'Is your honey suitable for infants?',
-    'contact.faq.q5.answer': 'Raw honey should not be given to infants under 12 months due to the rare risk of botulism. For children over 12 months and adults, our raw honey is a wonderful addition to their diet.',
-    'contact.faq.q6.question': 'Are your beekeeping practices ethical?',
-    'contact.faq.q6.answer': "Yes. All our honey comes from beekeepers who follow the Art of Gentle Harvesting — prioritizing hive health, bee welfare, and meadow biodiversity over volume. Every batch is 100% traceable to a specific apiary and harvest season.",
-    'aria.contactName': 'Your name',
-    'aria.contactEmail': 'Your email',
-    'aria.contactSubject': 'Message subject',
-    'aria.contactMessage': 'Your message'
+    'contact.details.location': "Where We Are",
+    'contact.details.address': "Kalanjevo, Municipality of Negotino\nTikveš, Macedonia",
+    'contact.details.hours': "Working Hours",
+    'contact.details.schedule': "Monday to Friday: 9:00, 18:00\nSaturday: 10:00, 16:00\nSunday: closed",
+    'contact.faq.title': "Common Questions",
+    'contact.faq.intro': "Here are answers to the questions we are asked most often. If you cannot find what you need, contact us.",
+    'contact.faq.q1.question': "What is the difference between raw and regular honey?",
+    'contact.faq.q1.answer': "Raw honey is not heated or finely filtered, so its enzymes, pollen, and the elements destroyed by heat remain in it. Regular honey is often pasteurised and blended. We jar Metche while the flowers are at their peak and never above 40°C.",
+    'contact.faq.q2.question': "How should I store Metche honey?",
+    'contact.faq.q2.answer': "Keep it in a cool, dark place at room temperature. If it starts to crystallise, that is a sign of genuine raw honey. Place the jar in warm water to soften it. Do not use a microwave or heat it above 40°C.",
+    'contact.faq.q3.question': "Do you deliver across Macedonia and abroad?",
+    'contact.faq.q3.answer': "Yes, we deliver throughout Macedonia. For orders outside the country, write to us and we will explain the available options and delivery times.",
+    'contact.faq.q4.question': "What if I am not satisfied?",
+    'contact.faq.q4.answer': "We stand behind our honey. If you are not satisfied within 30 days, we will refund you or send a new jar. Unopened jars may be returned without question.",
+    'contact.faq.q5.question': "Is it suitable for babies?",
+    'contact.faq.q5.answer': "Raw honey must not be given to children under 12 months. For older children and adults, it can be a good part of the diet when enjoyed in moderation.",
+    'contact.faq.q6.question': "How do you care for the bees?",
+    'contact.faq.q6.answer': "We work only with beekeepers who care for their bees attentively: the hive and the meadow come first, and the harvest quantity comes second. Every batch can be traced to a specific apiary and season.",
+    'aria.contactName': "Your name",
+    'aria.contactEmail': "Your email",
+    'aria.contactSubject': "Message subject",
+    'aria.contactMessage': "Your message",
   });
 
   translations.mk = Object.assign({}, translations.mk, {
     'contact.hero.title': 'Контакт',
-    'contact.hero.sub': 'Тука сме за да помогнеме. Контактирајте не со прашања, повратни информации или само да поздравите.',
-    'contact.form.title': 'Пишете ни порака',
-    'contact.form.desc': 'Ќе ви одговориме што е можно побрзо, обично во рок од 24 часа.',
-    'contact.form.name': 'Име',
+    'contact.hero.sub': 'Тука сме. Пишете ни за нарачка, достава или само да прашате нешто за медот.',
+    'contact.form.title': 'Испратете ни порака',
+    'contact.form.desc': 'Обично одговараме истиот ден, најдоцна за 24 часа.',
+    'contact.form.name': 'Име и презиме',
     'contact.form.email': 'Е-пошта',
-    'contact.form.subject': 'Наслов',
+    'contact.form.subject': 'За што станува збор',
     'contact.form.message': 'Порака',
-    'contact.form.submit': 'Испрати порака',
-    'contact.form.success': 'Ви благодариме што не контактиравте. Ќе ве известиме наскоро.',
-    'contact.details.title': 'Други начини да не контактирате',
+    'contact.form.submit': 'Испрати',
+    'contact.form.success': 'Примено. Ќе ви се јавиме наскоро.',
+    'contact.details.title': 'Други начини за контакт',
     'contact.details.email': 'Е-пошта',
     'contact.details.phone': 'Телефон',
-    'contact.details.location': 'Локација',
-    'contact.details.address': 'Долина на ливади, Планински регион\nПчinja, Северна Македонија',
+    'contact.details.location': 'Каде сме',
+    'contact.details.address': 'Калањево, Општина Неготино\nТиквеш, Македонија',
     'contact.details.hours': 'Работно време',
-    'contact.details.schedule': 'Понеделник – Петок: 9:00 – 18:00\nСабота: 10:00 – 16:00\nНедела: Затворено',
-    'contact.faq.title': 'Најчесто поставувани прашања',
-    'contact.faq.intro': 'Најдете одговори на чести прашања подолу. Ако не најдете што барате, слободно контактирајте не директно.',
-    'contact.faq.q1.question': 'Кое е разликата помеѓу суров и обичен мед?',
-    'contact.faq.q1.answer': 'Суровиот мед не е загреан и не е филтриран, го зачувува ензимите, поленот и природните соединенија што грењето ги отстранува. Обичниот мед често е пастеризиран и мешан. Метче-ов мед се флашува на врвот на цветот, никогаш над 40°C.',
-    'contact.faq.q2.question': 'Како треба да го чувам Метче медот?',
-    'contact.faq.q2.answer': 'Чувајте на ладно, темно место на собна температура. Медот природно кристализира со тек на време — тоа е знак за квалитет и чистота. Ако сакате порамна текстура, нежно загрејте ја теглата во топла вода. Никогаш не користете микробранова или загревање над 40°C.',
-    'contact.faq.q3.question': 'Дали нудите меѓународна достава?',
-    'contact.faq.q3.answer': 'Во моментов испраќаме низ цела Европа со стандардни и експрес опции. Меѓународни нарачки надвор од Европа се разгледуваат. Контактирајте не за специфични прашања за достава или нарачки по нарачка.',
-    'contact.faq.q4.question': 'Која е вашата политика за враќање?',
-    'contact.faq.q4.answer': 'Го поддржуваме квалитетот на нашиот мед. Ако не сте целосно задоволни во рок од 30 дена од купувањето, нудиме целосно враќање на средствата или замена. Ненадворени тегли може да се вратат од било кој причина.',
-    'contact.faq.q5.question': 'Дали вашиот мед е погоден за бебиња?',
-    'contact.faq.q5.answer': 'Суровиот мед не треба да се дава на бебиња под 12 месеци поради редок ризик од ботулизам. За деца над 12 месеци и возрасни, нашиот суров мед е одличен додаток во исхраната.',
-    'contact.faq.q6.question': 'Дали вашите практики на пчеларство се етички?',
-    'contact.faq.q6.answer': 'Да. Сите наши медови доаѓаат од пчелари кои ги следат Уметноста на нежното берење — приоритизирајќи го здравјето на пчелите, благосостојбата на пчелите и биоразновидноста на ливадите пред количината. Секоја серија е 100% следлива до одреден пчеларник и сезона на берење.',
+    'contact.details.schedule': 'Понеделник до петок: 9:00, 18:00\nСабота: 10:00, 16:00\nНедела: затворено',
+    'contact.faq.title': 'Најчести прашања',
+    'contact.faq.intro': 'Еве одговори на тоа што најчесто нè прашуваат. Ако не најдете што барате, јавете ни се.',
+    'contact.faq.q1.question': 'Која е разликата меѓу суров и обичен мед?',
+    'contact.faq.q1.answer': 'Суровиот мед не се загрева и не се фино цеди, па во него остануваат ензимите, поленот и она што греењето го уништува. Обичниот мед често е пастеризиран и мешан. Метче го полниме додека цветот е најсилен и никогаш над 40°C.',
+    'contact.faq.q2.question': 'Како да го чувам медот од Метче?',
+    'contact.faq.q2.answer': 'На ладно и темно место, на собна температура. Ако почне да се стврднува, тоа е знак дека е вистински суров мед. Ставете ја теглата во топла вода да омекне. Не користете микробранова и не го грејте над 40°C.',
+    'contact.faq.q3.question': 'Дали испраќате низ Македонија и на странство?',
+    'contact.faq.q3.answer': 'Да, доставуваме низ цела Македонија. За нарачки надвор од земјава пишете ни, ќе ви кажеме опции и рокови.',
+    'contact.faq.q4.question': 'Што ако не сум задоволен?',
+    'contact.faq.q4.answer': 'Стоиме зад медот. Ако во рок од 30 дена не сте задоволни, враќаме пари или праќаме нова тегла. Неотворени тегли може да се вратат без прашање.',
+    'contact.faq.q5.question': 'Дали смее за бебиња?',
+    'contact.faq.q5.answer': 'Суров мед не се дава на деца под 12 месеци. За постари деца и возрасни е добар дел од исхраната, во умерени количини.',
+    'contact.faq.q6.question': 'Како ги чувате пчелите?',
+    'contact.faq.q6.answer': 'Работиме само со пчелари што ги чуваат пчелите внимателно: прво кошницата и ливадата, па количината. Секоја серија може да се следи до конкретен пчеларник и сезона.',
     'aria.contactName': 'Вашето име',
     'aria.contactEmail': 'Вашата е-пошта',
     'aria.contactSubject': 'Наслов на пораката',
     'aria.contactMessage': 'Вашата порака'
   });
     translations.mk = Object.assign({}, translations.mk, {
-      'products.page.title': 'Сите производи',
-      'products.page.subtitle': 'Откријте ја нашата цела колекција на суров мед. Секоја тегла ја раскажува приказната за една жетва, една ливада и пчеларот кој неа ја негуваше со внимание.',
+      'products.page.title': 'Нашиот мед',
+      'products.page.subtitle': 'Целиот асортиман суров мед. Секоја тегла е од една берба, една ливада и еден пчелар.',
 
-      'cta.title': 'Подготвени да ја најдете вашата совршена тегла?',
-      'cta.desc': 'Направете го нашиот квиз „Селектор на производи“ — одговорете на три прашања и ќе ви препорачаме идеален мед.',
-      'cta.button': 'Отвори селектор на производи',
+      'cta.title': 'Не знаете кој мед да земете?',
+      'cta.desc': 'Три кратки прашања и ќе ви препорачаме мед според вашиот вкус.',
+      'cta.button': 'Започни',
 
-      'why.title': 'Зошто да го изберете Метче',
-      'why.traceable.title': '100% Следлив',
-      'why.traceable.desc': 'Секоја тегла е поврзана со конкретна жетва, ливада и пчелар. Скенирајте го кодот на серијата за да ја дознаете приказната.',
-      'why.unfiltered.title': 'Нефилтриран и суров',
-      'why.unfiltered.desc': 'Не е загреан над 40°C. Сите ензими, полен и природни соединенија остануваат непроменети.',
-      'why.ethical.title': 'Етичко берење',
-      'why.ethical.desc': 'Нашите пчелари ја практикуваат Уметноста на нежното берење, давајќи приоритет на здравјето на кошниците и биоразновидноста на ливадите.',
-      'why.tested.title': 'Трето-страно тестирање',
-      'why.tested.desc': 'Сертифицирано без остатоци од пестициди и тестиран за чистота. Секоја серија ги исполнува нашите строги стандарди.',
-      'product.wildflower.desc': 'Пониска вискозност, лесни цветни ноти. Студено полнење, единична жетвена серија.',
-      'product.highland.desc': 'Високопланински мед од диви цветови. Поголема густина на полен, длабок амбер профил.',
-      'product.reserve.desc': 'Мешавина од алпски мултифлора. Амбер шише, кодирана серија, никогаш загреан над 40°C.'
+      'why.title': 'Зошто токму Метче',
+      'why.traceable.title': 'Се знае од каде е',
+      'why.traceable.desc': 'Секоја тегла има шифра. Може да видите која берба, која ливада и кој пчелар стои зад неа.',
+      'why.unfiltered.title': 'Суров и нефилтриран',
+      'why.unfiltered.desc': 'Не се загрева над 40°C. Ензимите, поленот и природните материи остануваат во теглата.',
+      'why.ethical.title': 'Чесно пчеларство',
+      'why.ethical.desc': 'Прво здравјето на пчелите и ливадата, па дури потоа количината што ќе се набере.',
+      'why.tested.title': 'Проверен квалитет',
+      'why.tested.desc': 'Без остатоци од пестициди и проверен за чистота. Секоја серија минува низ истите правила.',
+      'product.wildflower.desc': 'Полесен, со меки ливадски ноти. Ладно полнет, од една берба.',
+      'product.highland.desc': 'Мед од високи пасишта. Погуст, подлабока боја.',
+      'product.reserve.desc': 'Мешавина од повеќе цветови. Темно стакло, шифра на серија, никогаш над 40°C.'
     });
 
     translations.en = Object.assign({}, translations.en, {
-      'products.page.title': 'All Products',
-      'products.page.subtitle': 'Discover our complete collection of raw honey. Each jar tells the story of a single harvest, a specific meadow, and the beekeeper who tended it with care.',
+      'products.page.title': "Our Honey",
+      'products.page.subtitle': "Our full range of raw honey. Every jar comes from one harvest, one meadow, and one beekeeper.",
 
-      'cta.title': 'Ready to find your perfect jar?',
-      'cta.desc': "Take our Product Selector quiz — answer three questions and we'll recommend the ideal honey for you.",
-      'cta.button': 'Open Product Selector',
+      'cta.title': "Not Sure Which Honey to Choose?",
+      'cta.desc': "Answer three short questions and we will recommend a honey based on your taste.",
+      'cta.button': "Start",
 
-      'why.title': 'Why Choose Metche',
-      'why.traceable.title': '100% Traceable',
-      'why.traceable.desc': 'Every jar is linked to a specific harvest, meadow, and beekeeper. Scan the batch code to learn the story.',
-      'why.unfiltered.title': 'Unfiltered & Raw',
-      'why.unfiltered.desc': 'Never heated above 40°C. All the enzymes, pollen, and natural compounds remain intact.',
-      'why.ethical.title': 'Ethically Harvested',
-      'why.ethical.desc': 'Our beekeepers follow the Art of Gentle Harvesting, prioritizing hive health and meadow biodiversity.',
-      'why.tested.title': 'Third-Party Tested',
-      'why.tested.desc': 'Certified pesticide residue-free and tested for purity. Every batch meets our rigorous standards.',
-      'product.wildflower.desc': 'Lower viscosity, light wildflower notes. Cold-bottled, single-harvest batch.',
-      'product.highland.desc': 'High-altitude wildflower honey. Higher pollen density, deep amber profile.',
-      'product.reserve.desc': 'Multi-floral alpine blend. Amber glass, batch-coded, never heated above 40°C.'
+      'why.title': "Why Metche",
+      'why.traceable.title': "You Know Where It Comes From",
+      'why.traceable.desc': "Every jar has a code. You can see the harvest, meadow, and beekeeper behind it.",
+      'why.unfiltered.title': "Raw and Unfiltered",
+      'why.unfiltered.desc': "It is never heated above 40°C. The enzymes, pollen, and natural elements stay in the jar.",
+      'why.ethical.title': "Honest Beekeeping",
+      'why.ethical.desc': "The health of the bees and the meadow comes first, and only then the amount harvested.",
+      'why.tested.title': "Tested Quality",
+      'why.tested.desc': "Free from pesticide residue and tested for purity. Every batch follows the same rules.",
+      'product.wildflower.desc': "Lighter, with soft meadow notes. Cold-filled from one harvest.",
+      'product.highland.desc': "Honey from high pastures. Thicker, with a deeper colour.",
+      'product.reserve.desc': "A blend of several flowers. Dark glass, batch code, never above 40°C.",
   });
 
   translations.en = Object.assign({}, translations.en, {
-      'article.back': 'Back to the Honey Journal',
-      'article.share': 'Share this article',
-      'cta.title': 'Ready to find your perfect jar?',
-      'cta.desc': "Take our Product Selector quiz — answer three questions and we'll recommend the ideal honey for you.",
-      'cta.button': 'Open Product Selector',
-      'related.heading': 'Mentioned in this article',
-      'article.readtime': '{min} min read',
-      'post.prebiotic.quote': "The benefits aren't in the sugar — they're in what survives it.",
-      'post.firstmonth.quote': 'The habit matters more than the amount.',
-      'post.texture.quote': "Crystallization isn't a flaw. It's proof nothing was taken out.",
+      'article.back': "Back to the Articles",
+      'article.share': "Share the Article",
+      'cta.title': "Not Sure Which Honey to Choose?",
+      'cta.desc': "Answer three short questions and we will recommend a honey based on your taste.",
+      'cta.button': "Start",
+      'related.heading': "Mentioned in the Article",
+      'related.blogs.label': "Read More",
+      'related.blogs.title': "More Articles About Honey",
+      'article.readtime': "{min} min read",
+      'post.prebiotic.quote': "The benefit is not in the sugar, but in what remains alive in the honey.",
+      'post.firstmonth.quote': "The habit matters more than the amount.",
+      'post.texture.quote': "Crystallisation is not a flaw. It is proof that nothing has been removed.",
 
-      'post.prebiotic.meta': 'Journal | March 12, 2025',
-      'post.prebiotic.title': 'Raw Honey as a Natural Prebiotic: What the Research Says',
-      'post.prebiotic.subtitle': 'How unheated honey feeds the good bacteria already living in your gut.',
-      'post.prebiotic.h1': 'Not All Sweeteners Are Created Equal',
-      'post.prebiotic.p1': "Most sweeteners pass through the digestive system without doing much beyond raising blood sugar. Raw honey behaves differently. Because it's never heated above 40°C, it retains a range of natural oligosaccharides — short chains of sugar molecules that resist digestion in the small intestine and travel further down to the colon, where beneficial bacteria can use them as fuel.",
-      'post.prebiotic.h2': 'What the Research Actually Shows',
-      'post.prebiotic.p2': "Several small clinical studies have looked at raw honey's effect on gut flora, and the pattern that keeps showing up is an increase in Bifidobacteria and Lactobacillus populations — two of the bacterial families most associated with digestive comfort and immune balance. The effect isn't dramatic overnight; it's closer to a gradual shift that builds with consistent use over several weeks.",
-      'post.prebiotic.h3': 'Why Heat and Filtering Change Everything',
-      'post.prebiotic.p3': "Commercial processing was designed to extend shelf life and improve clarity, not to protect nutritional content. Pasteurization at high temperatures denatures the enzymes honey naturally carries, and fine filtration strips out pollen and some of the oligosaccharide structures that make raw honey prebiotic in the first place. What's left still tastes sweet, but it behaves in the body more like table sugar.",
-      'post.prebiotic.h4': 'Adding It to Your Routine',
-      'post.prebiotic.p4': 'A teaspoon stirred into warm (not boiling) tea, spread over yogurt, or eaten straight off the spoon each morning is enough to introduce these compounds consistently. Because the benefits build over time, the habit matters more than the amount — a small daily dose outperforms an occasional large one.',
+      'post.prebiotic.meta': "Article | March 12, 2025",
+      'post.prebiotic.title': "Raw Honey and Digestion: What People Experience",
+      'post.prebiotic.subtitle': "What unheated honey contains, how it behaves during digestion, and why regular, moderate use matters.",
+      'post.prebiotic.h1': "Not All Sweeteners Behave the Same",
+      'post.prebiotic.p1': "Not all sweeteners behave in the same way. Refined sugar is broken down quickly and mainly serves as a source of energy. Alongside its natural sugars, raw honey contains small amounts of enzymes, pollen, and oligosaccharides. Some of these complex sugars are not fully broken down in the small intestine, so they reach the large intestine, where they may serve as food for beneficial bacteria. This does not make honey a medicine, but it helps explain why high-quality, minimally processed honey is not the same as ordinary white sugar.",
+      'post.prebiotic.h2': "What Is Most Often Observed",
+      'post.prebiotic.p2': "Some laboratory studies and smaller clinical studies suggest that certain components in honey may support the growth of bacteria commonly associated with a balanced gut microbiome. However, results are not the same for everyone, and no one should expect a change overnight. Your overall diet, fibre intake, movement, and sleep play a much larger role. Honey can only be a small, enjoyable part of that everyday care, not a replacement for a varied diet or medical advice.",
+      'post.prebiotic.h3': "Why Heating and Filtering Change Everything",
+      'post.prebiotic.p3': "Strong heating makes honey easier to jar and helps it remain clear and liquid for longer, but high temperatures may reduce some of its natural enzyme activity. Very fine filtration removes pollen and the tiny particles that tell the story of the plants and place the honey came from. This is why we jar <a href=\"../products/all.html\">our raw and unfiltered honey</a> with as little processing as possible and without heating it above 40°C. If it becomes cloudy or crystallises over time, that is natural behaviour, not a defect.",
+      'post.prebiotic.h4': "How to Make It Part of Your Day",
+      'post.prebiotic.p4': "The easiest approach is to add honey to something you already do every day: one teaspoon in warm tea, over yoghurt or oats, or on a slice of bread. Do not add it to a boiling drink if you want to preserve its natural aroma and delicate components. Although it is natural, honey is still rich in sugars, so moderation matters. A small, regular habit is more important than a large amount every now and then. Our <a href=\"./first-month-with-metche.html\">guide to your first month with Metche</a> offers a simple way to begin.",
 
-      'post.firstmonth.meta': 'Journal | January 8, 2024',
-      'post.firstmonth.title': 'Your First Month with Metche: What to Expect',
-      'post.firstmonth.subtitle': 'A week-by-week guide to settling into a daily honey ritual.',
-      'post.firstmonth.h1': 'Week One — Getting Used to the Taste',
-      'post.firstmonth.p1': 'Raw honey tastes different from what most people grew up with. It\'s less uniformly sweet and more layered — floral on the first spoon, then a deeper caramel or earthy note by the finish. Give your palate a few days to adjust; most customers say the "aha" moment happens somewhere around day four or five.',
-      'post.firstmonth.h2': 'Week Two — Building the Habit',
-      'post.firstmonth.p2': 'This is when a fixed daily moment helps most: a spoonful in your morning tea, over breakfast, or straight from the jar before bed. Attaching it to something you already do daily is the easiest way to make it stick without relying on memory alone.',
-      'post.firstmonth.h3': 'Weeks Three and Four — Noticing the Difference',
-      'post.firstmonth.p3': "By this point, many people report steadier energy through the afternoon and less of the crash that comes with refined sugar. These are subjective, individual observations rather than guarantees, but they're the most common pattern we hear about in customer feedback.",
-      'post.firstmonth.h4': 'Storing Your Jar for the Long Run',
-      'post.firstmonth.p4': "Keep the jar in a cool, dark cupboard rather than the fridge. Crystallization is a normal, expected sign of raw, unfiltered honey — not spoilage. If you prefer it smooth, sit the closed jar in a bowl of warm water for a few minutes; never microwave it, as heat destroys the enzymes you're trying to preserve.",
+      'post.firstmonth.meta': "Article | January 8, 2024",
+      'post.firstmonth.title': "Your First Month with Metche: What to Expect",
+      'post.firstmonth.subtitle': "A practical week-by-week guide to the taste, everyday use, and proper storage of honey.",
+      'post.firstmonth.h1': "Week One: Getting Used to the Taste",
+      'post.firstmonth.p1': "Your first spoonful of raw honey may surprise you. The taste is not uniformly sweet like many industrial blends: floral notes come first, followed by a deeper, warm aroma, while the finish depends on the harvest and the plants around Kalanjevo. Read <a href=\"./why-honey-tastes-richer.html\">why raw honey is thicker and richer</a>, and give your palate time to recognise the difference. During the first week, try it on its own, on bread, and in warm tea. That is the easiest way to discover how you enjoy it most.",
+      'post.firstmonth.h2': "Week Two: The Habit Takes Hold",
+      'post.firstmonth.p2': "You do not need a strict schedule in the second week. It is enough to connect honey with a habit you already have: a spoonful in your morning tea, a thin layer on bread and butter, or a little honey with yoghurt. Choose a jar from <a href=\"../products/all.html\">our raw honey range</a> according to the taste you prefer, and keep it somewhere you will notice easily. When honey becomes part of a familiar meal, the habit forms naturally and does not depend on reminders.",
+      'post.firstmonth.h3': "Weeks Three and Four: What Customers Tell Us",
+      'post.firstmonth.p3': "By the third or fourth week, you will already know which amount and way of using honey suit you. Some customers tell us that they have found it easier to replace refined sugar in their tea or breakfast and that they prefer the gentler sweetness. Others notice the biggest difference in the taste and how satisfied they feel after a meal. These are personal experiences, not a promise that everyone will feel the same way. The best sign that the habit suits you is that it fits easily into your day and that you enjoy it without overdoing it.",
+      'post.firstmonth.h4': "How to Store the Jar",
+      'post.firstmonth.p4': "Keep the jar tightly closed in a dry, dark place at room temperature. Refrigeration is not necessary and may only speed up crystallisation. If the honey becomes cloudy or crystallises, that does not mean it has spoiled; crystallisation is natural in raw honey. To soften it again, place the closed jar in a bowl of warm, but not boiling, water and wait a few minutes. Do not use a microwave or heat it directly, because strong heat changes the aroma, texture, and some of its natural properties.",
 
-      'post.texture.meta': 'Journal | November 3, 2025',
-      'post.texture.title': 'Why Raw Honey Tastes Richer: The Science Behind the Texture',
-      'post.texture.subtitle': "The chemistry behind that thick, spoon-coating texture — and why supermarket honey can't compete.",
-      'post.texture.h1': "Crystallization Isn't a Flaw",
-      'post.texture.p1': "When raw honey turns cloudy and firm in the jar, that's glucose naturally separating from water and forming crystals — a sign the honey hasn't been over-processed. Ultra-filtered honey stays clear indefinitely because that natural structure has been stripped out along with much of its flavor complexity.",
-      'post.texture.h2': 'Water Content and Viscosity',
-      'post.texture.p2': "Honey harvested too early, before bees have fully dehydrated the nectar in the hive, carries more water and pours thin. Properly ripened honey sits closer to 17–18% moisture, which is what gives it that slow, spoon-coating drip rather than a watery run.",
-      'post.texture.h3': 'Pollen, Enzymes, and Flavor Complexity',
-      'post.texture.p3': 'Unfiltered honey carries trace pollen, enzymes, and micro-particles from the flowers it came from, and these are what give each batch its specific character — buttery caramel from one meadow, brighter and more floral from another. Filtration designed to make honey look uniform on a shelf removes exactly what makes each batch unique.',
-      'post.texture.h4': 'How Processing Strips It Away',
-      'post.texture.p4': 'Fine filtration and high-heat pasteurization are built for consistency and shelf stability, not flavor. The result is honey that looks identical jar to jar but has lost the texture, aroma, and depth that come from minimal intervention. Raw honey, left closer to its natural state, keeps all of it intact.'
+      'post.texture.meta': "Article | November 3, 2025",
+      'post.texture.title': "Why Raw Honey Is Thicker and Richer",
+      'post.texture.subtitle': "Where its thickness, crystallisation, and rich taste come from, and why supermarket honey often looks different.",
+      'post.texture.h1': "Crystallisation Is Not a Flaw",
+      'post.texture.p1': "When honey becomes paler, turns cloudy, or begins to set, nothing unusual is happening inside the jar. Glucose naturally separates from water and forms small crystals, while the speed of the process depends on the floral origin, temperature, and balance of natural sugars. This is common in <a href=\"../products/all.html\">our raw and unfiltered honey</a> and does not mean it has spoiled. In fact, honey that has not been strongly heated or overly filtered often shows this natural change more readily.",
+      'post.texture.h2': "Water and Thickness",
+      'post.texture.p2': "Bees bring in nectar that contains a great deal of water, then gradually dry it in the honeycomb until it ripens. If honey is removed too early, it contains more moisture, is runnier, and ferments more easily. Well-ripened honey usually contains around 17 to 18 percent moisture, although the exact amount depends on the harvest. That is why mature honey flows slowly, stays on the spoon, and creates a full, creamy texture in the mouth. Its thickness is not a packaging trick, but the result of the time the bees spent finishing the honey in the hive.",
+      'post.texture.h3': "Pollen, Enzymes, and Character",
+      'post.texture.p3': "Unfiltered honey contains small amounts of pollen, natural enzymes, and tiny particles from the plants visited by the bees. They do not make the honey dirty; they are part of its origin and help each harvest develop a recognisable aroma, colour, and taste. Around Kalanjevo, on the slopes of Serta, the floral composition changes with the season, so one jar may be lighter and gentler while another is darker and deeper. <a href=\"../products/all.html\">Compare the Metche jars</a> and choose a meadow, mountain, or mixed-flower taste.",
+      'post.texture.h4': "What Strong Processing Removes",
+      'post.texture.p4': "Fine filtration and high-temperature heating help honey remain clear, liquid, and visually identical from jar to jar for a long time. That appearance is practical for large shops, but processing may remove some of the natural aroma, enzyme activity, and character of a particular harvest. Our aim is not for every jar to look exactly the same, but to keep as much as possible of the honey that came from the comb. That is why we accept differences in colour, thickness, and crystallisation as nature’s signature, not a mistake.",
   });
 
   translations.mk = Object.assign({}, translations.mk, {
-      'article.back': 'Назад кон Honey Journal',
-      'cta.title': 'Подготвени сте да ја најдете вашата идеална тегличка?',
-      'cta.desc': 'Одговорете на три прашања во нашиот избирач на производи и ќе ви препорачаме мед според вашиот вкус.',
-      'cta.button': 'Отвори го избирачот',
-      'related.heading': 'Спомнато во оваа статија',
+      'article.back': 'Назад кон текстовите',
+      'cta.title': 'Не знаете кој мед да земете?',
+      'cta.desc': 'Три кратки прашања и ќе ви препорачаме мед според вашиот вкус.',
+      'cta.button': 'Започни',
+      'related.heading': 'Споменато во текстот',
+      'related.blogs.label': 'Прочитајте повеќе',
+      'related.blogs.title': 'Уште текстови за медот',
       'article.readtime': '{min} мин читање',
-      'post.prebiotic.quote': 'Придобивките не се во шеќерот — тие се во она што опстојува покрај него.',
+      'post.prebiotic.quote': 'Придобивката не е во шеќерот, туку во она што останува живо во медот.',
       'post.firstmonth.quote': 'Навиката е поважна од количината.',
-      'post.texture.quote': 'Кристализацијата не е недостаток. Таа е доказ дека ништо не е отстрането.',
-      'article.share': 'Сподели ја оваа статија',
+      'post.texture.quote': 'Стврднувањето не е мана. Тоа е доказ дека ништо не е извадено.',
+      'article.share': 'Сподели го текстот',
 
-      'post.prebiotic.meta': 'Журнал | 12 март 2025',
-      'post.prebiotic.title': 'Суровиот мед како природен пребиотик: Што покажува науката',
-      'post.prebiotic.subtitle': 'Како нетопениот мед ги храни добрите бактерии што веќе живеат во вашето црево.',
-      'post.prebiotic.h1': 'Не сите засладувачи се исти',
-      'post.prebiotic.p1': 'Повеќето засладувачи само го поминуваат телото без некаков поголем ефект, освен што го кренуваат шеќерот во крвта. Суровиот мед се однесува поинаку. Бидејќи никогаш не се загрева над 40°C, тој ги задржува природните олигосахариди — кратки синџири на шеќерни молекули кои не се разградуваат целосно во тенкото црево, туку стигнуваат до дебелото црево каде добрите бактерии ги користат како храна.',
-      'post.prebiotic.h2': 'Што всушност покажуваат истражувањата',
-      'post.prebiotic.p2': 'Неколку помали клинички студии го испитувале ефектот на суровиот мед врз цревната флора, и она што најчесто се повторува е зголемување на бактериите Bifidobacteria и Lactobacillus — две групи најповрзани со добра пробава и стабилен имунитет. Ефектот не е драматичен преку ноќ, туку постепен и се гради со редовна употреба низ неколку недели.',
-      'post.prebiotic.h3': 'Зошто топлината и филтрирањето менуваат сè',
-      'post.prebiotic.p3': 'Индустриската обработка е направена да го продолжи рокот на траење и да го направи медот попроѕирен, а не да ги зачува неговите својства. Пастеризацијата на висока температура ги уништува ензимите што медот природно ги носи, а финото филтрирање го отстранува поленот и дел од олигосахаридите поради кои суровиот мед е пребиотик. Она што останува сè уште е слатко, но во телото се однесува повеќе како обичен шеќер.',
-      'post.prebiotic.h4': 'Како да го вклучите во секојдневието',
-      'post.prebiotic.p4': 'Една лажичка во млак (не вриел) чај, врз јогурт, или директно од лажичка секое утро е доволно за постојано внесување на овие состојки. Бидејќи придобивките се градат со текот на времето, навиката е поважна од количината — мала дневна доза дава подобри резултати од поголема, но повремена.',
+      'post.prebiotic.meta': 'Текст | 12 март 2025',
+      'post.prebiotic.title': 'Суров мед и варењето: што кажуваат искуствата',
+      'post.prebiotic.subtitle': 'Што содржи незагреаниот мед, како се однесува во варењето и зошто е важна редовната, умерена употреба.',
+      'post.prebiotic.h1': 'Не се исти сите засладувачи',
+      'post.prebiotic.p1': 'Не се однесуваат сите засладувачи исто. Рафинираниот шеќер брзо се разградува и главно служи како извор на енергија. Суровиот мед, покрај природните шеќери, содржи и мали количества ензими, полен и олигосахариди. Дел од овие сложени шеќери не се разградува целосно во тенкото црево, па стигнува до дебелото црево, каде што може да послужи како храна за корисните бактерии. Тоа не го прави медот лек, но објаснува зошто квалитетниот, минимално обработен мед не е исто што и обичниот бел шеќер.',
+      'post.prebiotic.h2': 'Што најчесто се забележува',
+      'post.prebiotic.p2': 'Некои лабораториски и помали клинички истражувања покажуваат дека одредени состојки во медот можат да го поддржат растот на бактерии што вообичаено се поврзуваат со урамнотежена цревна микрофлора. Сепак, резултатите не се исти кај секој човек и не треба да се очекува промена преку ноќ. Исхраната во целина, внесот на растителни влакна, движењето и сонот имаат многу поголема улога. Медот може да биде само мал, пријатен дел од таа секојдневна грижа, а не замена за разновидна исхрана или лекарски совет.',
+      'post.prebiotic.h3': 'Зошто греењето и цедењето менуваат сѐ',
+      'post.prebiotic.p3': "При силно загревање медот станува полесен за полнење и подолго останува течен и бистар, но високата температура може да намали дел од природната ензимска активност. Со многу фино филтрирање се отстрануваат поленот и ситните честички што зборуваат за растенијата и местото од каде што потекнува медот. Затоа <a href=\"../products/all.html\">нашиот суров и нефилтриран мед</a> го полниме со што помалку обработка и без загревање над 40°C. Ако со време се замати или кристализира, тоа е природно однесување, а не недостаток.",
+      'post.prebiotic.h4': 'Како да го вметнете во денот',
+      'post.prebiotic.p4': "Најлесно е медот да го вклучите во нешто што веќе го правите секој ден: една лажичка во млак чај, врз кисело млеко, овес или парче леб. Не ставајте го во зовриен напиток ако сакате да ја зачувате неговата природна арома и деликатните состојки. Иако е природен, медот сè уште е богат со шеќери, па умереноста е важна. Поважна е редовната мала навика отколку голема количина одвреме-навреме. Нашиот <a href=\"./first-month-with-metche.html\">водич за првиот месец со Метче</a> нуди едноставен начин да почнете.",
 
-      'post.firstmonth.meta': 'Журнал | 8 јануари 2024',
-      'post.firstmonth.title': 'Вашиот прв месец со Metche: Што да очекувате',
-      'post.firstmonth.subtitle': 'Водич недела по недела за навикнување на секојдневен ритуал со мед.',
-      'post.firstmonth.h1': 'Прва недела — навикнување на вкусот',
-      'post.firstmonth.p1': 'Суровиот мед има поинаков вкус од оној на кој повеќето луѓе се навикнати. Не е рамномерно сладок, туку слоевит — цветен на првата лажичка, а потоа со подлабока карамел или земјена нота на крајот. Дајте му на непцето неколку дена да се прилагоди; кај повеќето купувачи моментот кога „штиклира" доаѓа околу четвртиот или петтиот ден.',
-      'post.firstmonth.h2': 'Втора недела — градење навика',
-      'post.firstmonth.p2': 'Овде најмногу помага фиксен дневен момент: лажичка во утринскиот чај, врз појадокот, или директно од тегличката пред спиење. Кога ќе го врзете за нешто што веќе го правите секој ден, тоа е најлесниот начин да остане навика без да зависи само од сеќавањето.',
-      'post.firstmonth.h3': 'Трета и четврта недела — забележување разлика',
-      'post.firstmonth.p3': 'До овој момент, многу луѓе пријавуваат постабилна енергија во текот на попладнето и помал пад каков што доаѓа со рафинираниот шеќер. Ова се индивидуални набљудувања, а не гаранции, но токму тоа е шемата што најчесто ја слушаме од нашите купувачи.',
-      'post.firstmonth.h4': 'Чување на тегличката подолгорочно',
-      'post.firstmonth.p4': 'Чувајте ја тегличката на ладно и темно место, а не во фрижидер. Кристализацијата е нормален и очекуван знак дека медот е суров и нефилтриран — не дека е расипан. Ако го сакате мазен, ставете ја затворената тегла во сад со топла вода неколку минути; никогаш не користете микробранова печка, бидејќи топлината ги уништува ензимите кои токму сакате да ги зачувате.',
+      'post.firstmonth.meta': 'Текст | 8 јануари 2024',
+      'post.firstmonth.title': 'Првиот месец со Метче: што да очекувате',
+      'post.firstmonth.subtitle': 'Практичен водич недела по недела за вкусот, секојдневната употреба и правилното чување на медот.',
+      'post.firstmonth.h1': 'Прва недела: навикнување на вкусот',
+      'post.firstmonth.p1': "Првата лажичка суров мед може да изненади. Вкусот не е рамномерно сладок како кај многу индустриски мешавини: прво се чувствуваат цветните ноти, потоа доаѓа подлабока, топла арома, а завршетокот зависи од бербата и од растенијата околу Калањево. Прочитајте <a href=\"./why-honey-tastes-richer.html\">зошто суровиот мед е погуст и побогат</a> и дајте му време на непцето да ја препознае разликата. Првата недела пробајте го самостојно, на леб и во млак чај; така најлесно ќе откриете како ви се допаѓа најмногу.",
+      'post.firstmonth.h2': 'Втора недела: навиката се фаќа',
+      'post.firstmonth.p2': "Во втората недела не е потребен строг распоред. Доволно е медот да го поврзете со навика што веќе ја имате: лажичка во утринскиот чај, тенок слој врз леб со путер или малку мед со кисело млеко. Изберете тегла од <a href=\"../products/all.html\">нашиот суров мед</a> според вкусот што ви одговара и чувајте ја на место што лесно ќе го забележите. Кога медот е дел од познат оброк, навиката се создава природно и не зависи од потсетници.",
+      'post.firstmonth.h3': 'Трета и четврта недела: што се слуша од купувачите',
+      'post.firstmonth.p3': 'До третата или четвртата недела веќе знаете која количина и кој начин на употреба ви одговараат. Дел од купувачите ни кажуваат дека полесно го замениле рафинираниот шеќер во чајот или во појадокот и дека повеќе им одговара умерена сладост. Други, пак, најмногу ја забележуваат разликата во вкусот и во чувството на ситост по оброкот. Тоа се лични искуства, а не ветување дека секој ќе почувствува исто. Најдобар знак дека навиката ви одговара е ако лесно се вклопува во денот и ако уживате во неа без претерување.',
+      'post.firstmonth.h4': 'Како да ја чувате теглата',
+      'post.firstmonth.p4': 'Теглата чувајте ја добро затворена, на суво и темно место, на собна температура. Фрижидерот не е потребен и може само да го забрза стврднувањето. Ако медот се замати или кристализира, тоа не значи дека е расипан; кристализацијата е природна појава кај суровиот мед. За повторно да омекне, ставете ја затворената тегла во сад со топла, но не зовриена вода и почекајте неколку минути. Не користете микробранова печка и не го загревајте директно, бидејќи силната топлина ги менува аромата, текстурата и дел од природните својства.',
 
-      'post.texture.meta': 'Журнал | 3 ноември 2025',
-      'post.texture.title': 'Зошто суровиот мед има побогат вкус: Науката зад текстурата',
-      'post.texture.subtitle': 'Хемијата зад густата, леплива текстура — и зошто медот од супермаркет не може да се спореди.',
-      'post.texture.h1': 'Кристализацијата не е недостаток',
-      'post.texture.p1': 'Кога суровиот мед во тегличката станува матен и потврд, тоа е глукоза која природно се одделува од водата и формира кристали — знак дека медот не е премногу обработен. Ултра-филтрираниот мед останува бистар засекогаш затоа што токму таа природна структура е отстранета, заедно со голем дел од сложеноста на вкусот.',
-      'post.texture.h2': 'Содржина на вода и густина',
-      'post.texture.p2': 'Медот собран прерано, пред пчелите целосно да го исушат нектарот во кошницата, содржи повеќе вода и тече ретко. Правилно зреениот мед има околу 17–18% влага, што му дава оној бавен, лепливо-густ пад од лажичка, наместо воден млаз.',
-      'post.texture.h3': 'Полен, ензими и сложеност на вкусот',
-      'post.texture.p3': 'Нефилтрираниот мед носи траги од полен, ензими и микро-честички од цвеќињата од кои потекнува, и токму тие му го даваат специфичниот карактер на секоја серија — маслен карамел од една ливада, посветол и поцветен од друга. Филтрирањето направено медот да изгледа еднообразно на полица, всушност го отстранува токму она што ја прави секоја серија единствена.',
-      'post.texture.h4': 'Како обработката го одзема сето тоа',
-      'post.texture.p4': 'Финото филтрирање и пастеризацијата на висока температура се направени за постојаност и подолг рок на траење, а не за вкус. Резултатот е мед кој изгледа идентично во секоја тегла, но ја изгубил текстурата, ароматa и длабочината што доаѓаат со минимална интервенција. Суровиот мед, оставен поблизу до неговата природна состојба, сè тоа го задржува.'
+      'post.texture.meta': 'Текст | 3 ноември 2025',
+      'post.texture.title': 'Зошто суровиот мед е погуст и побогат',
+      'post.texture.subtitle': 'Од каде доаѓаат густината, кристализацијата и богатиот вкус, и зошто медот од супермаркет често изгледа поинаку.',
+      'post.texture.h1': 'Кристализацијата не е мана',
+      'post.texture.p1': "Кога медот ќе побледне, ќе се замати или ќе почне да се стврднува, во него не се случува ништо необично. Глукозата природно се одвојува од водата и создава ситни кристали, а брзината зависи од цветното потекло, температурата и односот меѓу природните шеќери. Ова е вообичаена појава кај <a href=\"../products/all.html\">нашиот суров и нефилтриран мед</a> и не значи дека е расипан. Напротив, мед што не бил силно загреван или претерано филтриран често полесно ја покажува оваа природна промена.",
+      'post.texture.h2': 'Вода и густина',
+      'post.texture.p2': 'Пчелите внесуваат нектар со многу вода, а потоа постепено го сушат во саќето сè додека не созрее. Ако медот се извади прерано, ќе содржи повеќе влага, ќе биде поредок и полесно ќе ферментира. Кај добро созреаниот мед влагата вообичаено е околу 17 до 18 проценти, иако точната вредност зависи од бербата. Токму затоа зрел мед тече бавно, се задржува на лажицата и создава полна, кремава текстура во устата. Густината не е трик на пакувањето, туку резултат на времето што пчелите го поминале довршувајќи го медот во кошницата.',
+      'post.texture.h3': 'Полен, ензими и карактер',
+      'post.texture.p3': "Нефилтрираниот мед во себе носи мали количества полен, природни ензими и ситни честички од растенијата што ги посетувале пчелите. Тие не го прават медот нечист; тие се дел од неговото потекло и помагаат секоја берба да има препознатлив мирис, боја и вкус. Околу Калањево, на падините на Серта, цветниот состав се менува со сезоната, па една тегла може да биде посветла и понежна, а друга потемна и подлабока. <a href=\"../products/all.html\">Споредете ги теглите на Метче</a> и изберете ливадски, планински или мешан цветен вкус.",
+      'post.texture.h4': 'Што отстранува силната обработка',
+      'post.texture.p4': 'Финото филтрирање и загревањето на висока температура му помагаат на медот долго да остане бистар, течен и визуелно еднаков од тегла до тегла. Таквиот изглед е практичен за големите продавници, но со обработката може да се изгуби дел од природната арома, ензимската активност и карактерот на конкретната берба. Нашата цел не е секоја тегла да изгледа сосема исто, туку во неа да остане што е можно повеќе од медот што излегол од саќето. Затоа разликите во бојата, густината и кристализацијата ги прифаќаме како потпис на природата, а не како грешка.'
   });
 
   let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
@@ -3941,6 +4087,10 @@ em {
       el.textContent = t(el.dataset.i18nReview);
     });
 
+    document.querySelectorAll('[data-i18n-cite]').forEach(el => {
+      el.textContent = t(el.dataset.i18nCite);
+    });
+
     document.querySelectorAll('[data-i18n-blog]').forEach(el => {
       const [idx, field] = el.dataset.i18nBlog.split('.');
       el.textContent = t(`blog.${idx}.${field}`);
@@ -3987,7 +4137,7 @@ em {
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script>
 /**
- * Metche — Main JavaScript
+ * Metche: Main JavaScript
  */
 
 (function () {
@@ -4086,16 +4236,30 @@ em {
 
   function initHeaderScroll() {
     const trigger = document.querySelector('.header-scroll-trigger');
-    if (!trigger) return;
+    if (trigger) {
+      const observer = new IntersectionObserver(
+        ([entry]) => setHeaderMinimal(!entry.isIntersecting),
+        { threshold: 0 }
+      );
+      observer.observe(trigger);
+    } else {
+      setHeaderMinimal(true);
+    }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeaderMinimal(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(trigger);
+    let lastY = 0;
+    function onScrollDirection(y) {
+      const delta = y - lastY;
+      if (y < 24) header.classList.remove('header--hidden');
+      else if (delta > 6) { header.classList.add('header--hidden'); closeMegaMenus(); }
+      else if (delta < -6) header.classList.remove('header--hidden');
+      lastY = y;
+    }
+    if (typeof lenis !== 'undefined' && lenis) {
+      lenis.on('scroll', ({ scroll }) => onScrollDirection(scroll));
+    } else {
+      window.addEventListener('scroll', () => onScrollDirection(window.scrollY || 0), { passive: true });
+    }
   }
-
-  initHeaderScroll();
 
   // Mobile menu
   function openMobileNav() {
@@ -4333,11 +4497,10 @@ em {
     success?.classList.remove('hidden');
   });
 
-  // Mega menu — mobile tap support
+  // Mega menu: mobile tap support
   document.querySelectorAll('[data-dropdown]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       if (window.innerWidth < 900) return;
-      if (!header.classList.contains('header--minimal')) return;
       e.preventDefault();
       const id = trigger.dataset.dropdown;
       const menu = document.getElementById(`dropdown-${id}`);
@@ -4377,6 +4540,7 @@ em {
   // Init
   window.MetcheI18n?.init();
   initSmoothScroll();
+  initHeaderScroll();
   renderCart();
 
   document.addEventListener('metche:languagechange', () => {
@@ -4416,7 +4580,7 @@ em {
           fadeEls.forEach(function (el) { el.classList.add('in-view'); });
         }
 
-        // Keep "Add to Cart — €price" text correctly translated with price
+        // Keep "Add to Cart: €price" text correctly translated with price
         function refreshRelatedPricing() {
           if (!window.MetcheI18n) return;
           document.querySelectorAll('.related-card .add-to-cart[data-price]').forEach(function (btn) {
