@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-meta-title-key="post.texture.title" data-meta-description-key="post.texture.subtitle">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -4023,21 +4023,30 @@ em {
     document.documentElement.classList.toggle('lang-mk', currentLang === 'mk');
     document.documentElement.classList.toggle('lang-en', currentLang === 'en');
 
-    document.title = t('meta.title');
+    const pageTitleKey = document.documentElement.dataset.metaTitleKey;
+    const pageDescriptionKey = document.documentElement.dataset.metaDescriptionKey;
+    const pageTitle = pageTitleKey
+      ? `${t(pageTitleKey)} | ${currentLang === 'mk' ? 'Метче' : 'Metche'}`
+      : t('meta.title');
+    const pageDescription = pageDescriptionKey
+      ? t(pageDescriptionKey)
+      : t('meta.description');
+
+    document.title = pageTitle;
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.content = t('meta.description');
+    if (metaDesc) metaDesc.content = pageDescription;
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.content = t('meta.title');
+    if (ogTitle) ogTitle.content = pageTitle;
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.content = t('meta.description');
+    if (ogDesc) ogDesc.content = pageDescription;
     const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
     if (ogImageAlt) ogImageAlt.content = t('meta.ogImageAlt');
 
     const twTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twTitle) twTitle.content = t('meta.title');
+    if (twTitle) twTitle.content = pageTitle;
     const twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twDesc) twDesc.content = t('meta.description');
+    if (twDesc) twDesc.content = pageDescription;
     const twImageAlt = document.querySelector('meta[name="twitter:image:alt"]');
     if (twImageAlt) twImageAlt.content = t('meta.ogImageAlt');
 
