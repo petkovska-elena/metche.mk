@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Honey | Metche</title>
+  <meta name="description" content="Mountain Honey, 2×250g raw honey. Thicker, with deeper colour. Dark glass, batch code, never above 40°C.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mountain Honey | Metche">
+  <meta property="og:description" content="Premium raw honey from one harvest, one meadow, and one beekeeper.">
+  <meta property="og:image" content="metche-opengraph.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mountain Honey | Metche">
+  <meta name="twitter:description" content="Premium raw Mountain Honey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p data-i18n="announcement.text">25% off every multi-jar set.</p>
+    <a href="../products/all.html" class="announcement-link" data-i18n="announcement.link">View the sets</a>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
+    <div class="mobile-nav-header">
+      <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
+      <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+        <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+      </div>
+      <button class="mobile-close" id="mobileClose" aria-label="Close menu" data-i18n-aria="aria.closeMenu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <details>
+        <summary data-i18n="nav.shopHoney">Shop Honey</summary>
+        <a href="./all.html" data-i18n="nav.products">All Products</a>
+        <a href="./reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+        <a href="./wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+        <a href="./highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
+      </details>
+      <details>
+        <summary data-i18n="nav.explore">Explore</summary>
+        <a href="./all.html" data-i18n="nav.products">All Products</a>
+        <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+      </details>
+      <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+      <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
+      <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2 data-i18n="cart.title">Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">&times;</button>
+    </div>
+    <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend another €{amount} for free delivery</p>
+    <div class="cart-items" id="cartItems" data-lenis-prevent>
+      <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span data-i18n="cart.subtotal">Total</span>
+        <span id="cartSubtotal">€0</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Order Now</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-hero">
+      <header class="header header--minimal" id="header">
+        <div class="header-inner">
+          <div class="header-side header-side--left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" data-i18n-aria="aria.openMenu">
+              <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-desktop nav-desktop--left" aria-label="Primary navigation" data-i18n-aria="aria.navPrimary">
+              <ul class="nav-list">
+                <li class="nav-item has-dropdown">
+                  <button class="nav-link" data-dropdown="shop-honey" data-i18n="nav.shopHoney">Shop Honey</button>
+                  <div class="mega-menu mega-menu--simple" id="dropdown-shop-honey">
+                    <div class="mega-menu-inner">
+                      <div class="mega-links mega-links--column">
+                        <a href="./all.html" data-i18n="nav.products">All Products</a>
+                        <a href="./reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+                        <a href="./wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+                        <a href="./highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                  <button class="nav-link" data-dropdown="explore" data-i18n="nav.explore">Explore</button>
+                  <div class="mega-menu mega-menu--simple" id="dropdown-explore">
+                    <div class="mega-menu-inner">
+                      <div class="mega-links mega-links--column">
+                        <a href="./all.html" data-i18n="nav.products">All Products</a>
+                        <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <a href="../index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
+            <img src="../LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
+          </a>
+
+          <div class="header-side header-side--right">
+            <div class="lang-switcher" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+              <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+            </div>
+            <button class="cart-btn" id="cartBtn" aria-label="Open cart" data-i18n-aria="aria.openCart">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="page-header-content">
+        <div class="container">
+          <h1 data-i18n="product.highland.page.title">Mountain Honey</h1>
+          <p data-i18n="product.highland.page.subtitle">Deep, earthy, and full-bodied. Raw, unfiltered, and cold-filled from the high pastures.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="section product-detail-section">
+      <div class="container">
+        <div class="product-detail-grid">
+          <!-- Product Image -->
+          <div class="product-detail-image">
+            <img src="../images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" class="product-main-image">
+            <span class="product-badge product-badge--large">Limited Quantity</span>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-detail-info">
+            <div class="product-detail-header">
+              <div>
+                <div class="product-rating product-rating--large">
+                  <span class="product-stars" aria-hidden="true">★★★★★</span>
+                  <span>4.7 (46 reviews)</span>
+                </div>
+                <h2 data-i18n="product.highland.detail.name">Mountain Honey, 2×250g</h2>
+              </div>
+            </div>
+
+            <div class="product-detail-price">
+              <span class="price-label">Price</span>
+              <span class="price-amount">€19</span>
+            </div>
+
+            <div class="product-detail-description">
+              <p data-i18n="product.highland.detail.desc1">Harvested from high pastures and remote slopes, our Mountain Honey offers a deeper colour and a more intense, earthy character. Every jar comes from a single harvest and a single beekeeper, preserving both depth and traceability.</p>
+              <p data-i18n="product.highland.detail.desc2">Dark glass packaging protects the honey from light exposure. Each jar includes a batch code so you can trace your honey back to the harvest, meadow, and beekeeper.</p>
+            </div>
+
+            <div class="product-detail-features">
+              <h3 data-i18n="product.highland.features.title">What You Get</h3>
+              <ul>
+                <li data-i18n="product.highland.features.0">2×250g of raw, unfiltered honey</li>
+                <li data-i18n="product.highland.features.1">Dark glass jars with batch code</li>
+                <li data-i18n="product.highland.features.2">Never heated above 40°C</li>
+                <li data-i18n="product.highland.features.3">From one harvest, one meadow, one beekeeper</li>
+                <li data-i18n="product.highland.features.4">Free from pesticide residue</li>
+              </ul>
+            </div>
+
+            <div class="product-detail-actions">
+              <div class="quantity-selector">
+                <button id="quantityMinus" aria-label="Decrease quantity">−</button>
+                <input type="number" id="quantity" value="1" min="1" max="10" aria-label="Quantity">
+                <button id="quantityPlus" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn btn-primary btn-large add-to-cart" data-id="highland-deep" data-product="highland-deep" data-price="19" id="addCartBtn">Add to Cart</button>
+            </div>
+
+            <div class="product-detail-meta">
+              <div class="meta-item">
+                <span class="meta-label" data-i18n="product.highland.meta.sizeLabel">Size</span>
+                <span class="meta-value" data-i18n="product.highland.meta.sizeValue">2×250g</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label" data-i18n="product.highland.meta.typeLabel">Type</span>
+                <span class="meta-value" data-i18n="product.highland.meta.typeValue">Mountain Honey</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label" data-i18n="product.highland.meta.packagingLabel">Packaging</span>
+                <span class="meta-value" data-i18n="product.highland.meta.packagingValue">Dark Glass</span>
+              </div>
+            </div>
+
+            <div class="product-detail-shipping">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-2v-5h-3V9a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v4H5v5c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-6-10H9v4h6V8z"/></svg>
+              <div>
+                <p class="shipping-title" data-i18n="product.highland.shipping.title">Free Delivery</p>
+                <p class="shipping-desc" data-i18n="product.highland.shipping.desc">On orders over €50</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Characteristics Section -->
+    <section class="section product-characteristics-section">
+      <div class="container">
+        <h2 data-i18n="product.highland.characteristics.title">Characteristics</h2>
+        <div class="characteristics-grid">
+          <div class="characteristic-card">
+            <div class="characteristic-icon">⛰️</div>
+            <h3 data-i18n="product.highland.characteristics.0.title">Highland Notes</h3>
+            <p data-i18n="product.highland.characteristics.0.desc">A richer, earthier profile shaped by herbs, wild mountain flora, and cool alpine air.</p>
+          </div>
+          <div class="characteristic-card">
+            <div class="characteristic-icon">🎨</div>
+            <h3 data-i18n="product.highland.characteristics.1.title">Color</h3>
+            <p data-i18n="product.highland.characteristics.1.desc">Deep amber with rich golden-brown tones, reflecting the complexity of the highland harvest.</p>
+          </div>
+          <div class="characteristic-card">
+            <div class="characteristic-icon">👅</div>
+            <h3 data-i18n="product.highland.characteristics.2.title">Taste</h3>
+            <p data-i18n="product.highland.characteristics.2.desc">Bold and layered sweetness with a warm, lingering finish. Perfect for those who like depth.</p>
+          </div>
+          <div class="characteristic-card">
+            <div class="characteristic-icon">❄️</div>
+            <h3 data-i18n="product.highland.characteristics.3.title">Temperature</h3>
+            <p data-i18n="product.highland.characteristics.3.desc">Never heated above 40°C to preserve all natural enzymes and pollen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="section related-products-section">
+      <div class="container">
+        <h2 data-i18n="product.highland.related.title">You Might Also Like</h2>
+        <div class="product-grid">
+          <article class="product-card add-to-cart" data-id="reserve-ritual" data-product="reserve-ritual" data-price="17">
+            <div class="product-visual">
+              <img src="../images/products/reserve-blend.jpg" alt="Floral Bouquet, 500g raw honey">
+              <span class="product-grade" data-i18n="product.reserve-ritual.grade">Floral Bouquet</span>
+              <span class="product-badge" data-i18n="badge.bestseller">Most Popular</span>
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <span class="product-stars" aria-hidden="true">★★★★★</span>
+                <span>4.9 (28)</span>
+              </div>
+              <h3 data-i18n="product.reserve-ritual.name">Floral Bouquet, 500g</h3>
+              <p class="product-desc" data-i18n="product.reserve.desc">A blend of several flowers. Cold-filled from one harvest.</p>
+              <span class="product-price">€17</span>
+            </div>
+          </article>
+
+          <article class="product-card add-to-cart" data-id="morning-glow" data-product="morning-glow" data-price="16">
+            <div class="product-visual">
+              <img src="../images/products/morning-glow.jpg" alt="Meadow Honey, 340g raw honey">
+              <span class="product-grade" data-i18n="product.morning-glow.grade">Meadow Honey</span>
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <span class="product-stars" aria-hidden="true">★★★★★</span>
+                <span>4.9 (33)</span>
+              </div>
+              <h3 data-i18n="product.morning-glow.name">Meadow Honey, 340g</h3>
+              <p class="product-desc" data-i18n="product.wildflower.desc">Lighter, with soft meadow notes. Cold-filled from one harvest.</p>
+              <span class="product-price">€16</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <h2 data-i18n="product.highland.cta.title">Not Sure Which Honey to Choose?</h2>
+        <p data-i18n="product.highland.cta.desc">Answer three short questions and we will recommend a honey based on your taste.</p>
+        <button class="btn btn-primary" id="quizOpenBtn" data-i18n="product.highland.cta.button">Start</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="faq">
+    <div class="footer-bg" aria-hidden="true"></div>
+    <div class="footer-overlay" aria-hidden="true"></div>
+    <div class="footer-grain" aria-hidden="true"></div>
+
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-newsletter">
+          <p class="footer-newsletter-text">Sign up for news, honey tips, and first access to offers.</p>
+          <form class="footer-newsletter-form" id="newsletterForm">
+            <div class="footer-input-wrap">
+              <input type="email" placeholder="Email Address" required aria-label="Email address">
+              <button type="submit" class="footer-submit" aria-label="Subscribe">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+          <div class="footer-fda-box">
+            <p>*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease.</p>
+          </div>
+          <p class="footer-newsletter-success hidden" id="newsletterSuccess">Thank you, you are on the list.</p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Shop Honey</h4>
+            <a href="./all.html">All Jars</a>
+            <a href="./reserve.html">Floral Bouquet</a>
+            <a href="./wildflower.html">Meadow Honey</a>
+            <a href="./highland.html">Mountain Honey</a>
+          </div>
+          <div class="footer-col">
+            <h4>Learn More</h4>
+            <a href="../#story">Our Apiaries</a>
+            <a href="../blog/index.html">About Honey</a>
+            <a href="../blog/raw-honey-prebiotic.html">Raw Honey and Digestion</a>
+            <a href="../#quiz">Help Me Choose</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="../#faq">Questions and Answers</a>
+            <a href="../pages/contact.html">Contact</a>
+            <a href="#">Returns and Exchanges</a>
+            <a href="#">Where to Find Us</a>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/metche.mk/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/metche.mk/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-brand-display">
+        <span class="footer-brand-name">metche</span>
+      </div>
+
+      <div class="footer-bar">
+        <p class="footer-tagline">Natural honey from Macedonian meadows.</p>
+        <p class="footer-copy">© All rights reserved 2026</p>
+        <div class="footer-legal">
+          <a href="../pages/terms.html">Terms</a>
+          <a href="../pages/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quiz Modal -->
+  <div class="modal" id="quizModal" role="dialog" aria-labelledby="quizTitle" aria-hidden="true">
+    <div class="modal-backdrop" id="quizBackdrop"></div>
+    <div class="modal-content quiz-modal" data-lenis-prevent>
+      <button class="modal-close" id="quizClose" aria-label="Close quiz">&times;</button>
+      <h2 id="quizTitle">Help Me Choose</h2>
+      <div class="quiz-steps" id="quizSteps">
+        <div class="quiz-step active" data-step="1">
+          <p class="quiz-question">What matters most to you?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-answer="wildflower">Mild honey for every day</button>
+            <button class="quiz-option" data-answer="reserve">Medium, balanced flavour</button>
+            <button class="quiz-option" data-answer="highland">Strong, deeper honey</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="2">
+          <p class="quiz-question">When do you usually eat it?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-answer="morning">In the morning with tea or bread</button>
+            <button class="quiz-option" data-answer="afternoon">In the afternoon for energy</button>
+            <button class="quiz-option" data-answer="evening">In the evening, at a slower pace</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="3">
+          <p class="quiz-question">What kind of honey are you looking for?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-answer="light">Light and floral</button>
+            <button class="quiz-option" data-answer="creamy">Creamy and caramel-like</button>
+            <button class="quiz-option" data-answer="bold">Dark and full-bodied</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="result">
+          <p class="quiz-result-label">We Recommend</p>
+          <h3 id="quizResultTitle">Mountain Honey, 2×250g</h3>
+          <p id="quizResultDesc">Deep, earthy, and full-bodied. Raw, unfiltered, and cold-filled.</p>
+          <button class="btn btn-primary add-to-cart" id="quizAddBtn" data-id="highland-deep" data-price="19">Add to Cart: €19</button>
+        </div>
+      </div>
+      <div class="quiz-progress">
+        <span id="quizProgress">1 / 3</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Product Detail Page Styles */
+    .product-detail-section {
+      background: var(--color-surface);
+      padding-top: 32px;
+      padding-bottom: 64px;
+    }
+
+    .product-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .product-detail-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .product-main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .product-badge--large {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 2;
+      background: var(--color-honey);
+      color: var(--color-text);
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      line-height: 1;
+    }
+
+    .product-detail-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .product-detail-header h2 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      margin-top: 12px;
+      line-height: 1.1;
+    }
+
+    .product-rating--large {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .product-rating--large .product-stars {
+      color: var(--color-honey);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .product-detail-price {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 24px;
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .price-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .price-amount {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-honey);
+    }
+
+    .product-detail-description {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .product-detail-description p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+    }
+
+    .product-detail-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .product-detail-features h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .product-detail-features ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .product-detail-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--color-text);
+      padding-left: 0;
+    }
+
+    .product-detail-features li::before {
+      content: '✓';
+      color: var(--color-green);
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .product-detail-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--color-border-strong);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      background: var(--color-surface-raised);
+    }
+
+    .quantity-selector button {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--color-text-muted);
+      transition: background var(--transition);
+    }
+
+    .quantity-selector button:hover {
+      background: var(--color-surface-warm);
+    }
+
+    .quantity-selector input {
+      width: 50px;
+      border: none;
+      text-align: center;
+      font-weight: 600;
+      background: transparent;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .quantity-selector input:focus {
+      outline: none;
+    }
+
+    .btn-large {
+      flex: 1;
+      padding: 16px 32px;
+      font-size: 14px;
+    }
+
+    .product-detail-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 24px;
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .product-detail-shipping {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .product-detail-shipping svg {
+      flex-shrink: 0;
+      color: var(--color-honey);
+    }
+
+    .shipping-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .shipping-desc {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    /* Characteristics Section */
+    .product-characteristics-section {
+      background: var(--color-bg);
+    }
+
+    .characteristics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .characteristic-card {
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      padding: 32px 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .characteristic-icon {
+      font-size: 36px;
+    }
+
+    .characteristic-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .characteristic-card p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .related-products-section {
+      background: var(--color-surface);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .characteristics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-detail-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail-actions {
+        flex-direction: column;
+      }
+
+      .btn-large {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .product-detail-image {
+        aspect-ratio: 1;
+      }
+
+      .product-badge--large {
+        top: 16px;
+        right: 16px;
+        padding: 8px 14px;
+        font-size: 10px;
+      }
+
+      .product-detail-price {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .price-amount {
+        font-size: 28px;
+      }
+
+      .characteristics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail-actions {
+        gap: 12px;
+      }
+
+      .quantity-selector {
+        order: 2;
+      }
+
+      .btn-large {
+        order: 1;
+      }
+    }
+  </style>
+
+  <script src="../js/i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
