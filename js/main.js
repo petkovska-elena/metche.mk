@@ -48,7 +48,80 @@
   const newsletterForm = document.getElementById('newsletterForm');
   const newsletterSuccess = document.getElementById('newsletterSuccess');
 
+  const COOKIE_CONSENT_KEY = 'metche-cookie-consent';
+  const COOKIE_CONSENT_COOKIE = 'metche-cookie-consent';
+
   let lenis = null;
+
+  function getCookieConsent() {
+    try {
+      const saved = localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (error) {
+      // fall back to cookie storage
+    }
+
+    const cookieMatch = document.cookie.match(new RegExp(`(?:^|; )${COOKIE_CONSENT_COOKIE}=([^;]*)`));
+    if (cookieMatch) {
+      try {
+        return JSON.parse(decodeURIComponent(cookieMatch[1]));
+      } catch (error) {
+        return null;
+      }
+    }
+
+    return null;
+  }
+
+  function saveCookieConsent(choice) {
+    const payload = JSON.stringify({ choice, updatedAt: Date.now() });
+
+    try {
+      localStorage.setItem(COOKIE_CONSENT_KEY, payload);
+    } catch (error) {
+      // ignore storage write failures
+    }
+
+    document.cookie = `${COOKIE_CONSENT_COOKIE}=${encodeURIComponent(payload)}; path=/; max-age=31536000; SameSite=Lax`;
+  }
+
+  function showCookieBanner() {
+    if (document.getElementById('cookieConsent')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'cookieConsent';
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.innerHTML = `
+      <div class="cookie-banner__content">
+        <div class="cookie-banner__title">We use cookies to improve your experience</div>
+        <p class="cookie-banner__text">This site uses cookies to remember your preferences and keep the experience smooth. You can accept or decline at any time.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--secondary" data-cookie-choice="decline">Decline</button>
+        <button class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-choice="accept">Accept</button>
+      </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    banner.querySelectorAll('[data-cookie-choice]').forEach((button) => {
+      button.addEventListener('click', () => {
+        saveCookieConsent(button.dataset.cookieChoice);
+        banner.remove();
+      });
+    });
+  }
+
+  function initCookieConsent() {
+    const consent = getCookieConsent();
+    if (!consent) {
+      showCookieBanner();
+    }
+  }
 
   function lockScroll() {
     document.body.classList.add('no-scroll');
@@ -153,6 +226,8 @@
       }
     }
   }
+
+  initCookieConsent();
 
   // Mobile menu
   function openMobileNav() {
