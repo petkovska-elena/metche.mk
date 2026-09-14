@@ -8,6 +8,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Why Raw Honey Is Thicker and Richer | Metche" />
     <meta property="og:description" content="Where its thickness, crystallisation, and rich taste come from, and why supermarket honey often looks different." />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1020,9 +1023,18 @@ em {
   letter-spacing: 0.02em;
 }
 
-.hero-social-proof .stars {
-  color: var(--color-honey);
+.hero-social-proof .stars,
+.product-stars {
+  display: inline-block;
+  width: 68px;
+  height: 11px;
   margin-right: 8px;
+  vertical-align: middle;
+  background-color: var(--color-honey);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 1l1.47 3.02 3.33.48-2.4 2.34.57 3.31L6 8.58 3.03 10.15l.57-3.31-2.4-2.34 3.33-.48z'/%3E%3C/svg%3E") repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 1l1.47 3.02 3.33.48-2.4 2.34.57 3.31L6 8.58 3.03 10.15l.57-3.31-2.4-2.34 3.33-.48z'/%3E%3C/svg%3E") repeat-x;
+  -webkit-mask-size: 13px 11px;
+  mask-size: 13px 11px;
 }
 
 /* Quote Banner */
@@ -1139,10 +1151,7 @@ em {
 }
 
 .product-stars {
-  color: var(--color-honey);
-  font-size: 11px;
-  letter-spacing: 2px;
-  line-height: 1;
+  margin-right: 0;
 }
 
 .product-info h3 {
@@ -1273,11 +1282,15 @@ em {
 }
 
 .grade-benefits li::before {
-  content: '✓';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--color-green);
-  font-weight: 700;
+  left: 4px;
+  top: 16px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid var(--color-green);
+  border-bottom: 2px solid var(--color-green);
+  transform: rotate(45deg);
 }
 
 .grade-disclaimer {
@@ -1411,9 +1424,21 @@ em {
 }
 
 .compare-table .check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 16px;
   color: var(--color-green);
-  font-size: 20px;
-  font-weight: 700;
+}
+
+.compare-table .check::after {
+  content: '';
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
 }
 
 .compare-table .cross {
@@ -2997,10 +3022,11 @@ em {
           <summary data-i18n="nav.explore">Explore</summary>
           <a href="../products/all.html" data-i18n="nav.products">All Products</a>
           <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+          <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
         </details>
         <a href="./index.html" data-i18n="nav.journal">About Honey</a>
         <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
-        <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+        <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
       </nav>
     </div>
     <div class="overlay" id="overlay"></div>
@@ -3060,6 +3086,7 @@ em {
                         <div class="mega-links mega-links--column">
                           <a href="../products/all.html" data-i18n="nav.products">All Products</a>
                           <a href="./index.html" data-i18n="nav.journal">About Honey</a>
+                          <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
                         </div>
                       </div>
                     </div>
@@ -3267,10 +3294,10 @@ em {
             </div>
             <div class="footer-col">
               <h4 data-i18n="footer.support">Support</h4>
-              <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+              <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
               <a href="../pages/contact.html" data-i18n="footer.contact">Contact</a>
-              <a href="../" data-i18n="footer.returns">Returns and Exchanges</a>
-              <a href="../" data-i18n="footer.locator">Where to Find Us</a>
+              <a href="../pages/faq.html#returns" data-i18n="footer.returns">Returns and Exchanges</a>
+              <a href="../pages/contact.html#location" data-i18n="footer.locator">Where to Find Us</a>
             </div>
             <div class="footer-col">
               <h4 data-i18n="footer.social">Follow Us</h4>

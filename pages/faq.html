@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-meta-title-key="faq.meta.title" data-meta-description-key="faq.meta.description">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions and Answers | Metche</title>
+    <meta
+      name="description"
+      content="Answers to common questions about Metche raw honey: storage, delivery, returns, and how we care for the bees."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Questions and Answers | Metche" />
+    <meta
+      property="og:description"
+      content="Answers to common questions about Metche raw honey: storage, delivery, returns, and how we care for the bees."
+    />
+    <meta property="og:image" content="../metche-opengraph.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta
+      property="og:image:alt"
+      content="Metche: pure raw honey harvested with care"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Questions and Answers | Metche" />
+    <meta
+      name="twitter:description"
+      content="Answers to common questions about Metche raw honey: storage, delivery, returns, and how we care for the bees."
+    />
+    <meta name="twitter:image" content="../metche-opengraph.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Metche: pure raw honey harvested with care"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <p data-i18n="announcement.text">25% off every multi-jar set.</p>
+      <a href="../products/all.html" class="announcement-link" data-i18n="announcement.link">View the sets</a>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
+      <div class="mobile-nav-header">
+        <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo" />
+        <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+          <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+        </div>
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu" data-i18n-aria="aria.closeMenu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links">
+        <details>
+          <summary data-i18n="nav.shopHoney">Shop Honey</summary>
+          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+          <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+          <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+          <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
+        </details>
+        <details>
+          <summary data-i18n="nav.explore">Explore</summary>
+          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+          <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+          <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
+        </details>
+        <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+        <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
+        <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
+      </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h2 data-i18n="cart.title">Cart</h2>
+        <button
+          class="cart-close"
+          id="cartClose"
+          aria-label="Close cart"
+          data-i18n-aria="aria.closeCart"
+        >
+          &times;
+        </button>
+      </div>
+      <p
+        class="cart-shipping"
+        id="cartShipping"
+        data-i18n="cart.shipping.remaining"
+        data-i18n-vars='{"amount":"50"}'
+      >Spend another €{amount} for free delivery</p>
+      <div class="cart-items" id="cartItems" data-lenis-prevent>
+        <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span data-i18n="cart.subtotal">Total</span>
+          <span id="cartSubtotal">€0</span>
+        </div>
+        <button
+          class="btn btn-primary btn-full"
+          id="checkoutBtn"
+          data-i18n="cart.checkout"
+        >Order Now</button>
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero contact-hero">
+        <header class="header" id="header">
+          <div class="header-inner">
+            <div class="header-side header-side--left">
+              <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu"
+                data-i18n-aria="aria.openMenu"
+              >
+                <span></span><span></span><span></span>
+              </button>
+              <nav
+                class="nav-desktop nav-desktop--left"
+                aria-label="Primary navigation"
+                data-i18n-aria="aria.navPrimary"
+              >
+                <ul class="nav-list">
+                  <li class="nav-item has-dropdown">
+                    <button
+                      class="nav-link"
+                      data-dropdown="shop-honey"
+                      data-i18n="nav.shopHoney"
+                    >
+                      Shop Honey
+                    </button>
+                    <div
+                      class="mega-menu mega-menu--simple"
+                      id="dropdown-shop-honey"
+                    >
+                      <div class="mega-menu-inner">
+                        <div class="mega-links mega-links--column">
+                          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+                          <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+                          <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+                          <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item has-dropdown">
+                    <button
+                      class="nav-link"
+                      data-dropdown="explore"
+                      data-i18n="nav.explore"
+                    >
+                      Explore
+                    </button>
+                    <div
+                      class="mega-menu mega-menu--simple"
+                      id="dropdown-explore"
+                    >
+                      <div class="mega-menu-inner">
+                        <div class="mega-links mega-links--column">
+                          <a href="../products/all.html" data-i18n="nav.products">All Products</a>
+                          <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+                          <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <a
+              href="../"
+              class="header-logo"
+              aria-label="Metche home"
+              data-i18n-aria="aria.home"
+            >
+              <img
+                src="../LOGO.png"
+                alt="Metche"
+                class="header-logo-img"
+                width="96"
+                height="96"
+                data-i18n-alt="brand.logo"
+              />
+            </a>
+
+            <div class="header-side header-side--right">
+              <div
+                class="lang-switcher"
+                role="group"
+                aria-label="Language"
+                data-i18n-aria="aria.language"
+                data-active="en"
+              >
+                <button
+                  type="button"
+                  class="lang-btn lang-btn--active"
+                  data-lang="en"
+                  aria-pressed="true"
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="mk"
+                  aria-pressed="false"
+                >
+                  MK
+                </button>
+              </div>
+              <button
+                class="cart-btn"
+                id="cartBtn"
+                aria-label="Open cart"
+                data-i18n-aria="aria.openCart"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M6 6h15l-1.5 9h-12z" />
+                  <circle cx="9" cy="20" r="1" />
+                  <circle cx="18" cy="20" r="1" />
+                  <path d="M6 6L5 3H2" />
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="hero-content-minimal">
+          <div class="container">
+            <h1 data-i18n="faq.hero.title">Questions and Answers</h1>
+            <p class="hero-sub" data-i18n="faq.hero.sub">Here are answers to the questions we are asked most often. If you cannot find what you need, contact us.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="container">
+          <div class="faq-accordion">
+            <details class="faq-item" id="raw-honey">
+              <summary data-i18n="contact.faq.q1.question">What is the difference between raw and regular honey?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q1.answer">Raw honey is not heated or finely filtered, so its enzymes, pollen, and the elements destroyed by heat remain in it. Regular honey is often pasteurised and blended. We jar Metche while the flowers are at their peak and never above 40°C.</p>
+              </div>
+            </details>
+            <details class="faq-item" id="storage">
+              <summary data-i18n="contact.faq.q2.question">How should I store Metche honey?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q2.answer">Keep it in a cool, dark place at room temperature. If it starts to crystallise, that is a sign of genuine raw honey. Place the jar in warm water to soften it. Do not use a microwave or heat it above 40°C.</p>
+              </div>
+            </details>
+            <details class="faq-item" id="delivery">
+              <summary data-i18n="contact.faq.q3.question">Do you deliver across Macedonia and abroad?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q3.answer">Yes, we deliver throughout Macedonia. For orders outside the country, write to us and we will explain the available options and delivery times.</p>
+              </div>
+            </details>
+            <details class="faq-item" id="returns">
+              <summary data-i18n="contact.faq.q4.question">What if I am not satisfied?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q4.answer">We stand behind our honey. If you are not satisfied within 30 days, we will refund you or send a new jar. Unopened jars may be returned without question.</p>
+              </div>
+            </details>
+            <details class="faq-item" id="babies">
+              <summary data-i18n="contact.faq.q5.question">Is it suitable for babies?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q5.answer">Raw honey must not be given to children under 12 months. For older children and adults, it can be a good part of the diet when enjoyed in moderation.</p>
+              </div>
+            </details>
+            <details class="faq-item" id="bees">
+              <summary data-i18n="contact.faq.q6.question">How do you care for the bees?</summary>
+              <div class="faq-content">
+                <p data-i18n="contact.faq.q6.answer">We work only with beekeepers who care for their bees attentively: the hive and the meadow come first, and the harvest quantity comes second. Every batch can be traced to a specific apiary and season.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container cta-box">
+          <h2 data-i18n="faq.cta.title">Still have a question?</h2>
+          <p data-i18n="faq.cta.desc">Write to us about an order, delivery, or anything else you would like to know about the honey.</p>
+          <a href="./contact.html" class="btn btn-primary" data-i18n="faq.cta.button">Contact Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bg" aria-hidden="true"></div>
+      <div class="footer-overlay" aria-hidden="true"></div>
+      <div class="footer-grain" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-newsletter">
+            <p class="footer-newsletter-text" data-i18n="footer.newsletter">Sign up for news, honey tips, and first access to offers.</p>
+            <form class="footer-newsletter-form" id="newsletterForm">
+              <div class="footer-input-wrap">
+                <input type="email" placeholder="Email" required aria-label="Email address" data-i18n-placeholder="footer.email" data-i18n-aria="aria.email" />
+                <button type="submit" class="footer-submit" aria-label="Subscribe" data-i18n-aria="aria.subscribe">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </button>
+              </div>
+            </form>
+            <div class="footer-fda-box"><p data-i18n="footer.fda">*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease.</p></div>
+            <p class="footer-newsletter-success hidden" id="newsletterSuccess" data-i18n="footer.thanks">Thank you, you are on the list.</p>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-col">
+              <h4 data-i18n="footer.shop">Shop Honey</h4>
+              <a href="../products/all.html" data-i18n="nav.allJars">All Jars</a>
+              <a href="../products/reserve.html" data-i18n="nav.product.reserve">Floral Bouquet</a>
+              <a href="../products/wildflower.html" data-i18n="nav.product.wildflower">Meadow Honey</a>
+              <a href="../products/highland.html" data-i18n="nav.product.highland">Mountain Honey</a>
+            </div>
+            <div class="footer-col">
+              <h4 data-i18n="footer.learn">Learn More</h4>
+              <a href="../#story" data-i18n="nav.apiaries">Our Apiaries</a>
+              <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+              <a href="../blog/raw-honey-prebiotic.html" data-i18n="nav.blog.prebiotic">Raw Honey and Digestion</a>
+              <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
+            </div>
+            <div class="footer-col">
+              <h4 data-i18n="footer.support">Support</h4>
+              <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
+              <a href="./contact.html" data-i18n="footer.contact">Contact</a>
+              <a href="./faq.html#returns" data-i18n="footer.returns">Returns and Exchanges</a>
+              <a href="./contact.html#location" data-i18n="footer.locator">Where to Find Us</a>
+            </div>
+            <div class="footer-col">
+              <h4 data-i18n="footer.social">Follow Us</h4>
+              <a href="https://www.instagram.com/metche.mk/" target="_blank" rel="noopener noreferrer" data-i18n-social="social.instagram" aria-label="Instagram">Instagram</a>
+              <a href="https://www.facebook.com/metche.mk/" target="_blank" rel="noopener noreferrer" data-i18n-social="social.facebook" aria-label="Facebook">Facebook</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-brand-display"><span class="footer-brand-name" data-i18n="brand.wordmark">metche</span></div>
+        <div class="footer-bar">
+          <p class="footer-tagline" data-i18n="footer.tagline">Natural honey from Macedonian meadows.</p>
+          <p class="footer-copy" data-i18n="footer.copy">© All rights reserved 2026</p>
+          <div class="footer-legal">
+            <a href="./terms.html" data-i18n="footer.terms">Terms</a>
+            <a href="./privacy.html" data-i18n="footer.privacy">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

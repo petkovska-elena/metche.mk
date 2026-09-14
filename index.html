@@ -17,6 +17,9 @@
   <meta name="twitter:description" content="Metche is a family beekeeping brand. Raw honey from our meadows and mountain pastures: unheated, unfiltered, and harvested as it should be.">
   <meta name="twitter:image" content="metche-opengraph.png">
   <meta name="twitter:image:alt" content="Metche: pure raw honey, carefully harvested">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -51,10 +54,11 @@
         <summary data-i18n="nav.explore">Explore</summary>
         <a href="products/all.html" data-i18n="nav.products">All Products</a>
         <a href="blog/index.html" data-i18n="nav.journal">About Honey</a>
+        <a href="pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
       </details>
       <a href="blog/index.html" data-i18n="nav.journal">About Honey</a>
       <a href="#quiz" data-i18n="nav.selector">Help Me Choose</a>
-      <a href="#faq" data-i18n="nav.faq">Questions and Answers</a>
+      <a href="pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
     </nav>
   </div>
   <div class="overlay" id="overlay"></div>
@@ -109,6 +113,7 @@
                       <div class="mega-links mega-links--column">
                         <a href="products/all.html" data-i18n="nav.products">All Products</a>
                         <a href="blog/index.html" data-i18n="nav.journal">About Honey</a>
+                        <a href="pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
                       </div>
                     </div>
                   </div>
@@ -144,7 +149,7 @@
               <a href="#quiz" class="btn btn-outline" data-i18n="hero.cta.selector">Help Me Choose</a>
             </div>
             <p class="hero-social-proof">
-              <span class="stars">★★★★★</span>
+              <span class="stars" aria-hidden="true"></span>
               <span data-i18n="hero.reviews">41 five-star customer reviews</span>
             </p>
           </div>
@@ -161,48 +166,48 @@
           <a href="products/all.html" class="link-arrow" data-i18n="products.shopAll">VIEW ALL</a>
         </div>
         <div class="product-grid" id="productGrid">
-            <article class="product-card add-to-cart" data-id="reserve-ritual" data-product="reserve-ritual" data-price="17">
+            <a href="products/reserve.html" class="product-card" data-product="reserve-ritual">
               <div class="product-visual">
                 <img src="images/products/reserve-blend.jpg" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
                 <span class="product-grade" data-i18n-grade>Floral Bouquet</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
-                  <span class="product-stars" aria-hidden="true">★★★★★</span>
+                  <span class="product-stars" aria-hidden="true"></span>
                   <span>4.9 (28)</span>
                 </div>
                 <h3 data-i18n-name>Floral Bouquet, 500g</h3>
                 <span class="product-price">€17</span>
               </div>
-            </article>
-            <article class="product-card add-to-cart" data-id="morning-glow" data-product="morning-glow" data-price="16">
+            </a>
+            <a href="products/wildflower.html" class="product-card" data-product="morning-glow">
               <div class="product-visual">
                 <img src="images/products/morning-glow.jpg" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
                 <span class="product-grade" data-i18n-grade>Meadow Honey</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
-                  <span class="product-stars" aria-hidden="true">★★★★★</span>
+                  <span class="product-stars" aria-hidden="true"></span>
                   <span>4.9 (33)</span>
                 </div>
                 <h3 data-i18n-name>Meadow Honey, 340g</h3>
                 <span class="product-price">€16</span>
               </div>
-            </article>
-            <article class="product-card add-to-cart" data-id="highland-deep" data-product="highland-deep" data-price="19">
+            </a>
+            <a href="products/highland.html" class="product-card" data-product="highland-deep">
               <div class="product-visual">
                 <img src="images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
                 <span class="product-grade" data-i18n-grade>Mountain Honey</span>
               </div>
               <div class="product-info">
                 <div class="product-rating">
-                  <span class="product-stars" aria-hidden="true">★★★★★</span>
+                  <span class="product-stars" aria-hidden="true"></span>
                   <span>4.7 (46)</span>
                 </div>
                 <h3 data-i18n-name>Mountain Honey, 2×250g</h3>
                 <span class="product-price">€19</span>
               </div>
-            </article>
+            </a>
         </div>
       </div>
     </section>
@@ -316,32 +321,32 @@
             <tbody>
               <tr>
                 <td data-i18n="compare.row.0">Dark glass that protects the honey</td>
-                <td><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
               </tr>
               <tr>
                 <td data-i18n="compare.row.1">Tested for purity</td>
-                <td><span class="check">✓</span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
                 <td><span class="cross">:</span></td>
                 <td><span class="cross">:</span></td>
               </tr>
               <tr>
                 <td data-i18n="compare.row.2">Free from pesticide residue</td>
-                <td><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
                 <td><span class="cross">:</span></td>
               </tr>
               <tr>
                 <td data-i18n="compare.row.3">The source apiary is known</td>
-                <td><span class="check">✓</span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
                 <td><span class="cross">:</span></td>
                 <td><span class="cross">:</span></td>
               </tr>
               <tr>
                 <td data-i18n="compare.row.4">Beekeeping that cares for the bees</td>
-                <td><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
+                <td><span class="check" aria-hidden="true"></span></td>
                 <td><span class="cross">:</span></td>
               </tr>
             </tbody>
@@ -489,7 +494,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer" id="faq">
+  <footer class="footer">
     <div class="footer-bg" aria-hidden="true"></div>
     <div class="footer-overlay" aria-hidden="true"></div>
     <div class="footer-grain" aria-hidden="true"></div>
@@ -529,10 +534,10 @@
           </div>
           <div class="footer-col">
             <h4 data-i18n="footer.support">Support</h4>
-            <a href="#faq" data-i18n="nav.faq">Questions and Answers</a>
+            <a href="pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
             <a href="pages/contact.html" data-i18n="footer.contact">Contact</a>
-            <a href="#" data-i18n="footer.returns">Returns and Exchanges</a>
-            <a href="#" data-i18n="footer.locator">Where to Find Us</a>
+            <a href="pages/faq.html#returns" data-i18n="footer.returns">Returns and Exchanges</a>
+            <a href="pages/contact.html#location" data-i18n="footer.locator">Where to Find Us</a>
           </div>
           <div class="footer-col">
             <h4 data-i18n="footer.social">Follow Us</h4>

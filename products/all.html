@@ -14,6 +14,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Our Honey | Metche">
   <meta name="twitter:description" content="Explore the full Metche raw honey range.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -48,10 +51,11 @@
         <summary data-i18n="nav.explore">Explore</summary>
         <a href="./all.html" data-i18n="nav.products">All Products</a>
         <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+        <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
       </details>
       <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
       <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
-      <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+      <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
     </nav>
   </div>
   <div class="overlay" id="overlay"></div>
@@ -106,6 +110,7 @@
                       <div class="mega-links mega-links--column">
                         <a href="./all.html" data-i18n="nav.products">All Products</a>
                         <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+                        <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
                       </div>
                     </div>
                   </div>
@@ -142,7 +147,7 @@
     <section class="section products-section" id="products">
       <div class="container">
         <div class="product-grid" id="productGrid">
-          <article class="product-card add-to-cart" data-id="reserve-ritual" data-product="reserve-ritual" data-price="17">
+          <a href="./reserve.html" class="product-card" data-product="reserve-ritual">
             <div class="product-visual">
               <img src="../images/products/reserve-blend.jpg" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
               <span class="product-grade" data-i18n-grade>Floral Bouquet</span>
@@ -150,32 +155,32 @@
             </div>
             <div class="product-info">
               <div class="product-rating">
-                <span class="product-stars" aria-hidden="true">★★★★★</span>
+                <span class="product-stars" aria-hidden="true"></span>
                 <span>4.9 (28)</span>
               </div>
               <h3 data-i18n-name>Floral Bouquet, 500g</h3>
               <p class="product-desc" data-i18n="product.reserve.desc">A blend of several flowers. Dark glass, batch code, never above 40°C.</p>
               <span class="product-price">€17</span>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card add-to-cart" data-id="morning-glow" data-product="morning-glow" data-price="16">
+          <a href="./wildflower.html" class="product-card" data-product="morning-glow">
             <div class="product-visual">
               <img src="../images/products/morning-glow.jpg" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
               <span class="product-grade" data-i18n-grade>Meadow Honey</span>
             </div>
             <div class="product-info">
               <div class="product-rating">
-                <span class="product-stars" aria-hidden="true">★★★★★</span>
+                <span class="product-stars" aria-hidden="true"></span>
                 <span>4.9 (33)</span>
               </div>
               <h3 data-i18n-name>Meadow Honey, 340g</h3>
               <p class="product-desc" data-i18n="product.wildflower.desc">Lighter, with soft meadow notes. Cold-filled from one harvest.</p>
               <span class="product-price">€16</span>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card add-to-cart" data-id="highland-deep" data-product="highland-deep" data-price="19">
+          <a href="./highland.html" class="product-card" data-product="highland-deep">
             <div class="product-visual">
               <img src="../images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
               <span class="product-grade" data-i18n-grade>Mountain Honey</span>
@@ -183,14 +188,14 @@
             </div>
             <div class="product-info">
               <div class="product-rating">
-                <span class="product-stars" aria-hidden="true">★★★★★</span>
+                <span class="product-stars" aria-hidden="true"></span>
                 <span>4.7 (46)</span>
               </div>
               <h3 data-i18n-name>Mountain Honey, 2×250g</h3>
               <p class="product-desc" data-i18n="product.highland.desc">Honey from high pastures. Thicker, with a deeper colour.</p>
               <span class="product-price">€19</span>
             </div>
-          </article>
+          </a>
 
         </div>
       </div>
@@ -199,28 +204,65 @@
     <!-- Why Metche -->
     <section class="section why-metche-section">
       <div class="container">
-        <h2 data-i18n="why.title">Why Metche</h2>
+        <header class="why-header">
+          <p class="section-label" data-i18n="why.label">Our promise</p>
+          <h2 data-i18n="why.title">Why Metche</h2>
+          <p class="why-intro" data-i18n="why.subtitle">Four things that stay the same in every jar, from meadow to table.</p>
+        </header>
         <div class="why-grid">
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">✓</div>
+          <article class="why-card">
+            <div class="why-card-top">
+              <span class="why-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"/>
+                  <circle cx="12" cy="10" r="2.2"/>
+                </svg>
+              </span>
+              <span class="why-index">01</span>
+            </div>
             <h3 data-i18n="why.traceable.title">You Know Where It Comes From</h3>
             <p data-i18n="why.traceable.desc">Every jar has a code. You can see the harvest, meadow, and beekeeper behind it.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">✓</div>
+          </article>
+          <article class="why-card">
+            <div class="why-card-top">
+              <span class="why-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3s5.5 6.4 5.5 10.4A5.5 5.5 0 1 1 6.5 13.4C6.5 9.4 12 3 12 3z"/>
+                </svg>
+              </span>
+              <span class="why-index">02</span>
+            </div>
             <h3 data-i18n="why.unfiltered.title">Raw and Unfiltered</h3>
             <p data-i18n="why.unfiltered.desc">It is never heated above 40°C. The enzymes, pollen, and natural elements stay in the jar.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">✓</div>
+          </article>
+          <article class="why-card">
+            <div class="why-card-top">
+              <span class="why-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="8" r="2.4"/>
+                  <circle cx="16" cy="8" r="2.4"/>
+                  <circle cx="12" cy="15.2" r="3.2"/>
+                  <path d="M12 12V6.5"/>
+                </svg>
+              </span>
+              <span class="why-index">03</span>
+            </div>
             <h3 data-i18n="why.ethical.title">Honest Beekeeping</h3>
             <p data-i18n="why.ethical.desc">The health of the bees and the meadow comes first, and only then the amount harvested.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">✓</div>
+          </article>
+          <article class="why-card">
+            <div class="why-card-top">
+              <span class="why-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3 5.5 6v5.2c0 4.3 2.8 8.2 6.5 9.8 3.7-1.6 6.5-5.5 6.5-9.8V6L12 3z"/>
+                  <path d="M9.2 12.2 11.1 14l3.7-4"/>
+                </svg>
+              </span>
+              <span class="why-index">04</span>
+            </div>
             <h3 data-i18n="why.tested.title">Tested Quality</h3>
             <p data-i18n="why.tested.desc">Free from pesticide residue and tested for purity. Every batch follows the same rules.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -236,7 +278,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer" id="faq">
+  <footer class="footer">
     <div class="footer-bg" aria-hidden="true"></div>
     <div class="footer-overlay" aria-hidden="true"></div>
     <div class="footer-grain" aria-hidden="true"></div>
@@ -276,10 +318,10 @@
           </div>
           <div class="footer-col">
             <h4 data-i18n="footer.support">Support</h4>
-            <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+            <a href="../pages/faq.html" data-i18n="nav.faq">Questions and Answers</a>
             <a href="../pages/contact.html" data-i18n="footer.contact">Contact</a>
-            <a href="#" data-i18n="footer.returns">Returns and Exchanges</a>
-            <a href="#" data-i18n="footer.locator">Where to Find Us</a>
+            <a href="../pages/faq.html#returns" data-i18n="footer.returns">Returns and Exchanges</a>
+            <a href="../pages/contact.html#location" data-i18n="footer.locator">Where to Find Us</a>
           </div>
           <div class="footer-col">
             <h4 data-i18n="footer.social">Follow Us</h4>

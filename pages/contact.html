@@ -32,6 +32,9 @@
       name="twitter:image:alt"
       content="Metche: pure raw honey harvested with care"
     />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -397,10 +400,11 @@
           <summary data-i18n="nav.explore">Explore</summary>
           <a href="../products/all.html" data-i18n="nav.products">All Products</a>
           <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
+          <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
         </details>
         <a href="../blog/index.html" data-i18n="nav.journal">About Honey</a>
         <a href="../#quiz" data-i18n="nav.selector">Help Me Choose</a>
-        <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+        <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
       </nav>
     </div>
     <div class="overlay" id="overlay"></div>
@@ -515,6 +519,9 @@
                           >
                           <a href="../blog/index.html" data-i18n="nav.journal"
                             >About Honey</a
+                          >
+                          <a href="./faq.html" data-i18n="nav.faq"
+                            >Questions and Answers</a
                           >
                         </div>
                       </div>
@@ -713,7 +720,7 @@
                   <p><a href="tel:+38970123456">+389 70 123 456</a></p>
                 </div>
               </div>
-              <div class="contact-detail-item">
+              <div class="contact-detail-item" id="location">
                 <div class="contact-detail-icon" aria-hidden="true">
                   <svg
                     width="24"
@@ -772,37 +779,37 @@ Sunday: closed</p>
           <h2 data-i18n="contact.faq.title">Common Questions</h2>
           <p data-i18n="contact.faq.intro">Here are answers to the questions we are asked most often. If you cannot find what you need, contact us.</p>
           <div class="faq-accordion">
-            <details class="faq-item">
+            <details class="faq-item" id="raw-honey">
               <summary data-i18n="contact.faq.q1.question">What is the difference between raw and regular honey?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q1.answer">Raw honey is not heated or finely filtered, so its enzymes, pollen, and the elements destroyed by heat remain in it. Regular honey is often pasteurised and blended. We jar Metche while the flowers are at their peak and never above 40°C.</p>
               </div>
             </details>
-            <details class="faq-item">
+            <details class="faq-item" id="storage">
               <summary data-i18n="contact.faq.q2.question">How should I store Metche honey?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q2.answer">Keep it in a cool, dark place at room temperature. If it starts to crystallise, that is a sign of genuine raw honey. Place the jar in warm water to soften it. Do not use a microwave or heat it above 40°C.</p>
               </div>
             </details>
-            <details class="faq-item">
+            <details class="faq-item" id="delivery">
               <summary data-i18n="contact.faq.q3.question">Do you deliver across Macedonia and abroad?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q3.answer">Yes, we deliver throughout Macedonia. For orders outside the country, write to us and we will explain the available options and delivery times.</p>
               </div>
             </details>
-            <details class="faq-item">
+            <details class="faq-item" id="returns">
               <summary data-i18n="contact.faq.q4.question">What if I am not satisfied?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q4.answer">We stand behind our honey. If you are not satisfied within 30 days, we will refund you or send a new jar. Unopened jars may be returned without question.</p>
               </div>
             </details>
-            <details class="faq-item">
+            <details class="faq-item" id="babies">
               <summary data-i18n="contact.faq.q5.question">Is it suitable for babies?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q5.answer">Raw honey must not be given to children under 12 months. For older children and adults, it can be a good part of the diet when enjoyed in moderation.</p>
               </div>
             </details>
-            <details class="faq-item">
+            <details class="faq-item" id="bees">
               <summary data-i18n="contact.faq.q6.question">How do you care for the bees?</summary>
               <div class="faq-content">
                 <p data-i18n="contact.faq.q6.answer">We work only with beekeepers who care for their bees attentively: the hive and the meadow come first, and the harvest quantity comes second. Every batch can be traced to a specific apiary and season.</p>
@@ -850,10 +857,10 @@ Sunday: closed</p>
             </div>
             <div class="footer-col">
               <h4 data-i18n="footer.support">Support</h4>
-              <a href="../#faq" data-i18n="nav.faq">Questions and Answers</a>
+              <a href="./faq.html" data-i18n="nav.faq">Questions and Answers</a>
               <a href="./contact.html" data-i18n="footer.contact">Contact</a>
-              <a href="./contact.html" data-i18n="footer.returns">Returns and Exchanges</a>
-              <a href="./contact.html" data-i18n="footer.locator">Where to Find Us</a>
+              <a href="./faq.html#returns" data-i18n="footer.returns">Returns and Exchanges</a>
+              <a href="./contact.html#location" data-i18n="footer.locator">Where to Find Us</a>
             </div>
             <div class="footer-col">
               <h4 data-i18n="footer.social">Follow Us</h4>

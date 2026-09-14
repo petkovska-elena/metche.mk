@@ -134,6 +134,7 @@
   }
 
   function getAnchorOffset() {
+    if (!header) return -70;
     return header.classList.contains('header--minimal') ? -70 : -12;
   }
 
@@ -213,7 +214,7 @@
     }
 
     const announcement = document.querySelector('.announcement-bar');
-    if (announcement && header.closest('.page-hero')) {
+    if (announcement && header.closest('.page-hero, .contact-hero')) {
       function syncAnnounceOffset() {
         const past = announcement.getBoundingClientRect().bottom <= 0;
         header.classList.toggle('header--past-announce', past);
@@ -275,12 +276,13 @@
     closeQuiz();
   });
 
-  function addToCart(id, name, price) {
+  function addToCart(id, name, price, qty = 1) {
+    const amount = Math.min(12, Math.max(1, parseInt(qty, 10) || 1));
     const existing = cart.find(item => item.id === id);
     if (existing) {
-      existing.qty += 1;
+      existing.qty += amount;
     } else {
-      cart.push({ id, name, price, qty: 1 });
+      cart.push({ id, name, price, qty: amount });
     }
     renderCart();
     openCart();
@@ -348,11 +350,57 @@
     const id = card.dataset.id || btn.dataset.id;
     const name = card.dataset.name || btn.dataset.name;
     const price = parseInt(card.dataset.price || btn.dataset.price, 10);
+    const inPdp = btn.closest('.pdp-buy, .pdp-sticky, .pdp-layout');
+    const pageQty = document.querySelector('.pdp-layout .pdp-qty-value');
+    const qty = inPdp ? parseInt(pageQty?.textContent || '1', 10) : 1;
 
     if (id && name && price) {
-      addToCart(id, name, price);
+      addToCart(id, name, price, qty);
     }
   });
+
+  document.addEventListener('click', (e) => {
+    const stepBtn = e.target.closest('[data-qty-step]');
+    if (stepBtn) {
+      const values = document.querySelectorAll('.pdp-qty-value');
+      const current = parseInt(values[0]?.textContent || '1', 10);
+      const next = Math.min(12, Math.max(1, current + parseInt(stepBtn.dataset.qtyStep, 10)));
+      values.forEach(value => {
+        value.textContent = String(next);
+      });
+    }
+
+    const thumb = e.target.closest('.pdp-thumb');
+    if (thumb) {
+      const layout = thumb.closest('.pdp-layout');
+      const stage = layout?.querySelector('.pdp-stage-img');
+      layout?.querySelectorAll('.pdp-thumb').forEach(item => {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+      });
+      thumb.classList.add('is-active');
+      thumb.setAttribute('aria-selected', 'true');
+      const img = thumb.querySelector('img');
+      if (stage && img) {
+        stage.src = thumb.dataset.src || img.src;
+        if (img.alt) stage.alt = img.alt;
+      }
+    }
+  });
+
+  function initPdp() {
+    const layout = document.querySelector('.pdp-layout');
+    if (!layout) return;
+
+    const buy = layout.querySelector('.pdp-buy');
+    const sticky = document.getElementById('pdpSticky');
+    if (buy && sticky && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        sticky.classList.toggle('is-visible', !entry.isIntersecting);
+      }, { threshold: 0, rootMargin: '-72px 0px 0px 0px' });
+      observer.observe(buy);
+    }
+  }
 
   // Grade tabs
   document.querySelectorAll('.grade-tab').forEach(tab => {
@@ -488,6 +536,28 @@
     }
   });
 
+  function openFaqFromHash() {
+    const hash = window.location.hash;
+    if (!hash || hash === '#') return;
+    const id = hash.slice(1);
+    const target = document.getElementById(id) || document.querySelector(hash);
+    if (!target) return;
+    const item = target.matches('details.faq-item')
+      ? target
+      : target.closest('details.faq-item');
+    if (item) item.open = true;
+    const scrollTarget = item || target;
+    const scrollToFaq = () => {
+      if (lenis) {
+        lenis.scrollTo(scrollTarget, { offset: getAnchorOffset() });
+      } else {
+        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    requestAnimationFrame(scrollToFaq);
+    setTimeout(scrollToFaq, 80);
+  }
+
   // Smooth anchor links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -510,9 +580,13 @@
 
   // Init
   window.MetcheI18n?.init();
+  openFaqFromHash();
   initSmoothScroll();
   initHeaderScroll();
+  initPdp();
   renderCart();
+  window.addEventListener('hashchange', openFaqFromHash);
+  window.addEventListener('load', openFaqFromHash);
 
   document.addEventListener('metche:languagechange', () => {
     cart = cart.map(item => ({
