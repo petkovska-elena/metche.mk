@@ -2994,7 +2994,7 @@ em {
   right: 0;
   bottom: 0;
   z-index: 90;
-  background: var(--color-surface-raised);
+  background: var(--color-bg);
   border-top: 1px solid var(--color-border);
   box-shadow: 0 -10px 32px rgba(58, 50, 41, 0.08);
 }
@@ -3058,8 +3058,13 @@ body:has(#pdpSticky) .footer {
     position: static;
   }
 
+  .pdp-stage {
+    background: transparent;
+  }
+
   .pdp-stage-img {
-    max-height: min(30dvh, 210px);
+    width: 100%;
+    max-height: none;
   }
 
   .pdp-thumbs {
