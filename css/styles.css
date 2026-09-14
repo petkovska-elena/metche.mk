@@ -2550,8 +2550,8 @@ em {
 
 .pdp-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  column-gap: 72px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  column-gap: 56px;
   row-gap: 28px;
   align-items: start;
 }
@@ -2584,6 +2584,9 @@ em {
 
 .pdp-stage {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: var(--radius-lg);
   background: var(--color-surface-warm);
@@ -2592,9 +2595,12 @@ em {
 
 .pdp-stage-img {
   display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(68vh, 640px);
+  object-fit: contain;
+  object-position: center;
 }
 
 .pdp-badge {
@@ -2988,15 +2994,20 @@ em {
   right: 0;
   bottom: 0;
   z-index: 90;
-  transform: translateY(110%);
-  transition: transform 0.35s ease;
   background: var(--color-surface-raised);
   border-top: 1px solid var(--color-border);
   box-shadow: 0 -10px 32px rgba(58, 50, 41, 0.08);
 }
 
-.pdp-sticky.is-visible {
-  transform: translateY(0);
+@media (min-width: 900px) {
+  .pdp-sticky {
+    transform: translateY(110%);
+    transition: transform 0.35s ease;
+  }
+
+  .pdp-sticky.is-visible {
+    transform: translateY(0);
+  }
 }
 
 .pdp-sticky-inner {
@@ -3034,13 +3045,26 @@ body:has(#pdpSticky) .footer {
 }
 
 @media (max-width: 899px) {
+  .section.pdp-section {
+    padding: 16px 0 28px;
+  }
+
   .pdp-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .pdp-gallery {
     position: static;
+  }
+
+  .pdp-stage-img {
+    max-height: min(30dvh, 210px);
+  }
+
+  .pdp-thumbs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .pdp-note-grid,
@@ -3058,22 +3082,24 @@ body:has(#pdpSticky) .footer {
     width: 100%;
   }
 
+  .pdp-sticky-inner {
+    padding: 10px var(--content-padding) calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
   .pdp-sticky-inner .add-to-cart {
-    padding: 12px 18px;
-  }
-}
-
-@media (max-width: 640px) {
-  .pdp-thumbs {
-    grid-template-columns: repeat(4, minmax(64px, 1fr));
-  }
-
-  .pdp-related .product-grid {
-    grid-template-columns: 1fr;
+    flex: 1;
+    padding: 12px 16px;
+    white-space: nowrap;
   }
 
   .pdp-info h1 {
     font-size: clamp(1.85rem, 8vw, 2.4rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .pdp-related .product-grid {
+    grid-template-columns: 1fr;
   }
 }
 
