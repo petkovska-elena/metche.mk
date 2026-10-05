@@ -40,6 +40,8 @@ docker compose up --build
 
 The site is served on container port 80. Publish it with `-p 8080:80` if you want it on localhost.
 
+`docker-compose.yml` and `stack.yml` are the deployment files for RepoRun.
+
 ## Team
 
 - Elena Petkovska
