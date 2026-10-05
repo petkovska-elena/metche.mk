@@ -8,19 +8,19 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mountain Honey, 2×250g | Metche">
   <meta property="og:description" content="Honey from high pastures. Thicker, with a deeper colour.">
-  <meta property="og:image" content="metche-opengraph.png">
+  <meta property="og:image" content="../assets/images/brand/metche-opengraph.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mountain Honey, 2×250g | Metche">
   <meta name="twitter:description" content="Honey from high pastures. Thicker, with a deeper colour.">
-  <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../assets/icons/favicon-32x32.webp">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <!-- Announcement Bar -->
@@ -32,7 +32,7 @@
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
     <div class="mobile-nav-header">
-      <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
+      <img src="../assets/icons/logo.webp" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
       <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
         <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
@@ -61,21 +61,29 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- Cart Drawer -->
-  <aside class="cart-drawer" id="cartDrawer">
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
     <div class="cart-header">
-      <h2 data-i18n="cart.title">Cart</h2>
-      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">&times;</button>
+      <div class="cart-heading">
+        <h2 id="cartTitle" data-i18n="cart.title">Cart</h2>
+        <span class="cart-heading-count" id="cartHeadingCount" hidden>0</span>
+      </div>
+      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
     </div>
-    <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend another €{amount} for free delivery</p>
-    <div class="cart-items" id="cartItems" data-lenis-prevent>
-      <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+    <div class="cart-shipping" id="cartShipping">
+      <p class="cart-shipping-text" id="cartShippingText"></p>
+      <div class="cart-shipping-track" aria-hidden="true"><span id="cartShippingBar"></span></div>
     </div>
-    <div class="cart-footer">
+    <div class="cart-items" id="cartItems" data-lenis-prevent></div>
+    <div class="cart-footer" id="cartFooter">
       <div class="cart-subtotal">
-        <span data-i18n="cart.subtotal">Total</span>
+        <span data-i18n="cart.subtotal">Subtotal</span>
         <span id="cartSubtotal">€0</span>
       </div>
-      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Order Now</button>
+      <p class="cart-note" data-i18n="cart.note">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Checkout</button>
+      <button type="button" class="cart-continue" id="cartContinue" data-i18n="cart.continue">Continue shopping</button>
     </div>
   </aside>
 
@@ -119,7 +127,7 @@
           </div>
 
           <a href="../" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
-            <img src="../LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
+            <img src="../assets/icons/logo.webp" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
           </a>
 
           <div class="header-side header-side--right">
@@ -146,21 +154,21 @@
 
         <div class="pdp-gallery">
           <div class="pdp-stage">
-            <img class="pdp-stage-img" src="../images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
+            <img class="pdp-stage-img" src="../assets/images/products/highland-gold.webp" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
             <span class="pdp-badge" data-i18n="badge.limited">Limited Quantity</span>
           </div>
           <div class="pdp-thumbs" role="tablist" aria-label="Product images" data-i18n-aria="pdp.gallery.aria">
-            <button type="button" class="pdp-thumb is-active" role="tab" aria-selected="true" data-src="../images/products/highland-gold.jpg">
-              <img src="../images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
+            <button type="button" class="pdp-thumb is-active" role="tab" aria-selected="true" data-src="../assets/images/products/highland-gold.webp">
+              <img src="../assets/images/products/highland-gold.webp" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
             </button>
-            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg">
-              <img src="../images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
+            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../assets/images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.webp">
+              <img src="../assets/images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.webp" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
             </button>
-            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.jpg">
-              <img src="../images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.jpg" alt="Beekeeper in the field" data-i18n-alt="alt.masterBeekeeper">
+            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../assets/images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.webp">
+              <img src="../assets/images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.webp" alt="Beekeeper in the field" data-i18n-alt="alt.masterBeekeeper">
             </button>
-            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg">
-              <img src="../images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture" data-i18n-alt="alt.blog.2">
+            <button type="button" class="pdp-thumb" role="tab" aria-selected="false" data-src="../assets/images/honey/daily-slowdown-xGrtSzRazVM-unsplash.webp">
+              <img src="../assets/images/honey/daily-slowdown-xGrtSzRazVM-unsplash.webp" alt="Creamy honey texture" data-i18n-alt="alt.blog.2">
             </button>
           </div>
         </div>
@@ -244,7 +252,7 @@
     <section class="section pdp-origin-section">
       <div class="container pdp-origin-grid">
         <div class="pdp-origin-image">
-          <img src="../images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
+          <img src="../assets/images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.webp" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
         </div>
         <div class="pdp-origin-copy">
           <p class="section-label" data-i18n="pdp.origin.label">Where it comes from</p>
@@ -334,7 +342,7 @@
         <div class="product-grid">
           <a href="./reserve.html" class="product-card" data-product="reserve-ritual">
             <div class="product-visual">
-              <img src="../images/products/reserve-blend.jpg" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
+              <img src="../assets/images/products/reserve-blend.webp" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
               <span class="product-grade" data-i18n-grade>Floral Bouquet</span>
               <span class="product-badge" data-i18n="badge.bestseller">Most Popular</span>
             </div>
@@ -350,7 +358,7 @@
           </a>
           <a href="./wildflower.html" class="product-card" data-product="morning-glow">
             <div class="product-visual">
-              <img src="../images/products/morning-glow.jpg" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
+              <img src="../assets/images/products/morning-glow.webp" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
               <span class="product-grade" data-i18n-grade>Meadow Honey</span>
             </div>
             <div class="product-info">
@@ -493,8 +501,8 @@
     </div>
   </div>
 
-  <script src="../js/i18n.js"></script>
+  <script src="../assets/js/i18n.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

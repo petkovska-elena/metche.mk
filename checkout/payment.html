@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="checkout.meta.payment" data-meta-description-key="checkout.secure">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay on delivery | Metche</title>
+  <meta name="description" content="You pay the courier when the jars arrive. Nothing is charged now.">
+  <meta property="og:title" content="Payment | Metche">
+  <meta property="og:description" content="Preview checkout. No payment is taken.">
+  <meta property="og:image" content="../assets/images/brand/metche-opengraph.webp">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../assets/icons/favicon-32x32.webp">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="checkout-page" data-checkout="payment">
+  <div class="checkout-shell">
+    <div class="checkout-main">
+      <div class="checkout-main-inner">
+        <header class="checkout-top">
+          <a class="checkout-logo" href="../index.html" aria-label="Metche home" data-i18n-aria="aria.home">
+            <img src="../assets/icons/logo.webp" alt="Metche" width="970" height="669" data-i18n-alt="brand.logo">
+          </a>
+          <div class="lang-switcher" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
+            <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+          </div>
+        </header>
+
+        <nav class="checkout-steps" aria-label="Checkout">
+          <a href="../index.html?cart=open" data-i18n="checkout.step.cart">Cart</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html" data-i18n="checkout.step.information">Information</a>
+          <span aria-hidden="true">/</span>
+          <a href="shipping.html" data-i18n="checkout.step.shipping">Shipping</a>
+          <span aria-hidden="true">/</span>
+          <span class="is-current" aria-current="step" data-i18n="checkout.step.payment">Payment</span>
+        </nav>
+
+        <div class="checkout-empty" id="checkoutEmpty" hidden>
+          <h1 data-i18n="checkout.empty.title">Your cart is empty</h1>
+          <p data-i18n="checkout.empty.text">Add a jar before you check out.</p>
+          <a class="btn btn-primary" href="../products/all.html" data-i18n="checkout.empty.cta">Continue shopping</a>
+        </div>
+
+        <div id="checkoutFlow">
+          <div class="checkout-review" id="checkoutReview"></div>
+          <form id="paymentForm" novalidate>
+            <section class="checkout-section">
+              <h1 data-i18n="checkout.payment.title">Payment on delivery</h1>
+              <div class="checkout-pay-options">
+                <div class="checkout-pay-option">
+                  <p class="checkout-method-name" data-i18n="checkout.payment.cod">Pay on delivery</p>
+                  <p class="checkout-pay-hint" data-i18n="checkout.payment.cod.hint">You pay the courier when the jars arrive. Nothing is charged now.</p>
+                </div>
+              </div>
+            </section>
+
+            <p class="checkout-policy">
+              <span data-i18n="checkout.policy">By placing this order you agree to our terms and privacy policy.</span>
+              <a href="../pages/terms.html" data-i18n="footer.terms">Terms</a>
+              ·
+              <a href="../pages/privacy.html" data-i18n="footer.privacy">Privacy</a>
+            </p>
+            <div class="checkout-actions">
+              <a class="checkout-return" href="shipping.html" data-i18n="checkout.step.shipping">Shipping</a>
+              <button class="btn btn-primary" id="payButton" type="submit">Place order</button>
+            </div>
+          </form>
+          <footer class="checkout-footer">
+            <a href="../pages/terms.html" data-i18n="footer.terms">Terms</a>
+            <a href="../pages/privacy.html" data-i18n="footer.privacy">Privacy</a>
+            <a href="../pages/contact.html" data-i18n="footer.contact">Contact</a>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <aside class="checkout-summary" aria-labelledby="summaryTitle">
+      <div class="checkout-summary-inner">
+        <button type="button" class="checkout-summary-toggle" id="summaryToggle" aria-expanded="false" aria-controls="summaryBody">
+          <span id="summaryToggleLabel" data-i18n="checkout.showSummary">Show order summary</span>
+          <span id="summaryToggleTotal">€0</span>
+        </button>
+        <div class="checkout-summary-body" id="summaryBody">
+          <h2 id="summaryTitle" data-i18n="checkout.summary">Order summary</h2>
+          <div id="checkoutSummary"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../assets/js/checkout.js"></script>
+</body>
+</html>

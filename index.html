@@ -8,22 +8,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Metche | Pure Raw Honey from Macedonia">
   <meta property="og:description" content="Metche is a family beekeeping brand. Raw honey from our meadows and mountain pastures: unheated, unfiltered, and harvested as it should be.">
-  <meta property="og:image" content="metche-opengraph.png">
+  <meta property="og:image" content="assets/images/brand/metche-opengraph.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800">
   <meta property="og:image:alt" content="Metche: pure raw honey, carefully harvested">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Metche | Pure Raw Honey from Macedonia">
   <meta name="twitter:description" content="Metche is a family beekeeping brand. Raw honey from our meadows and mountain pastures: unheated, unfiltered, and harvested as it should be.">
-  <meta name="twitter:image" content="metche-opengraph.png">
+  <meta name="twitter:image" content="assets/images/brand/metche-opengraph.webp">
   <meta name="twitter:image:alt" content="Metche: pure raw honey, carefully harvested">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/webp" sizes="32x32" href="assets/icons/favicon-32x32.webp">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <!-- Announcement Bar -->
@@ -35,7 +35,7 @@
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
     <div class="mobile-nav-header">
-      <img src="LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
+      <img src="assets/icons/logo.webp" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
       <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
         <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
@@ -64,21 +64,29 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- Cart Drawer -->
-  <aside class="cart-drawer" id="cartDrawer">
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
     <div class="cart-header">
-      <h2 data-i18n="cart.title">Cart</h2>
-      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">&times;</button>
+      <div class="cart-heading">
+        <h2 id="cartTitle" data-i18n="cart.title">Cart</h2>
+        <span class="cart-heading-count" id="cartHeadingCount" hidden>0</span>
+      </div>
+      <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
     </div>
-    <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend another €{amount} for free delivery</p>
-    <div class="cart-items" id="cartItems" data-lenis-prevent>
-      <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+    <div class="cart-shipping" id="cartShipping">
+      <p class="cart-shipping-text" id="cartShippingText"></p>
+      <div class="cart-shipping-track" aria-hidden="true"><span id="cartShippingBar"></span></div>
     </div>
-    <div class="cart-footer">
+    <div class="cart-items" id="cartItems" data-lenis-prevent></div>
+    <div class="cart-footer" id="cartFooter">
       <div class="cart-subtotal">
-        <span data-i18n="cart.subtotal">Total</span>
+        <span data-i18n="cart.subtotal">Subtotal</span>
         <span id="cartSubtotal">€0</span>
       </div>
-      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Order Now</button>
+      <p class="cart-note" data-i18n="cart.note">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Checkout</button>
+      <button type="button" class="cart-continue" id="cartContinue" data-i18n="cart.continue">Continue shopping</button>
     </div>
   </aside>
 
@@ -123,7 +131,7 @@
           </div>
 
           <a href="index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
-            <img src="LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
+            <img src="assets/icons/logo.webp" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
           </a>
 
           <div class="header-side header-side--right">
@@ -139,7 +147,7 @@
         </div>
       </header>
       <div class="hero-media">
-        <img src="janosch-diggelmann-8zuB5SK0pI0-unsplash.jpg" alt="Bee on wildflower: raw honey harvest" data-i18n-alt="alt.hero">
+        <img src="assets/images/nature/janosch-diggelmann-8zuB5SK0pI0-unsplash.webp" alt="Bee on wildflower: raw honey harvest" data-i18n-alt="alt.hero">
         <div class="container hero-content-wrap">
           <div class="hero-content">
             <h1 data-i18n="hero.title">Honey to Remember.</h1>
@@ -168,7 +176,7 @@
         <div class="product-grid" id="productGrid">
             <a href="products/reserve.html" class="product-card" data-product="reserve-ritual">
               <div class="product-visual">
-                <img src="images/products/reserve-blend.jpg" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
+                <img src="assets/images/products/reserve-blend.webp" alt="Floral Bouquet, 500g raw honey" data-i18n-alt="alt.product.reserveRitual">
                 <span class="product-grade" data-i18n-grade>Floral Bouquet</span>
               </div>
               <div class="product-info">
@@ -182,7 +190,7 @@
             </a>
             <a href="products/wildflower.html" class="product-card" data-product="morning-glow">
               <div class="product-visual">
-                <img src="images/products/morning-glow.jpg" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
+                <img src="assets/images/products/morning-glow.webp" alt="Meadow Honey, 340g raw honey" data-i18n-alt="alt.product.morningGlow">
                 <span class="product-grade" data-i18n-grade>Meadow Honey</span>
               </div>
               <div class="product-info">
@@ -196,7 +204,7 @@
             </a>
             <a href="products/highland.html" class="product-card" data-product="highland-deep">
               <div class="product-visual">
-                <img src="images/products/highland-gold.jpg" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
+                <img src="assets/images/products/highland-gold.webp" alt="Mountain Honey, 2×250g raw honey" data-i18n-alt="alt.product.highlandDeep">
                 <span class="product-grade" data-i18n-grade>Mountain Honey</span>
               </div>
               <div class="product-info">
@@ -220,7 +228,7 @@
           <p data-i18n-html="meet.text">We harvest our honey from the mountain pastures and flower meadows around Kalanjevo. It is known for its <em>full floral taste</em>, <em>slow crystallisation</em>, and <em>pollen that stays in the jar</em>. This is not just another sweetener: it is honey straight from the apiary, made for every day.</p>
         </div>
         <div class="meet-image">
-          <img src="images/nature/bianca-ackermann-mTNVvQvmoKs-unsplash.jpg" alt="Beekeeper inspecting a hive frame" data-i18n-alt="alt.beekeeper">
+          <img src="assets/images/nature/bianca-ackermann-mTNVvQvmoKs-unsplash.webp" alt="Beekeeper inspecting a hive frame" data-i18n-alt="alt.beekeeper">
         </div>
       </div>
     </section>
@@ -305,15 +313,15 @@
               <tr>
                 <th></th>
                 <th>
-                  <img class="compare-thumb compare-thumb--metche" src="images/honey/oktay-yildiz-AQMqURILWoU-unsplash.jpg" alt="Honeybee" data-i18n-alt="alt.compare.bee">
+                  <img class="compare-thumb compare-thumb--metche" src="assets/images/honey/oktay-yildiz-AQMqURILWoU-unsplash.webp" alt="Honeybee" data-i18n-alt="alt.compare.bee">
                   <span data-i18n="compare.col.metche">Metche</span>
                 </th>
                 <th>
-                  <img class="compare-thumb compare-thumb--other" src="images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.jpg" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
+                  <img class="compare-thumb compare-thumb--other" src="assets/images/nature/bianca-ackermann-ANsQG9qvbqM-unsplash.webp" alt="Raw honeycomb" data-i18n-alt="alt.compare.honeycomb">
                   <span data-i18n="compare.col.other">Other Raw Honey</span>
                 </th>
                 <th>
-                  <img class="compare-thumb compare-thumb--regular" src="images/honey/andy-holmes-wdz-dez94RQ-unsplash.jpg" alt="Wildflowers" data-i18n-alt="alt.compare.wildflowers">
+                  <img class="compare-thumb compare-thumb--regular" src="assets/images/honey/andy-holmes-wdz-dez94RQ-unsplash.webp" alt="Wildflowers" data-i18n-alt="alt.compare.wildflowers">
                   <span data-i18n="compare.col.regular">Regular Honey</span>
                 </th>
               </tr>
@@ -360,7 +368,7 @@
       <div class="container">
         <div class="taste-panel">
           <div class="taste-panel-bg" aria-hidden="true">
-            <img src="texture.jpg" alt="">
+            <img src="assets/images/brand/texture.webp" alt="">
             <div class="taste-panel-overlay"></div>
           </div>
           <div class="taste-panel-inner">
@@ -440,7 +448,7 @@
     <section class="section beekeeper-section">
       <div class="container beekeeper-grid">
         <div class="beekeeper-image">
-          <img src="images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.jpg" alt="Master beekeeper in the field" data-i18n-alt="alt.masterBeekeeper">
+          <img src="assets/images/nature/bianca-ackermann-LZ3Ffa_Yl7E-unsplash.webp" alt="Master beekeeper in the field" data-i18n-alt="alt.masterBeekeeper">
         </div>
         <div class="beekeeper-text">
           <p class="beekeeper-intro" data-i18n-html="beekeeper.intro">Our beekeepers work the traditional way, with <em>gentle harvesting</em>: the health of the bees and the meadow comes first, and the harvest quantity comes second.</p>
@@ -462,19 +470,19 @@
         </div>
         <div class="blog-grid">
           <article class="blog-card">
-            <img src="images/honey/aaron-burden-2xhOYKK-jAM-unsplash.jpg" alt="Honey and wellness" data-i18n-alt="alt.blog.0">
+            <img src="assets/images/honey/aaron-burden-2xhOYKK-jAM-unsplash.webp" alt="Honey and wellness" data-i18n-alt="alt.blog.0">
             <div class="blog-meta" data-i18n-blog="0.meta">Article | March 12, 2025</div>
             <h3 data-i18n-blog="0.title">Raw Honey and Digestion: What People Experience</h3>
             <a href="blog/raw-honey-prebiotic.html" class="link-arrow" data-i18n="blog.readMore">Read More</a>
           </article>
           <article class="blog-card">
-            <img src="images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.jpg" alt="First jar of honey" data-i18n-alt="alt.blog.1">
+            <img src="assets/images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.webp" alt="First jar of honey" data-i18n-alt="alt.blog.1">
             <div class="blog-meta" data-i18n-blog="1.meta">Article | January 8, 2024</div>
             <h3 data-i18n-blog="1.title">Your First Month with Metche: What to Expect</h3>
             <a href="blog/first-month-with-metche.html" class="link-arrow" data-i18n="blog.readMore">Read More</a>
           </article>
           <article class="blog-card">
-            <img src="images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture" data-i18n-alt="alt.blog.2">
+            <img src="assets/images/honey/daily-slowdown-xGrtSzRazVM-unsplash.webp" alt="Creamy honey texture" data-i18n-alt="alt.blog.2">
             <div class="blog-meta" data-i18n-blog="2.meta">Article | November 3, 2025</div>
             <h3 data-i18n-blog="2.title">Why Raw Honey Is Thicker and Richer</h3>
             <a href="blog/why-honey-tastes-richer.html" class="link-arrow" data-i18n="blog.readMore">Read More</a>
@@ -606,8 +614,8 @@
     </div>
   </div>
 
-  <script src="js/i18n.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
       property="og:description"
       content="How Metche collects, uses, stores, and protects personal data when you browse, contact us, or place an order."
     />
-    <meta property="og:image" content="../metche-opengraph.png" />
+    <meta property="og:image" content="../assets/images/brand/metche-opengraph.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="800" />
     <meta
@@ -27,21 +27,21 @@
       name="twitter:description"
       content="How Metche collects, uses, stores, and protects personal data when you browse, contact us, or place an order."
     />
-    <meta name="twitter:image" content="../metche-opengraph.png" />
+    <meta name="twitter:image" content="../assets/images/brand/metche-opengraph.webp" />
     <meta
       name="twitter:image:alt"
       content="Metche: pure raw honey harvested with care"
     />
-    <link rel="icon" href="../favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="../assets/icons/favicon-32x32.webp" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
     <style>
       .legal-hero .hero-content-minimal { padding-top: clamp(28px, 4vw, 48px); padding-bottom: clamp(24px, 3vw, 40px); }
@@ -75,7 +75,7 @@
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
       <div class="mobile-nav-header">
-        <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo" />
+        <img src="../assets/icons/logo.webp" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo" />
         <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-i18n-aria="aria.language" data-active="en">
           <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
@@ -104,37 +104,29 @@
     <div class="overlay" id="overlay"></div>
 
     <!-- Cart Drawer -->
-    <aside class="cart-drawer" id="cartDrawer">
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
       <div class="cart-header">
-        <h2 data-i18n="cart.title">Cart</h2>
-        <button
-          class="cart-close"
-          id="cartClose"
-          aria-label="Close cart"
-          data-i18n-aria="aria.closeCart"
-        >
-          &times;
+        <div class="cart-heading">
+          <h2 id="cartTitle" data-i18n="cart.title">Cart</h2>
+          <span class="cart-heading-count" id="cartHeadingCount" hidden>0</span>
+        </div>
+        <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
         </button>
       </div>
-      <p
-        class="cart-shipping"
-        id="cartShipping"
-        data-i18n="cart.shipping.remaining"
-        data-i18n-vars='{"amount":"50"}'
-      >Spend another €{amount} for free delivery</p>
-      <div class="cart-items" id="cartItems" data-lenis-prevent>
-        <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+      <div class="cart-shipping" id="cartShipping">
+        <p class="cart-shipping-text" id="cartShippingText"></p>
+        <div class="cart-shipping-track" aria-hidden="true"><span id="cartShippingBar"></span></div>
       </div>
-      <div class="cart-footer">
+      <div class="cart-items" id="cartItems" data-lenis-prevent></div>
+      <div class="cart-footer" id="cartFooter">
         <div class="cart-subtotal">
-          <span data-i18n="cart.subtotal">Total</span>
+          <span data-i18n="cart.subtotal">Subtotal</span>
           <span id="cartSubtotal">€0</span>
         </div>
-        <button
-          class="btn btn-primary btn-full"
-          id="checkoutBtn"
-          data-i18n="cart.checkout"
-        >Order Now</button>
+        <p class="cart-note" data-i18n="cart.note">Shipping and taxes calculated at checkout.</p>
+        <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Checkout</button>
+        <button type="button" class="cart-continue" id="cartContinue" data-i18n="cart.continue">Continue shopping</button>
       </div>
     </aside>
 
@@ -231,7 +223,7 @@
               data-i18n-aria="aria.home"
             >
               <img
-                src="../LOGO.png"
+                src="../assets/icons/logo.webp"
                 alt="Metche"
                 class="header-logo-img"
                 width="96"
@@ -405,9 +397,9 @@
       </div>
     </footer>
 
-    <script src="../js/i18n.js"></script>
+    <script src="../assets/js/i18n.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
       (() => {
         const copy = {

@@ -8,9 +8,18 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Your First Month with Metche: What to Expect | Metche" />
     <meta property="og:description" content="A practical week-by-week guide to the taste, everyday use, and proper storage of honey." />
-    <link rel="icon" href="../favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <meta property="og:image" content="../assets/images/brand/metche-opengraph.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Metche: pure raw honey, carefully harvested">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your First Month with Metche: What to Expect | Metche">
+    <meta name="twitter:description" content="A practical week-by-week guide to the taste, everyday use, and proper storage of honey.">
+    <meta name="twitter:image" content="../assets/images/brand/metche-opengraph.webp">
+    <meta name="twitter:image:alt" content="Metche: pure raw honey, carefully harvested">
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="../assets/icons/favicon-32x32.webp" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -68,7 +77,6 @@
   --radius: 20px;
   --radius-lg: 28px;
   --radius-pill: 999px;
-  --shadow: 0 4px 24px rgba(58, 50, 41, 0.08);
 }
 
 *, *::before, *::after {
@@ -194,7 +202,7 @@ em {
 .btn-outline:hover {
   background: var(--color-surface-warm);
   color: var(--color-text);
-  border-color: var(--color-brown);
+  border-color: var(--color-surface-warm);
 }
 
 .btn-small {
@@ -264,7 +272,6 @@ em {
   transition:
     transform 0.35s ease,
     background 0.45s ease,
-    box-shadow 0.45s ease,
     border-color 0.45s ease,
     backdrop-filter 0.45s ease;
 }
@@ -277,7 +284,6 @@ em {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: none;
-  box-shadow: 0 2px 20px rgba(58, 50, 41, 0.06);
 }
 
 .header-inner {
@@ -426,17 +432,12 @@ em {
   height: 88px;
   width: auto;
   object-fit: contain;
-  transition: height 0.45s ease, filter 0.45s ease;
+  transition: height 0.45s ease;
 }
 
-.header:not(.header--minimal) .header-logo-img {
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
-}
 
 .header.header--minimal .header-logo-img {
   height: 46px;
-  filter: none;
-  transition: filter 0.35s ease;
 }
 
 .nav-desktop {
@@ -544,6 +545,10 @@ em {
   justify-content: center;
 }
 
+.cart-count.is-hidden {
+  display: none;
+}
+
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -573,9 +578,7 @@ em {
   background: rgba(250, 247, 242, 0.97);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-top: 1px solid rgba(58, 50, 41, 0.08);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  box-shadow: 0 18px 48px rgba(58, 50, 41, 0.12);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -655,16 +658,13 @@ em {
   gap: 14px;
   padding: 10px 14px 10px 10px;
   min-width: 260px;
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: var(--radius);
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition: transform var(--transition);
 }
 
 .mega-product-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(195, 141, 0, 0.35);
-  box-shadow: var(--shadow);
 }
 
 .mega-product-card img {
@@ -804,12 +804,13 @@ em {
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   height: 100vh;
-  background: var(--color-surface);
+  height: 100dvh;
+  background: #fff;
   z-index: 200;
   transform: translateX(100%);
-  transition: transform var(--transition);
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
   flex-direction: column;
 }
@@ -818,82 +819,412 @@ em {
   transform: translateX(0);
 }
 
+.cart-drawer :focus,
+.cart-drawer :focus-visible,
+.cart-drawer * {
+  outline: none;
+}
+
 .cart-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
-  border-bottom: 1px solid var(--color-border);
+  gap: 16px;
+  padding: 18px 20px;
+  min-height: 72px;
+  background: #fff;
+}
+
+.cart-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
 
 .cart-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.cart-heading-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cart-heading-count[hidden] {
+  display: none;
 }
 
 .cart-close {
-  font-size: 28px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
   color: var(--color-text);
+  flex-shrink: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.cart-close:hover {
+  background: var(--color-bg);
 }
 
 .cart-shipping {
-  padding: 12px 24px;
+  padding: 14px 20px 16px;
+  background: var(--color-surface);
+}
+
+.cart-shipping-text {
+  margin: 0 0 10px;
   font-size: 13px;
-  background: var(--color-surface-raised);
+  line-height: 1.4;
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.cart-shipping.is-free .cart-shipping-text {
+  color: var(--color-green);
+  font-weight: 650;
+}
+
+.cart-shipping-track {
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--color-cream-dark);
+  overflow: hidden;
+}
+
+.cart-shipping-track span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d7a21a, var(--color-honey));
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cart-shipping.is-free .cart-shipping-track span {
+  background: var(--color-green);
 }
 
 .cart-items {
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 4px 20px 20px;
+  background: #fff;
 }
 
 .cart-empty {
-  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 48px 0;
+  min-height: 320px;
+  padding: 48px 12px;
+  color: var(--color-text);
+}
+
+.cart-empty-mark {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface);
+  color: var(--color-honey-dark);
+}
+
+.cart-empty-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cart-empty-hint {
+  max-width: 26ch;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.cart-empty .btn {
+  margin-top: 20px;
 }
 
 .cart-item {
-  display: flex;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 0;
+}
+
+.cart-item-media {
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.cart-item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cart-item-info {
-  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .cart-item-name {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 650;
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
-.cart-item-price {
-  font-size: 14px;
+.cart-item-name:hover {
+  color: var(--color-honey-dark);
+}
+
+.cart-item-variant {
+  margin-top: 3px;
+  font-size: 13px;
   color: var(--color-text-muted);
-  margin-top: 4px;
+}
+
+.cart-item-line {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.cart-qty {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+}
+
+.cart-qty button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.cart-qty button:hover:not(:disabled) {
+  background: var(--color-bg);
+}
+
+.cart-qty button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cart-qty span {
+  min-width: 1.25rem;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .cart-item-remove {
   font-size: 12px;
   color: var(--color-text-muted);
   text-decoration: underline;
-  margin-top: 8px;
+  text-underline-offset: 3px;
+}
+
+.cart-item-remove:hover {
+  color: var(--color-text);
+}
+
+.cart-upsell {
+  margin-top: 22px;
+  padding-top: 4px;
+}
+
+.cart-upsell-label {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.cart-upsell-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-upsell-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.cart-upsell-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--color-bg);
+}
+
+.cart-upsell-copy {
+  min-width: 0;
+}
+
+.cart-upsell-copy p {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.cart-upsell-copy span {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.cart-upsell-add {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cart-upsell-add:hover {
+  background: var(--color-honey);
 }
 
 .cart-footer {
-  padding: 24px;
-  border-top: 1px solid var(--color-border);
+  padding: 16px 20px calc(18px + env(safe-area-inset-bottom));
+  background: #fff;
+}
+
+.cart-drawer.is-empty .cart-footer {
+  display: none;
 }
 
 .cart-subtotal {
   display: flex;
   justify-content: space-between;
-  font-weight: 600;
-  margin-bottom: 16px;
+  align-items: baseline;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cart-note {
+  margin: 6px 0 14px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.cart-footer .btn-primary {
+  min-height: 52px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+.cart-footer .btn-primary:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.cart-continue {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 6px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cart-continue:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  .cart-header,
+  .cart-shipping,
+  .cart-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cart-items {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cart-item {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .cart-item-media {
+    width: 78px;
+    height: 78px;
+  }
 }
 
 /* Hero */
@@ -1257,7 +1588,7 @@ em {
 .grade-tab.active {
   background: var(--color-honey);
   color: var(--color-text);
-  border-color: var(--color-honey);
+  border-color: transparent;
 }
 
 .grade-panels {
@@ -1309,16 +1640,11 @@ em {
 }
 
 .featured-grade {
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.4);
   padding: 32px;
   border-radius: var(--radius);
   text-align: center;
   position: relative;
-}
-
-.featured-grade--bestseller {
-  border: 2px solid var(--color-amber);
 }
 
 .featured-badge {
@@ -1405,7 +1731,6 @@ em {
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  border: 1px solid rgba(58, 50, 41, 0.08);
   display: block;
   margin: 0 auto 10px;
   background: var(--color-surface-warm);
@@ -1457,7 +1782,6 @@ em {
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: clamp(280px, 32vw, 380px);
-  box-shadow: var(--shadow);
 }
 
 .taste-panel-bg {
@@ -1559,7 +1883,6 @@ em {
   height: 10px;
   border-radius: 50%;
   background: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22);
 }
 
 .taste-callout-dash {
@@ -1602,8 +1925,7 @@ em {
 }
 
 .review-card {
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.4);
   padding: 28px;
   border-radius: var(--radius);
 }
@@ -1700,7 +2022,6 @@ em {
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius);
-  border: 1px solid rgba(58, 50, 41, 0.07);
   margin-bottom: 16px;
   display: block;
   background: var(--color-surface-warm);
@@ -1780,7 +2101,7 @@ em {
 .footer-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80&fit=crop');
+  background-image: url('../assets/images/nature/photo-1469474968028-56623f02e42e.webp');
   background-size: cover;
   background-position: center 30%;
   transform: scale(1.05);
@@ -2014,7 +2335,6 @@ em {
 .modal-content {
   position: relative;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 40px;
   max-width: 520px;
@@ -2075,7 +2395,7 @@ em {
 }
 
 .quiz-option:hover {
-  border-color: var(--color-honey);
+  border-color: var(--color-surface-raised);
   background: var(--color-surface-raised);
 }
 
@@ -2143,7 +2463,6 @@ em {
 
   .header.header--minimal .header-logo-img {
     height: 42px;
-    transition: filter 0.35s ease;
   }
 
   .header.header--minimal .header-inner {
@@ -2557,7 +2876,6 @@ em {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  border: 1px solid var(--color-border);
   border-radius: 999px;
   background: var(--color-surface-raised);
 }
@@ -2757,17 +3075,15 @@ em {
 }
 
 .related-card {
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 18px;
   padding: 28px 22px 24px;
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .related-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 40px rgba(61, 52, 44, 0.12);
 }
 
 .related-jar {
@@ -3002,7 +3318,7 @@ em {
     <div class="mobile-nav" id="mobileNav" data-lenis-prevent>
       <div class="mobile-nav-header">
         <a href="../index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
-          <img src="../LOGO.png" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
+          <img src="../assets/icons/logo.webp" alt="Metche" class="mobile-nav-logo" width="48" height="48" data-i18n-alt="brand.logo">
         </a>
         <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language" data-active="en">
           <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
@@ -3032,21 +3348,29 @@ em {
     <div class="overlay" id="overlay"></div>
 
     <!-- Cart Drawer -->
-    <aside class="cart-drawer" id="cartDrawer">
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
       <div class="cart-header">
-        <h2 data-i18n="cart.title">Cart</h2>
-        <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+        <div class="cart-heading">
+          <h2 id="cartTitle" data-i18n="cart.title">Cart</h2>
+          <span class="cart-heading-count" id="cartHeadingCount" hidden>0</span>
+        </div>
+        <button class="cart-close" id="cartClose" aria-label="Close cart" data-i18n-aria="aria.closeCart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
       </div>
-      <p class="cart-shipping" id="cartShipping" data-i18n="cart.shipping.remaining" data-i18n-vars='{"amount":"50"}'>Spend another €{amount} for free delivery</p>
-      <div class="cart-items" id="cartItems" data-lenis-prevent>
-        <p class="cart-empty" data-i18n="cart.empty">The cart is empty</p>
+      <div class="cart-shipping" id="cartShipping">
+        <p class="cart-shipping-text" id="cartShippingText"></p>
+        <div class="cart-shipping-track" aria-hidden="true"><span id="cartShippingBar"></span></div>
       </div>
-      <div class="cart-footer">
+      <div class="cart-items" id="cartItems" data-lenis-prevent></div>
+      <div class="cart-footer" id="cartFooter">
         <div class="cart-subtotal">
-          <span data-i18n="cart.subtotal">Total</span>
+          <span data-i18n="cart.subtotal">Subtotal</span>
           <span id="cartSubtotal">€0</span>
         </div>
-        <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Order Now</button>
+        <p class="cart-note" data-i18n="cart.note">Shipping and taxes calculated at checkout.</p>
+        <button class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Checkout</button>
+        <button type="button" class="cart-continue" id="cartContinue" data-i18n="cart.continue">Continue shopping</button>
       </div>
     </aside>
 
@@ -3096,7 +3420,7 @@ em {
             </div>
 
             <a href="../index.html" class="header-logo" aria-label="Metche home" data-i18n-aria="aria.home">
-              <img src="../LOGO.png" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
+              <img src="../assets/icons/logo.webp" alt="Metche" class="header-logo-img" width="96" height="96" data-i18n-alt="brand.logo">
             </a>
 
             <div class="header-side header-side--right">
@@ -3119,7 +3443,7 @@ em {
 
         <div class="hero-content-minimal">
           <div class="article-hero-art">
-                <img src="../images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.jpg" alt="">
+                <img src="../assets/images/honey/danika-perkinson-ZhA9vZQPTeE-unsplash.webp" alt="">
               </div>
           <div class="container">
             <div class="article-hero-copy">
@@ -3144,7 +3468,7 @@ em {
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <span class="section-icon"><img src="../assets/icons/logo.webp" alt="" width="28" height="28"></span>
                 <h2 data-i18n="post.firstmonth.h1">Week One: Getting Used to the Taste</h2>
               </div>
               <p data-i18n-html="post.firstmonth.p1">Your first spoonful of raw honey may surprise you. The taste is not uniformly sweet like many industrial blends: floral notes come first, followed by a deeper, warm aroma, while the finish depends on the harvest and the plants around Kalanjevo. Read <a href="./why-honey-tastes-richer.html">why raw honey is thicker and richer</a>, and give your palate time to recognise the difference. During the first week, try it on its own, on bread, and in warm tea. That is the easiest way to discover how you enjoy it most.</p>
@@ -3152,7 +3476,7 @@ em {
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <span class="section-icon"><img src="../assets/icons/logo.webp" alt="" width="28" height="28"></span>
                 <h2 data-i18n="post.firstmonth.h2">Week Two: The Habit Takes Hold</h2>
               </div>
               <p data-i18n-html="post.firstmonth.p2">You do not need a strict schedule in the second week. It is enough to connect honey with a habit you already have: a spoonful in your morning tea, a thin layer on bread and butter, or a little honey with yoghurt. Choose a jar from <a href="../products/all.html">our raw honey range</a> according to the taste you prefer, and keep it somewhere you will notice easily. When honey becomes part of a familiar meal, the habit forms naturally and does not depend on reminders.</p>
@@ -3162,7 +3486,7 @@ em {
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <span class="section-icon"><img src="../assets/icons/logo.webp" alt="" width="28" height="28"></span>
                 <h2 data-i18n="post.firstmonth.h3">Weeks Three and Four: What Customers Tell Us</h2>
               </div>
               <p data-i18n="post.firstmonth.p3">By the third or fourth week, you will already know which amount and way of using honey suit you. Some customers tell us that they have found it easier to replace refined sugar in their tea or breakfast and that they prefer the gentler sweetness. Others notice the biggest difference in the taste and how satisfied they feel after a meal. These are personal experiences, not a promise that everyone will feel the same way. The best sign that the habit suits you is that it fits easily into your day and that you enjoy it without overdoing it.</p>
@@ -3170,7 +3494,7 @@ em {
 
             <div class="fade-up">
               <div class="section-heading">
-                <span class="section-icon"><img src="../LOGO.png" alt="" width="28" height="28"></span>
+                <span class="section-icon"><img src="../assets/icons/logo.webp" alt="" width="28" height="28"></span>
                 <h2 data-i18n="post.firstmonth.h4">How to Store the Jar</h2>
               </div>
               <p data-i18n="post.firstmonth.p4">Keep the jar tightly closed in a dry, dark place at room temperature. Refrigeration is not necessary and may only speed up crystallisation. If the honey becomes cloudy or crystallises, that does not mean it has spoiled; crystallisation is natural in raw honey. To soften it again, place the closed jar in a bowl of warm, but not boiling, water and wait a few minutes. Do not use a microwave or heat it directly, because strong heat changes the aroma, texture, and some of its natural properties.</p>
@@ -3200,21 +3524,21 @@ em {
           </div>
           <div class="related-grid">
             <div class="related-card fade-up">
-              <div class="related-jar"><img src="../images/products/reserve-blend.jpg" alt="Floral Bouquet"></div>
+              <div class="related-jar"><img src="../assets/images/products/reserve-blend.webp" alt="Floral Bouquet"></div>
               <h4 data-i18n="featured.reserve.title">Floral Bouquet, 500g</h4>
               <p class="related-sub" data-i18n="featured.reserve.sub">Raw · Unfiltered · Cold-filled</p>
               <span class="price">€14</span>
               <button class="btn btn-outline add-to-cart" data-id="reserve-blend" data-name="Floral Bouquet, 500g" data-price="14">Add to Cart: €14</button>
             </div>
             <div class="related-card fade-up">
-              <div class="related-jar"><img src="../images/products/highland-gold.jpg" alt="Mountain Honey"></div>
+              <div class="related-jar"><img src="../assets/images/products/highland-gold.webp" alt="Mountain Honey"></div>
               <h4 data-i18n="featured.highland.title">Mountain Honey, 380g</h4>
               <p class="related-sub" data-i18n="featured.highland.sub">Raw · From mountain pastures</p>
               <span class="price">€18</span>
               <button class="btn btn-outline add-to-cart" data-id="highland-gold" data-name="Mountain Honey, 380g" data-price="18">Add to Cart: €18</button>
             </div>
             <div class="related-card fade-up">
-              <div class="related-jar"><img src="../images/products/morning-glow.jpg" alt="Meadow Honey"></div>
+              <div class="related-jar"><img src="../assets/images/products/morning-glow.webp" alt="Meadow Honey"></div>
               <h4 data-i18n="featured.wildflower.title">Meadow Honey, 340g</h4>
               <p class="related-sub" data-i18n="featured.wildflower.sub">Raw · Mild meadow taste</p>
               <span class="price">€12</span>
@@ -3234,7 +3558,7 @@ em {
           <div class="blog-grid">
             <article class="blog-card fade-up">
               <a href="./raw-honey-prebiotic.html" class="blog-card-link">
-                <img src="../images/honey/aaron-burden-2xhOYKK-jAM-unsplash.jpg" alt="Honey and wellness" data-i18n-alt="alt.blog.0" style="object-position: 54% 46%">
+                <img src="../assets/images/honey/aaron-burden-2xhOYKK-jAM-unsplash.webp" alt="Honey and wellness" data-i18n-alt="alt.blog.0" style="object-position: 54% 46%">
               </a>
               <div class="blog-meta" data-i18n-blog="0.meta">Article | March 12, 2025</div>
               <h3 data-i18n-blog="0.title">Raw Honey and Digestion: What People Experience</h3>
@@ -3242,7 +3566,7 @@ em {
             </article>
             <article class="blog-card fade-up">
               <a href="./why-honey-tastes-richer.html" class="blog-card-link">
-                <img src="../images/honey/daily-slowdown-xGrtSzRazVM-unsplash.jpg" alt="Creamy honey texture" data-i18n-alt="alt.blog.2" style="object-position: center 30%">
+                <img src="../assets/images/honey/daily-slowdown-xGrtSzRazVM-unsplash.webp" alt="Creamy honey texture" data-i18n-alt="alt.blog.2" style="object-position: center 30%">
               </a>
               <div class="blog-meta" data-i18n-blog="2.meta">Article | November 3, 2025</div>
               <h3 data-i18n-blog="2.title">Why Raw Honey Is Thicker and Richer</h3>
@@ -3507,11 +3831,16 @@ em {
       'footer.privacy': 'Privacy',
 
       'cart.title': 'Cart',
-      'cart.subtotal': "Total",
-      'cart.checkout': "Order Now",
-      'cart.empty': "The cart is empty",
-      'cart.shipping.remaining': "Spend another €{amount} for free delivery",
-      'cart.shipping.free': "You have free delivery!",
+      'cart.subtotal': 'Subtotal',
+      'cart.checkout': 'Checkout',
+      'cart.empty': 'Your cart is empty',
+      'cart.empty.hint': 'Raw honey, jarred when the flowers are at their peak.',
+      'cart.continue': 'Continue shopping',
+      'cart.note': 'Shipping and taxes calculated at checkout.',
+      'cart.upsell': 'You may also like',
+      'cart.add': 'Add',
+      'cart.shipping.remaining': 'Spend another €{amount} for free delivery',
+      'cart.shipping.free': 'You have free delivery',
       'cart.remove': 'Remove',
       'cart.checkout.alert': "Thank you for your order! Payment is a demo: connect the payment system.",
 
@@ -3746,11 +4075,16 @@ em {
       'footer.privacy': 'Приватност',
 
       'cart.title': 'Кошничка',
-      'cart.subtotal': 'Вкупно',
-      'cart.checkout': 'Нарачај',
-      'cart.empty': 'Кошничката е празна',
+      'cart.subtotal': 'Меѓузбир',
+      'cart.checkout': 'Кон плаќање',
+      'cart.empty': 'Вашата кошничка е празна',
+      'cart.empty.hint': 'Суров мед, наполнет кога цветовите се на врвот.',
+      'cart.continue': 'Продолжи со купување',
+      'cart.note': 'Доставата и данокот се пресметуваат при нарачка.',
+      'cart.upsell': 'Можеби ќе ви се допадне',
+      'cart.add': 'Додај',
       'cart.shipping.remaining': 'Потрошете уште €{amount} за бесплатна достава',
-      'cart.shipping.free': 'Имате бесплатна достава!',
+      'cart.shipping.free': 'Имате бесплатна достава',
       'cart.remove': 'Отстрани',
       'cart.checkout.alert': 'Ви благодариме за нарачката! Наплатата е демо: поврзете го платежниот систем.',
 
@@ -4180,7 +4514,32 @@ em {
   'use strict';
 
   const FREE_SHIPPING_THRESHOLD = 50;
+  const CART_STORAGE_KEY = 'metche-cart';
   let cart = [];
+
+  function loadCart() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+      if (!Array.isArray(saved)) return;
+      cart = saved
+        .filter(item => item && item.id && item.name && Number.isFinite(Number(item.price)))
+        .map(item => ({
+          id: String(item.id),
+          name: String(item.name),
+          price: Number(item.price),
+          qty: Math.min(12, Math.max(1, parseInt(item.qty, 10) || 1))
+        }));
+    } catch (error) {
+      cart = [];
+    }
+  }
+
+  function saveCart() {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    } catch (error) {}
+  }
+
   let quizStep = 1;
   let quizAnswers = [];
   let lastQuizResultKey = null;
@@ -4212,6 +4571,9 @@ em {
   const cartCount = document.getElementById('cartCount');
   const cartSubtotal = document.getElementById('cartSubtotal');
   const cartShipping = document.getElementById('cartShipping');
+  const cartShippingText = document.getElementById('cartShippingText');
+  const cartShippingBar = document.getElementById('cartShippingBar');
+  const cartHeadingCount = document.getElementById('cartHeadingCount');
   const checkoutBtn = document.getElementById('checkoutBtn');
   const quizModal = document.getElementById('quizModal');
   const quizOpenBtn = document.getElementById('quizOpenBtn');
@@ -4321,13 +4683,16 @@ em {
 
   // Cart
   function openCart() {
+    if (!cartDrawer) return;
     cartDrawer.classList.add('open');
+    cartDrawer.setAttribute('aria-hidden', 'false');
     overlay.classList.add('active');
     lockScroll();
   }
 
   function closeCart() {
-    cartDrawer.classList.remove('open');
+    cartDrawer?.classList.remove('open');
+    cartDrawer?.setAttribute('aria-hidden', 'true');
     if (!isModalOpen()) {
       overlay.classList.remove('active');
       unlockScroll();
@@ -4336,6 +4701,11 @@ em {
 
   cartBtn?.addEventListener('click', openCart);
   cartClose?.addEventListener('click', closeCart);
+  document.getElementById('cartContinue')?.addEventListener('click', closeCart);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cartDrawer?.classList.contains('open')) closeCart();
+  });
 
   overlay?.addEventListener('click', () => {
     closeCart();
@@ -4359,52 +4729,196 @@ em {
     renderCart();
   }
 
+  const CART_CATALOG = {
+    'reserve-ritual': { image: 'assets/images/products/reserve-blend.webp', href: 'products/reserve.html' },
+    'reserve-blend': { image: 'assets/images/products/reserve-blend.webp', href: 'products/reserve.html' },
+    'morning-glow': { image: 'assets/images/products/morning-glow.webp', href: 'products/wildflower.html' },
+    'wildflower-light': { image: 'assets/images/products/morning-glow.webp', href: 'products/wildflower.html' },
+    'highland-deep': { image: 'assets/images/products/highland-gold.webp', href: 'products/highland.html' },
+    'highland-gold': { image: 'assets/images/products/highland-gold.webp', href: 'products/highland.html' }
+  };
+
+  const CART_UPSELLS = [
+    { id: 'reserve-blend', price: 14 },
+    { id: 'wildflower-light', price: 12 },
+    { id: 'highland-gold', price: 18 }
+  ];
+
+  function assetBase() {
+    return /\/(products|pages|blog)\//.test(window.location.pathname) ? '../' : '';
+  }
+
+  function shopHref() {
+    const path = window.location.pathname;
+    if (/\/products\//.test(path)) return './all.html';
+    if (/\/(pages|blog)\//.test(path)) return '../products/all.html';
+    return 'products/all.html';
+  }
+
+  function escHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function splitProductName(name) {
+    const parts = String(name || '').split(',');
+    if (parts.length < 2) return { title: name || '', size: '' };
+    return { title: parts[0].trim(), size: parts.slice(1).join(',').trim() };
+  }
+
+  function setQty(id, qty, focusSelector) {
+    const item = cart.find(entry => entry.id === id);
+    if (!item) return;
+    item.qty = Math.min(12, Math.max(1, qty));
+    renderCart(focusSelector);
+  }
+
   function getSubtotal() {
     return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   }
 
-  function renderCart() {
+  function renderUpsell() {
+    if (!cart.length) return '';
+    const picks = CART_UPSELLS.filter(item => !cart.some(entry => entry.id === item.id)).slice(0, 2);
+    if (!picks.length) return '';
+    const base = assetBase();
+
+    return `
+      <section class="cart-upsell">
+        <p class="cart-upsell-label">${escHtml(t('cart.upsell'))}</p>
+        <div class="cart-upsell-list">
+          ${picks.map(item => {
+            const catalog = CART_CATALOG[item.id];
+            const { title } = splitProductName(t(`product.${item.id}.name`));
+            return `
+              <article class="cart-upsell-card">
+                <img src="${base}${catalog.image}" alt="${escHtml(title)}">
+                <div class="cart-upsell-copy">
+                  <p>${escHtml(title)}</p>
+                  <span>€${item.price}</span>
+                </div>
+                <button type="button" class="cart-upsell-add" data-upsell="${item.id}" data-price="${item.price}">${escHtml(t('cart.add'))}</button>
+              </article>
+            `;
+          }).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderCart(focusSelector) {
+    saveCart();
     const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
     const subtotal = getSubtotal();
+    const base = assetBase();
 
-    cartCount.textContent = totalItems;
-    cartSubtotal.textContent = `€${subtotal}`;
-
-    const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
-    if (remaining > 0) {
-      cartShipping.textContent = t('cart.shipping.remaining', { amount: remaining });
-      cartShipping.style.display = 'block';
-    } else {
-      cartShipping.textContent = t('cart.shipping.free');
-      cartShipping.style.display = 'block';
+    if (cartCount) {
+      cartCount.textContent = totalItems;
+      cartCount.classList.toggle('is-hidden', totalItems === 0);
     }
+    if (cartHeadingCount) {
+      cartHeadingCount.textContent = totalItems;
+      cartHeadingCount.hidden = totalItems === 0;
+    }
+    if (cartSubtotal) cartSubtotal.textContent = `€${subtotal}`;
+    cartDrawer?.classList.toggle('is-empty', cart.length === 0);
+    if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
+
+    const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+    const progress = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
+    if (cartShipping) {
+      cartShipping.classList.toggle('is-free', remaining === 0 && subtotal > 0);
+      cartShipping.hidden = false;
+    }
+    if (cartShippingText) {
+      cartShippingText.textContent = remaining > 0
+        ? t('cart.shipping.remaining', { amount: remaining })
+        : t('cart.shipping.free');
+    }
+    if (cartShippingBar) cartShippingBar.style.width = `${subtotal > 0 ? progress : 0}%`;
+
+    if (!cartItems) return;
 
     if (cart.length === 0) {
-      cartItems.innerHTML = `<p class="cart-empty">${t('cart.empty')}</p>`;
+      cartItems.innerHTML = `
+        <div class="cart-empty">
+          <div class="cart-empty-mark" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7 5 4H2"/><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg>
+          </div>
+          <p class="cart-empty-title">${escHtml(t('cart.empty'))}</p>
+          <p class="cart-empty-hint">${escHtml(t('cart.empty.hint'))}</p>
+          <a class="btn btn-primary" href="${shopHref()}">${escHtml(t('cart.continue'))}</a>
+        </div>
+      `;
       return;
     }
 
-    cartItems.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <div class="cart-item-info">
-          <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">€${item.price} × ${item.qty}</div>
-          <button class="cart-item-remove" data-remove="${item.id}">${t('cart.remove')}</button>
-        </div>
-      </div>
-    `).join('');
+    cartItems.innerHTML = cart.map(item => {
+      const catalog = CART_CATALOG[item.id] || {};
+      const { title, size } = splitProductName(item.name);
+      const href = catalog.href ? `${base}${catalog.href}` : shopHref();
+      const image = catalog.image ? `${base}${catalog.image}` : '';
+      const line = item.price * item.qty;
+      return `
+        <article class="cart-item">
+          <a class="cart-item-media" href="${href}">
+            ${image ? `<img src="${image}" alt="${escHtml(title)}">` : ''}
+          </a>
+          <div class="cart-item-info">
+            <div class="cart-item-top">
+              <div>
+                <a class="cart-item-name" href="${href}">${escHtml(title)}</a>
+                ${size ? `<p class="cart-item-variant">${escHtml(size)}</p>` : ''}
+              </div>
+              <div class="cart-item-line">€${line}</div>
+            </div>
+            <div class="cart-item-actions">
+              <div class="cart-qty" role="group" aria-label="${escHtml(t('pdp.qty.aria'))}">
+                <button type="button" data-qty="${escHtml(item.id)}" data-delta="-1" aria-label="${escHtml(t('pdp.qty.decrease'))}" ${item.qty <= 1 ? 'disabled' : ''}>−</button>
+                <span>${item.qty}</span>
+                <button type="button" data-qty="${escHtml(item.id)}" data-delta="1" aria-label="${escHtml(t('pdp.qty.increase'))}" ${item.qty >= 12 ? 'disabled' : ''}>+</button>
+              </div>
+              <button type="button" class="cart-item-remove" data-remove="${escHtml(item.id)}">${escHtml(t('cart.remove'))}</button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('') + renderUpsell();
 
-    cartItems.querySelectorAll('[data-remove]').forEach(btn => {
-      btn.addEventListener('click', () => removeFromCart(btn.dataset.remove));
-    });
+    if (focusSelector) cartItems.querySelector(focusSelector)?.focus();
   }
+
+  cartItems?.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('[data-remove]');
+    if (removeBtn) {
+      removeFromCart(removeBtn.dataset.remove);
+      return;
+    }
+
+    const qtyBtn = e.target.closest('[data-qty]');
+    if (qtyBtn && !qtyBtn.disabled) {
+      const item = cart.find(entry => entry.id === qtyBtn.dataset.qty);
+      if (!item) return;
+      const next = item.qty + parseInt(qtyBtn.dataset.delta, 10);
+      setQty(item.id, next, `[data-qty="${CSS.escape(item.id)}"][data-delta="${qtyBtn.dataset.delta}"]`);
+      return;
+    }
+
+    const upsell = e.target.closest('[data-upsell]');
+    if (upsell) {
+      addToCart(upsell.dataset.upsell, t(`product.${upsell.dataset.upsell}.name`), parseInt(upsell.dataset.price, 10), 1);
+    }
+  });
+
+
 
   checkoutBtn?.addEventListener('click', () => {
     if (cart.length === 0) return;
-    alert(t('cart.checkout.alert'));
-    cart = [];
-    renderCart();
-    closeCart();
+    saveCart();
+    window.location.href = '../checkout/index.html';
   });
 
   // Add to cart buttons
@@ -4574,6 +5088,7 @@ em {
   });
 
   // Init
+  loadCart();
   window.MetcheI18n?.init();
   initSmoothScroll();
   initHeaderScroll();
