@@ -5044,12 +5044,22 @@ em {
     const email = String(form.querySelector('input[type="email"]')?.value || '').trim();
     if (!email) return;
     const mk = (window.MetcheI18n?.getLang?.() || 'en') === 'mk';
-    const subject = mk ? 'Пријава за новости од Метче' : 'Metche newsletter signup';
-    const intro = mk
-      ? 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче. Откако ќе ја примиме, новостите ќе ги испраќаме на адресата подолу.'
-      : 'Please send this email to join the Metche list. After we receive it, we will send news and offers to the address below.';
-    const label = mk ? 'Е-пошта за листата' : 'Email to add to the list';
-    const href = `mailto:pcelarstvo.petkovski@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${intro}\n\n${label}: ${email}`)}`;
+    const subject = mk ? 'Пријава за билтен' : 'Newsletter signup';
+    const note = mk
+      ? 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче.'
+      : 'Please send this email to join the Metche list.';
+    const owner = mk
+      ? 'Додајте ја оваа е-пошта на листата за новости.'
+      : 'Please add this email to the newsletter list.';
+    const italicNote = Array.from(note).map((ch) => {
+      if (ch === 'h') return '\u210E';
+      const code = ch.codePointAt(0);
+      if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D434 + (code - 65));
+      if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D44E + (code - 97));
+      return ch;
+    }).join('');
+    const label = mk ? 'Е-пошта' : 'Email';
+    const href = `mailto:pcelarstvo.petkovski@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${italicNote}\n\n${owner}\n\n${label}: ${email}`)}`;
     const success = document.getElementById('newsletterSuccess');
     form.querySelector('.footer-input-wrap')?.classList.add('hidden');
     form.querySelector('.footer-fda-box')?.classList.add('hidden');

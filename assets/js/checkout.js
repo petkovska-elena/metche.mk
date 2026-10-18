@@ -389,8 +389,9 @@
       return `- ${name} × ${item.qty} = ${money(item.price * item.qty)}`;
     }).join('\n');
 
+    const fullName = `${order.firstName} ${order.lastName}`.trim();
     const address = [
-      `${order.firstName} ${order.lastName}`.trim(),
+      fullName,
       order.address,
       order.apartment,
       `${order.postal} ${order.city}`.trim(),
@@ -398,9 +399,8 @@
     ].filter(Boolean).join('\n');
 
     const body = [
-      t('mail.order.intro'),
-      '',
-      `${t('checkout.thanks.confirmed', { number: '#' + order.number })}`,
+      t('mail.order.owner', { name: fullName || t('mail.none') }),
+      line(t('mail.order.number'), '#' + order.number),
       '',
       t('mail.order.items'),
       items || t('mail.none'),
@@ -415,21 +415,20 @@
       line(t('checkout.thanks.payment'), t('checkout.pay.cod')),
       '',
       t('mail.order.customer'),
-      line(t('checkout.firstName'), order.firstName),
-      line(t('checkout.lastName'), order.lastName),
+      line(t('mail.name'), fullName),
       line(t('checkout.email'), order.email),
-      line(t('checkout.phone'), order.phone),
-      line(t('checkout.marketing'), order.marketing ? t('mail.yes') : t('mail.no')),
+      line(t('mail.phone'), order.phone),
+      line(t('mail.newsletter'), order.marketing ? t('mail.yes') : t('mail.no')),
       '',
       t('mail.order.address'),
       address || t('mail.none'),
-      '',
-      line(t('checkout.notes'), order.notes)
+      order.notes ? `\n${line(t('mail.note'), order.notes)}` : null
     ].filter((row) => row !== null).join('\n');
 
     return window.MetcheI18n?.composeMail(
       t('mail.order.subject', { number: '#' + order.number }),
-      body
+      body,
+      t('mail.order.note')
     ) || '';
   }
 

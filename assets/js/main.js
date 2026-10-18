@@ -688,8 +688,8 @@
     renderQuizResult(result);
   }
 
-  function composeMail(subject, body) {
-    return window.MetcheI18n?.composeMail(subject, body) || '';
+  function composeMail(subject, body, customerNote) {
+    return window.MetcheI18n?.composeMail(subject, body, customerNote) || '';
   }
 
   function showMailFollowUp(successEl, href, againKey) {
@@ -708,10 +708,11 @@
     const href = composeMail(
       t('mail.newsletter.subject'),
       [
-        t('mail.newsletter.intro'),
+        t('mail.newsletter.owner'),
         '',
         `${t('mail.newsletter.email')}: ${email}`
-      ].join('\n')
+      ].join('\n'),
+      t('mail.newsletter.note')
     );
 
     const success = document.getElementById('newsletterSuccess');
@@ -733,7 +734,7 @@
     const href = composeMail(
       t('mail.contact.subject', { subject }),
       [
-        t('mail.contact.intro'),
+        t('mail.contact.owner', { name }),
         '',
         `${t('contact.form.name')}: ${name}`,
         `${t('contact.form.email')}: ${email}`,
@@ -741,7 +742,8 @@
         '',
         `${t('contact.form.message')}:`,
         message
-      ].join('\n')
+      ].join('\n'),
+      t('mail.contact.note')
     );
 
     const success = document.getElementById('contactSuccess');

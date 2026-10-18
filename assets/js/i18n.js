@@ -277,17 +277,25 @@
       'mail.yes': 'Yes',
       'mail.no': 'No',
       'mail.none': 'Not provided',
-      'mail.order.subject': 'Metche order {number} — send this email to place the order',
-      'mail.order.intro': 'Please send this email now. Sending it places your Metche order. Do not change the details unless something is wrong. We will pack the jars and send them to the address below. You pay the courier when the package arrives (cash on delivery).',
-      'mail.order.items': 'ITEMS',
-      'mail.order.customer': 'CUSTOMER',
-      'mail.order.address': 'DELIVERY ADDRESS',
-      'mail.order.totals': 'AMOUNTS',
-      'mail.contact.subject': 'Metche message: {subject}',
-      'mail.contact.intro': 'Please send this email so Metche receives your message. We will reply to the address you gave.',
-      'mail.newsletter.subject': 'Metche newsletter signup',
-      'mail.newsletter.intro': 'Please send this email to join the Metche list. After we receive it, we will send news and offers to the address below.',
-      'mail.newsletter.email': 'Email to add to the list',
+      'mail.name': 'Name',
+      'mail.phone': 'Phone',
+      'mail.newsletter': 'Newsletter',
+      'mail.note': 'Delivery note',
+      'mail.order.subject': 'Metche order {number}',
+      'mail.order.note': 'Please send this email to place your order. Pay the courier when the jars arrive.',
+      'mail.order.owner': 'New order from {name}.',
+      'mail.order.number': 'Order',
+      'mail.order.items': 'Items',
+      'mail.order.customer': 'Customer',
+      'mail.order.address': 'Delivery address',
+      'mail.order.totals': 'Totals',
+      'mail.contact.subject': '{subject}',
+      'mail.contact.note': 'Please send this email so Metche receives your message.',
+      'mail.contact.owner': 'New website message from {name}.',
+      'mail.newsletter.subject': 'Newsletter signup',
+      'mail.newsletter.note': 'Please send this email to join the Metche list.',
+      'mail.newsletter.owner': 'Please add this email to the newsletter list.',
+      'mail.newsletter.email': 'Email',
       'checkout.thanks.customer': 'Contact',
       'checkout.thanks.shippingAddress': 'Shipping address',
       'checkout.thanks.billing': 'Billing address',
@@ -626,17 +634,25 @@
       'mail.yes': 'Да',
       'mail.no': 'Не',
       'mail.none': 'Не е внесено',
-      'mail.order.subject': 'Нарачка Метче {number} — испратете ја оваа е-пошта за да ја потврдите нарачката',
-      'mail.order.intro': 'Испратете ја оваа е-пошта сега. Со испраќање ја потврдувате нарачката кај Метче. Не ги менувајте податоците освен ако нешто не е точно. Ќе ги спакуваме теглите и ќе ги испратиме на адресата подолу. Плаќате на курирот кога ќе пристигне пратката (плата при достава).',
-      'mail.order.items': 'ПРОИЗВОДИ',
-      'mail.order.customer': 'КУПУВАЧ',
-      'mail.order.address': 'АДРЕСА ЗА ДОСТАВА',
-      'mail.order.totals': 'ИЗНОСИ',
-      'mail.contact.subject': 'Порака до Метче: {subject}',
-      'mail.contact.intro': 'Испратете ја оваа е-пошта за Метче да ја прими вашата порака. Ќе одговориме на адресата што ја напишавте.',
-      'mail.newsletter.subject': 'Пријава за новости од Метче',
-      'mail.newsletter.intro': 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче. Откако ќе ја примиме, новостите ќе ги испраќаме на адресата подолу.',
-      'mail.newsletter.email': 'Е-пошта за листата',
+      'mail.name': 'Име',
+      'mail.phone': 'Телефон',
+      'mail.newsletter': 'Билтен',
+      'mail.note': 'Белешка за достава',
+      'mail.order.subject': 'Нарачка Метче {number}',
+      'mail.order.note': 'Испратете ја оваа е-пошта за да ја потврдите нарачката. Плаќате на курирот кога ќе пристигнат теглите.',
+      'mail.order.owner': 'Нова нарачка од {name}.',
+      'mail.order.number': 'Нарачка',
+      'mail.order.items': 'Производи',
+      'mail.order.customer': 'Купувач',
+      'mail.order.address': 'Адреса за достава',
+      'mail.order.totals': 'Износи',
+      'mail.contact.subject': '{subject}',
+      'mail.contact.note': 'Испратете ја оваа е-пошта за Метче да ја прими вашата порака.',
+      'mail.contact.owner': 'Нова порака од веб-страницата, од {name}.',
+      'mail.newsletter.subject': 'Пријава за билтен',
+      'mail.newsletter.note': 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче.',
+      'mail.newsletter.owner': 'Додајте ја оваа е-пошта на листата за новости.',
+      'mail.newsletter.email': 'Е-пошта',
       'checkout.thanks.customer': 'Контакт',
       'checkout.thanks.shippingAddress': 'Адреса за достава',
       'checkout.thanks.billing': 'Адреса за наплата',
@@ -1289,8 +1305,20 @@
 
   const MAIL_ADDRESS = 'pcelarstvo.petkovski@gmail.com';
 
-  function composeMail(subject, body) {
-    return `mailto:${MAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  function italicizeMail(text) {
+    return Array.from(String(text || '')).map((ch) => {
+      if (ch === 'h') return '\u210E';
+      const code = ch.codePointAt(0);
+      if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D434 + (code - 65));
+      if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D44E + (code - 97));
+      return ch;
+    }).join('');
+  }
+
+  function composeMail(subject, body, customerNote) {
+    const note = String(customerNote || '').trim();
+    const message = note ? `${italicizeMail(note)}\n\n${body}` : body;
+    return `mailto:${MAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(String(message).trim())}`;
   }
 
   function openMail(href) {
