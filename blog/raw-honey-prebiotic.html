@@ -5041,10 +5041,27 @@ em {
   newsletterForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = newsletterForm;
+    const email = String(form.querySelector('input[type="email"]')?.value || '').trim();
+    if (!email) return;
+    const mk = (window.MetcheI18n?.getLang?.() || 'en') === 'mk';
+    const subject = mk ? 'Пријава за новости од Метче' : 'Metche newsletter signup';
+    const intro = mk
+      ? 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче. Откако ќе ја примиме, новостите ќе ги испраќаме на адресата подолу.'
+      : 'Please send this email to join the Metche list. After we receive it, we will send news and offers to the address below.';
+    const label = mk ? 'Е-пошта за листата' : 'Email to add to the list';
+    const href = `mailto:pcelarstvo.petkovski@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${intro}\n\n${label}: ${email}`)}`;
     const success = document.getElementById('newsletterSuccess');
     form.querySelector('.footer-input-wrap')?.classList.add('hidden');
     form.querySelector('.footer-fda-box')?.classList.add('hidden');
     success?.classList.remove('hidden');
+    if (success) {
+      const again = mk ? 'Отвори ја е-поштата повторно' : 'Open the email again';
+      const thanks = mk
+        ? 'Се отвори е-поштата. Притиснете Испрати за да се пријавите на листата.'
+        : 'Your email app opened. Press Send to join the list.';
+      success.innerHTML = `${thanks} <a href="${href.replace(/"/g, '&quot;')}">${again}</a>`;
+    }
+    window.location.href = href;
   });
 
   // Mega menu: mobile tap support

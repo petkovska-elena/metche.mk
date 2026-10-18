@@ -688,14 +688,66 @@
     renderQuizResult(result);
   }
 
+  function composeMail(subject, body) {
+    return window.MetcheI18n?.composeMail(subject, body) || '';
+  }
+
+  function showMailFollowUp(successEl, href, againKey) {
+    if (!successEl) return;
+    successEl.classList.remove('hidden');
+    successEl.innerHTML = `${escHtml(t(successEl.dataset.i18n || againKey))} <a href="${escHtml(href)}">${escHtml(t(againKey))}</a>`;
+  }
+
   // Newsletter
   newsletterForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = newsletterForm;
+    const email = String(form.querySelector('input[type="email"]')?.value || '').trim();
+    if (!email) return;
+
+    const href = composeMail(
+      t('mail.newsletter.subject'),
+      [
+        t('mail.newsletter.intro'),
+        '',
+        `${t('mail.newsletter.email')}: ${email}`
+      ].join('\n')
+    );
+
     const success = document.getElementById('newsletterSuccess');
     form.querySelector('.footer-input-wrap')?.classList.add('hidden');
     form.querySelector('.footer-fda-box')?.classList.add('hidden');
-    success?.classList.remove('hidden');
+    showMailFollowUp(success, href, 'footer.mail.again');
+    window.MetcheI18n?.openMail(href);
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = String(contactForm.elements.name?.value || '').trim();
+    const email = String(contactForm.elements.email?.value || '').trim();
+    const subject = String(contactForm.elements.subject?.value || '').trim();
+    const message = String(contactForm.elements.message?.value || '').trim();
+    if (!name || !email || !subject || !message) return;
+
+    const href = composeMail(
+      t('mail.contact.subject', { subject }),
+      [
+        t('mail.contact.intro'),
+        '',
+        `${t('contact.form.name')}: ${name}`,
+        `${t('contact.form.email')}: ${email}`,
+        `${t('contact.form.subject')}: ${subject}`,
+        '',
+        `${t('contact.form.message')}:`,
+        message
+      ].join('\n')
+    );
+
+    const success = document.getElementById('contactSuccess');
+    contactForm.classList.add('hidden');
+    showMailFollowUp(success, href, 'contact.form.again');
+    window.MetcheI18n?.openMail(href);
   });
 
   // Mega menu: mobile tap support

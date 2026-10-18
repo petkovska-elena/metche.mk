@@ -168,7 +168,8 @@
       'footer.newsletter': "Sign up for news, honey tips, and first access to offers.",
       'footer.email': "Email",
       'footer.fda': "*These statements have not been evaluated by the Food and Veterinary Agency. This product is not a medicine and is not intended to diagnose, treat, or prevent disease.",
-      'footer.thanks': "Thank you, you are on the list.",
+      'footer.thanks': "Your email app opened. Press Send to join the list.",
+      'footer.mail.again': "Open the email again",
       'footer.shop': "Shop Honey",
       'footer.learn': "Learn More",
       'footer.support': 'Support',
@@ -267,11 +268,26 @@
       'checkout.error.cvv': 'Enter the security code',
       'checkout.thanks.hello': 'Thank you, {name}',
       'checkout.thanks.confirmed': 'Order {number}',
-      'checkout.thanks.preview': 'Your order is saved in this browser. Pay the courier when it arrives.',
+      'checkout.thanks.preview': 'Send the email that just opened. That is how the order reaches us. Pay the courier when the jars arrive.',
       'checkout.thanks.next': 'What happens next',
-      'checkout.thanks.step1': 'We pack the jars from this harvest.',
-      'checkout.thanks.step2': 'You keep this order number for any question.',
-      'checkout.thanks.step3': 'Delivery follows the method you chose.',
+      'checkout.thanks.step1': 'Press Send in your email app. That places the order.',
+      'checkout.thanks.step2': 'We pack the jars after we receive that email.',
+      'checkout.thanks.step3': 'You pay the courier when the package arrives.',
+      'checkout.thanks.resend': 'Open the order email again',
+      'mail.yes': 'Yes',
+      'mail.no': 'No',
+      'mail.none': 'Not provided',
+      'mail.order.subject': 'Metche order {number} — send this email to place the order',
+      'mail.order.intro': 'Please send this email now. Sending it places your Metche order. Do not change the details unless something is wrong. We will pack the jars and send them to the address below. You pay the courier when the package arrives (cash on delivery).',
+      'mail.order.items': 'ITEMS',
+      'mail.order.customer': 'CUSTOMER',
+      'mail.order.address': 'DELIVERY ADDRESS',
+      'mail.order.totals': 'AMOUNTS',
+      'mail.contact.subject': 'Metche message: {subject}',
+      'mail.contact.intro': 'Please send this email so Metche receives your message. We will reply to the address you gave.',
+      'mail.newsletter.subject': 'Metche newsletter signup',
+      'mail.newsletter.intro': 'Please send this email to join the Metche list. After we receive it, we will send news and offers to the address below.',
+      'mail.newsletter.email': 'Email to add to the list',
       'checkout.thanks.customer': 'Contact',
       'checkout.thanks.shippingAddress': 'Shipping address',
       'checkout.thanks.billing': 'Billing address',
@@ -501,7 +517,8 @@
       'footer.newsletter': 'Пријавете се за новости, совети за мед и први понуди.',
       'footer.email': 'Е-пошта',
       'footer.fda': '*Овие тврдења не се оценети од Агенцијата за храна и ветеринарство. Производот не е лек и не е наменет за дијагноза, лекување или спречување на болести.',
-      'footer.thanks': 'Благодариме, сте на листата.',
+      'footer.thanks': 'Се отвори е-поштата. Притиснете Испрати за да се пријавите на листата.',
+      'footer.mail.again': 'Отвори ја е-поштата повторно',
       'footer.shop': 'Купи мед',
       'footer.learn': 'Дознај повеќе',
       'footer.support': 'Поддршка',
@@ -600,11 +617,26 @@
       'checkout.error.cvv': 'Внесете го безбедносниот код',
       'checkout.thanks.hello': 'Ви благодариме, {name}',
       'checkout.thanks.confirmed': 'Нарачка {number}',
-      'checkout.thanks.preview': 'Нарачката е зачувана во прелистувачот. Плаќате на курирот кога ќе пристигне.',
+      'checkout.thanks.preview': 'Испратете ја е-поштата што штотуку се отвори. Така нарачката стигнува до нас. Плаќате на курирот кога ќе пристигнат теглите.',
       'checkout.thanks.next': 'Што следи',
-      'checkout.thanks.step1': 'Ги пакуваме теглите од оваа берба.',
-      'checkout.thanks.step2': 'Го чувате бројот на нарачката за секое прашање.',
-      'checkout.thanks.step3': 'Доставата оди според начинот што го избравте.',
+      'checkout.thanks.step1': 'Притиснете Испрати во е-поштата. Тоа ја прави нарачката.',
+      'checkout.thanks.step2': 'Теглите ги пакуваме откако ќе ја примиме таа е-пошта.',
+      'checkout.thanks.step3': 'Плаќате на курирот кога ќе пристигне пратката.',
+      'checkout.thanks.resend': 'Отвори ја е-поштата за нарачка повторно',
+      'mail.yes': 'Да',
+      'mail.no': 'Не',
+      'mail.none': 'Не е внесено',
+      'mail.order.subject': 'Нарачка Метче {number} — испратете ја оваа е-пошта за да ја потврдите нарачката',
+      'mail.order.intro': 'Испратете ја оваа е-пошта сега. Со испраќање ја потврдувате нарачката кај Метче. Не ги менувајте податоците освен ако нешто не е точно. Ќе ги спакуваме теглите и ќе ги испратиме на адресата подолу. Плаќате на курирот кога ќе пристигне пратката (плата при достава).',
+      'mail.order.items': 'ПРОИЗВОДИ',
+      'mail.order.customer': 'КУПУВАЧ',
+      'mail.order.address': 'АДРЕСА ЗА ДОСТАВА',
+      'mail.order.totals': 'ИЗНОСИ',
+      'mail.contact.subject': 'Порака до Метче: {subject}',
+      'mail.contact.intro': 'Испратете ја оваа е-пошта за Метче да ја прими вашата порака. Ќе одговориме на адресата што ја напишавте.',
+      'mail.newsletter.subject': 'Пријава за новости од Метче',
+      'mail.newsletter.intro': 'Испратете ја оваа е-пошта за да се пријавите на листата на Метче. Откако ќе ја примиме, новостите ќе ги испраќаме на адресата подолу.',
+      'mail.newsletter.email': 'Е-пошта за листата',
       'checkout.thanks.customer': 'Контакт',
       'checkout.thanks.shippingAddress': 'Адреса за достава',
       'checkout.thanks.billing': 'Адреса за наплата',
@@ -685,7 +717,8 @@
     'contact.form.subject': "What Is It About?",
     'contact.form.message': "Message",
     'contact.form.submit': "Send",
-    'contact.form.success': "Received. We will get back to you soon.",
+    'contact.form.success': "Your email app opened with the message. Press Send so we receive it.",
+    'contact.form.again': "Open the email again",
     'contact.details.title': "Other Ways to Contact Us",
     'contact.details.email': 'Email',
     'contact.details.phone': 'Phone',
@@ -730,7 +763,8 @@
     'contact.form.subject': 'За што станува збор',
     'contact.form.message': 'Порака',
     'contact.form.submit': 'Испрати',
-    'contact.form.success': 'Примено. Ќе ви се јавиме наскоро.',
+    'contact.form.success': 'Се отвори е-поштата со пораката. Притиснете Испрати за да ја примиме.',
+    'contact.form.again': 'Отвори ја е-поштата повторно',
     'contact.details.title': 'Други начини за контакт',
     'contact.details.email': 'Е-пошта',
     'contact.details.phone': 'Телефон',
@@ -1253,10 +1287,24 @@
     });
   }
 
+  const MAIL_ADDRESS = 'pcelarstvo.petkovski@gmail.com';
+
+  function composeMail(subject, body) {
+    return `mailto:${MAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function openMail(href) {
+    if (!href) return;
+    window.location.href = href;
+  }
+
   window.MetcheI18n = {
     t,
     getLang: () => currentLang,
     setLang: applyLanguage,
+    mailAddress: MAIL_ADDRESS,
+    composeMail,
+    openMail,
     init() {
       initLanguageSwitcher();
       applyLanguage(currentLang);

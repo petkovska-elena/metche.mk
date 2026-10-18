@@ -8,6 +8,8 @@
   const CART_KEY = 'metche-cart';
   const DRAFT_KEY = 'metche-checkout';
   const ORDER_KEY = 'metche-order';
+  const MAIL_HREF_KEY = 'metche-order-mail';
+  const MAIL_OPENED_KEY = 'metche-order-mail-opened';
   const FREE_SHIPPING = 50;
   const DISCOUNT_CODE = 'METCHE10';
 
@@ -372,6 +374,65 @@
     return true;
   }
 
+  function line(label, value) {
+    const text = String(value ?? '').trim();
+    return `${label}: ${text || t('mail.none')}`;
+  }
+
+  function buildOrderMail(order) {
+    const figures = order.totals || {};
+    const shipLabel = order.shippingMethod === 'express' ? t('checkout.ship.express') : t('checkout.ship.standard');
+    const shipTime = order.shippingMethod === 'express' ? t('checkout.ship.express.time') : t('checkout.ship.standard.time');
+    const items = (order.items || []).map((item) => {
+      const { title, size } = splitName(item.name);
+      const name = size ? `${title}, ${size}` : title;
+      return `- ${name} × ${item.qty} = ${money(item.price * item.qty)}`;
+    }).join('\n');
+
+    const address = [
+      `${order.firstName} ${order.lastName}`.trim(),
+      order.address,
+      order.apartment,
+      `${order.postal} ${order.city}`.trim(),
+      countryName(order.country)
+    ].filter(Boolean).join('\n');
+
+    const body = [
+      t('mail.order.intro'),
+      '',
+      `${t('checkout.thanks.confirmed', { number: '#' + order.number })}`,
+      '',
+      t('mail.order.items'),
+      items || t('mail.none'),
+      '',
+      t('mail.order.totals'),
+      line(t('checkout.subtotal'), money(figures.goods)),
+      figures.discount ? line(t('checkout.discount.line'), `−${money(figures.discount)} (${order.discountCode || DISCOUNT_CODE})`) : null,
+      line(t('checkout.shipping'), figures.shipping === 0 ? t('checkout.shipping.free') : money(figures.shipping)),
+      line(t('checkout.ship.title'), `${shipLabel} (${shipTime})`),
+      line(t('checkout.vat'), `${t('checkout.vat.included')} ${money(figures.vat)}`),
+      line(t('checkout.total'), money(figures.total)),
+      line(t('checkout.thanks.payment'), t('checkout.pay.cod')),
+      '',
+      t('mail.order.customer'),
+      line(t('checkout.firstName'), order.firstName),
+      line(t('checkout.lastName'), order.lastName),
+      line(t('checkout.email'), order.email),
+      line(t('checkout.phone'), order.phone),
+      line(t('checkout.marketing'), order.marketing ? t('mail.yes') : t('mail.no')),
+      '',
+      t('mail.order.address'),
+      address || t('mail.none'),
+      '',
+      line(t('checkout.notes'), order.notes)
+    ].filter((row) => row !== null).join('\n');
+
+    return window.MetcheI18n?.composeMail(
+      t('mail.order.subject', { number: '#' + order.number }),
+      body
+    ) || '';
+  }
+
   function placeOrder(payment) {
     const figures = totals();
     const order = {
@@ -401,9 +462,13 @@
       } : null,
       items: cart,
       discountCode: figures.discount ? DISCOUNT_CODE : '',
+      marketing: Boolean(draft.marketing),
       totals: figures
     };
+    const href = buildOrderMail(order);
     sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
+    sessionStorage.setItem(MAIL_HREF_KEY, href);
+    sessionStorage.removeItem(MAIL_OPENED_KEY);
     sessionStorage.removeItem(DRAFT_KEY);
     localStorage.setItem(CART_KEY, '[]');
     window.location.href = 'thank-you.html';
@@ -488,6 +553,19 @@
       </div>
       <a class="btn btn-primary" href="../products/all.html">${esc(t('checkout.thanks.continue'))}</a>
     `;
+
+    const mailHref = sessionStorage.getItem(MAIL_HREF_KEY);
+    if (mailHref) {
+      const resend = document.createElement('p');
+      resend.className = 'thanks-lead';
+      resend.innerHTML = `<a class="btn btn-primary" href="${esc(mailHref)}">${esc(t('checkout.thanks.resend'))}</a>`;
+      mount.querySelector('.thanks-lead')?.after(resend);
+
+      if (!sessionStorage.getItem(MAIL_OPENED_KEY)) {
+        sessionStorage.setItem(MAIL_OPENED_KEY, '1');
+        window.MetcheI18n?.openMail(mailHref);
+      }
+    }
   }
 
   function bindInformation() {
